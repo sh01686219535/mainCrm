@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\AdminAuth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\UserVerification;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Session;
 
 class AdminController extends Controller
@@ -27,6 +29,16 @@ class AdminController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
+        $code= sha1(rand(1000,8000));
+
+        $user->userVerify()->create([
+            'code' => $code
+        ]);
+
+        $generatedUrl = route('verifyEmail',[$user->email,$code]);
+
+        Mail::to($user->email)->send(new UserVerification($generatedUrl));
+
         return redirect('/dashboard')->with('message','Úser Registration Successfully');
     }
     //login
