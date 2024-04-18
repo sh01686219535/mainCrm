@@ -15,7 +15,10 @@ Route::get('/login', [AdminController::class, 'login'])->name('login');
 Route::post('/login', [AdminController::class, 'storeLogin'])->name('login');
 
 //forgot password
-route::get('forgot/password', [AdminController::class, 'forgotPassword'])->name('forgot.password');
+route::get('/forgot/password', [AdminController::class, 'forgotPassword'])->name('forgot.password');
+route::post('/forgot', [AdminController::class, 'forgot'])->name('forgot');
+route::get('/reset/password', [AdminController::class, 'resetPassword']);
+route::post('/reset/user/password', [AdminController::class, 'resetUserPassword'])->name('reset.user.password');
 
 // Auth Logout Route
 Route::get('/logout', [AdminController::class, 'logout'])->name('logout');

@@ -7,23 +7,21 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //verifyEmail
     public function verifyEmail($email, $code){
-        $user=User::where('email',$email)->first();
-        if($user){
+        $user = User::where('email', $email)->first();
+        if ($user) {
             $userCode = $user->userVerify->code;
-            if($userCode == $code)
-            {
-                $user->update([
-                    'email_verify'=> 'yes'
-                ]);
+            if ($userCode == $code) {
+                $user->email_verify = 'yes'; 
+                $user->save(); 
                 $user->userVerify->delete();
                 return 'User Verified';
-            }else{
+            } else {
                 return 'UnAuthorized Data!';
             }
-        }else{
+        } else {
             return 'UnAuthorized';
         }
     }
+    
 }
