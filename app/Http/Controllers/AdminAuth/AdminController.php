@@ -49,7 +49,7 @@ class AdminController extends Controller
 
         Mail::to($user->email)->send(new UserVerification($generatedUrl));
 
-        return redirect('/dashboard')->with('message', 'User Registration Successfully');
+        return redirect('/dashboard')->with('success', 'User Registration Successfully');
     }
     //login
     public function login()
@@ -67,13 +67,13 @@ class AdminController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->email_verify === 'yes') {
-                return redirect('/dashboard')->with('message', 'Login Successfully');
+                return redirect('/dashboard')->with('success', 'Login Successfully');
             } else {
                 Auth::logout();
-                return redirect('/login')->with('message', 'Your email is not verified');
+                return redirect('/login')->with('success', 'Your email is not verified');
             }
         }
-        return redirect('/login')->with('message', 'Login Details is not match');
+        return redirect('/login')->with('success', 'Login Details is not match');
     }
     //logout
     public function logout()
@@ -114,7 +114,7 @@ class AdminController extends Controller
             $passwordReset->save();
             return back()->with('message', 'Please cjeck your email inbox to reset your email');
         } else {
-            return redirect('/forgot/password')->with('message', 'Email Does not Exits');
+            return redirect('/forgot/password')->with('success', 'Email Does not Exits');
         }
     }
     //resetPassword
@@ -143,9 +143,9 @@ class AdminController extends Controller
             $user->password = bcrypt($request->password);
             $user->save();
             PasswordReset::where('email', $request->user_email)->delete();
-            return redirect('/login')->with('message', 'Password Reset Successfully');
+            return redirect('/login')->with('success', 'Password Reset Successfully');
         } catch (\Throwable $th) {
-            return back()->with('message', 'Fail to Reset Pasword');
+            return back()->with('success', 'Fail to Reset Pasword');
         }
     }
     //googleLogin
@@ -176,6 +176,7 @@ class AdminController extends Controller
                 $generatedUrl = route('verifyEmail', [$findUser->email, $code]);
         
                 Mail::to($findUser->email)->send(new UserVerification($generatedUrl));
+                return redirect('/login')->with('success', 'Registration Successfull');
             }
     
             // Set session variables

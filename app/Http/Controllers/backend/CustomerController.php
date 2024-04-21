@@ -11,4 +11,8 @@ class CustomerController extends Controller
     public function customer(){
         return view('backEnd.customer.customer');
     }
+    //addCustomer
+    public function addCustomer(){
+        return view('backEnd.customer.addCustomer');
+    }
 }

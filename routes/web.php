@@ -36,6 +36,9 @@ Route::group(['middleware' => 'UserAuth'], function () {
     //Dashboard Route
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     //customer Route
-    Route::get('/customer', [CustomerController::class, 'customer'])->name('customer');
+    Route::controller(CustomerController::class)->group(function () {
+        Route::get('/customer','customer')->name('customer');
+        Route::get('/add/customer', 'addCustomer')->name('add.customer');
+    });
 
 });
