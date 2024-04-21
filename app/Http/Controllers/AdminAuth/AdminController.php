@@ -49,7 +49,7 @@ class AdminController extends Controller
 
         Mail::to($user->email)->send(new UserVerification($generatedUrl));
 
-        return redirect('/dashboard')->with('message', 'Úser Registration Successfully');
+        return redirect('/dashboard')->with('message', 'User Registration Successfully');
     }
     //login
     public function login()

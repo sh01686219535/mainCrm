@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuth\AdminController;
+use App\Http\Controllers\backend\CustomerController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\UserController;
 
@@ -34,4 +35,7 @@ Route::get('/auth/google/callback', [AdminController::class, 'googleHandler']);
 Route::group(['middleware' => 'UserAuth'], function () {
     //Dashboard Route
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    //customer Route
+    Route::get('/customer', [CustomerController::class, 'customer'])->name('customer');
+
 });
