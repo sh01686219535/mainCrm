@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title')</title>
@@ -27,5 +27,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('backEndAsset')}}/plugins/summernote/summernote-bs4.min.css">
   <link rel="stylesheet" href="{{asset('backEndAsset')}}/css/custom.css">
+  {{-- Toster CSS --}}
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 
 </head>
