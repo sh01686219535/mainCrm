@@ -26,6 +26,11 @@ Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 // mail
 Route::get('/verify/{email}/{code}', [UserController::class, 'verifyEmail'])->name('verifyEmail');
 
+//googleLogin 
+Route::get('googleLogin', [AdminController::class, 'googleLogin']);
+Route::get('/auth/google/callback', [AdminController::class, 'googleHandler']);
+
+
 Route::group(['middleware' => 'UserAuth'], function () {
     //Dashboard Route
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
