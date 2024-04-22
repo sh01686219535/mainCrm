@@ -28,5 +28,5 @@
   <link rel="stylesheet" href="{{asset('backEndAsset')}}/css/custom.css">
   {{-- Toster CSS --}}
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
-
+  @stack('css')
 </head>
