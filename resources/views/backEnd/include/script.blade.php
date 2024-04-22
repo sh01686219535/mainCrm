@@ -8,8 +8,7 @@
 </script>
 
 <!-- Bootstrap 4 -->
-<script src="{{ asset('backEndAsset') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" ></script><!-- ChartJS -->
 <script src="{{ asset('backEndAsset') }}/plugins/chart.js/Chart.min.js"></script>
 <!-- Sparkline -->
 <script src="{{ asset('backEndAsset') }}/plugins/sparklines/sparkline.js"></script>
