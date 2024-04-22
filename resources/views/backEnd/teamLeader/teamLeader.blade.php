@@ -109,11 +109,11 @@
                                                             alt="">
                                                     </td>
                                                     <td>
-                                                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editExampleModal"><i class="fa fa-edit"></i></a>
-                                                        <a href="" class="btn btn-danger"><i
+                                                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editExampleModal{{$item->id}}"><i class="fa fa-edit"></i></a>
+                                                        <a href="{{route('delete.teamleader',$item->id)}}" class="btn btn-danger"><i
                                                                 class="fa fa-trash"></i></a>
                                                         <!-- Edit Teamleader modal-->
-                                                        <div class="modal fade" id="editExampleModal" tabindex="-1"
+                                                        <div class="modal fade" id="editExampleModal{{$item->id}}" tabindex="-1"
                                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                             <div class="modal-dialog">
                                                                 {{-- error show --}}
@@ -126,13 +126,14 @@
                                                                         </ul>
                                                                     </div>
                                                                 @endif
-                                                                <form action="{{ route('add.teamleader') }}" method="post"
+                                                                <form action="{{ route('update.teamleader') }}" method="post"
                                                                     enctype="multipart/form-data">
                                                                     @csrf
+                                                                    <input type="hidden" name="teamleader_id" value="{{$item->id}}">
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
                                                                             <h1 class="modal-title fs-5"
-                                                                                id="exampleModalLabel">Create
+                                                                                id="exampleModalLabel">Update
                                                                                 Teamleader
                                                                             </h1>
                                                                             <button type="button" class="btn-close"
@@ -142,19 +143,19 @@
                                                                         <div class="modal-body">
                                                                             <div class="form-group">
                                                                                 <label for="name">Full Name</label>
-                                                                                <input type="text" id="name" 
+                                                                                <input type="text" id="name" value="{{$item->name}}"
                                                                                     name="name" class="form-control"
                                                                                     placeholder="Enter Full Name">
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="phone">Phone Number</label>
-                                                                                <input type="number" id="phone"
+                                                                                <input type="number" id="phone" value="{{$item->phone}}"
                                                                                     name="phone" class="form-control"
                                                                                     placeholder="Enter Phone Number">
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="email">Email Address</label>
-                                                                                <input type="email" id="email"
+                                                                                <input type="email" id="email" value="{{$item->email}}"
                                                                                     name="email" class="form-control"
                                                                                     placeholder="Enter Email Address">
                                                                             </div>
@@ -162,7 +163,7 @@
                                                                                 <label
                                                                                     for="designation">Designation</label>
                                                                                 <input type="text" id="designation"
-                                                                                    name="designation"
+                                                                                    name="designation" value="{{$item->designation}}"
                                                                                     class="form-control"
                                                                                     placeholder="Enter Designation">
                                                                             </div>

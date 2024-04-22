@@ -46,5 +46,7 @@ Route::group(['middleware' => 'UserAuth'], function () {
     Route::controller(TeamLeaderController::class)->group(function () {
         Route::get('/teamLeader', 'teamLeader')->name('teamLeader');
         Route::post('/add/teamleader', 'addTeamleader')->name('add.teamleader');
+        Route::post('/update/teamleader', 'updateTeamleader')->name('update.teamleader');
+        Route::get('/delete/teamleader', 'deleteTeamleader')->name('delete.teamleader');
     });
 });

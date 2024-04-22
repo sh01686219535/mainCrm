@@ -43,4 +43,28 @@ class TeamLeaderController extends Controller
         $image->move($directory,$imageName);
         return $imageUrl;
     }
+    //updateTeamleader
+    public function updateTeamleader(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+        ]);
+
+        $teamLeader = TeamLeader::find($request->teamleader_id);
+        $teamLeader->name = $request->name;
+        $teamLeader->phone = $request->phone;
+        $teamLeader->email = $request->email;
+        $teamLeader->designation = $request->designation;
+        if ($request->file('image')) {
+            $teamLeader->image = $this->SaveImage($request);
+        }
+        $teamLeader->save();
+        return back()->with('success','TeamLeader Ipdate Successfull');
+    }
+    // deleteTeamleader
+    public function deleteTeamleader(){
+        
+    }
 }
