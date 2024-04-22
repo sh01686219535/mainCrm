@@ -28,9 +28,10 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <form action="">
+                        <form action="" class="form-demo">
                             @csrf
-                            <div class="card form-section">
+                            <div class="form-section ">
+                            <div class="card">
                                 <div class="card-body">
                                     <h2>Personal Info</h2>
                                     <hr>
@@ -171,7 +172,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card form-section">
+</div>
+                           
+
+<div class="form-section ">
+
+                            <div class="card">
                                 <div class="card-body">
                                     <h2>Project Info</h2>
                                     <hr>
@@ -292,7 +298,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card form-section">
+</div>
+                            <div class="form-section">
+
+                            <div class="card">
                                 <div class="card-body">
                                     <h2>Booking & Payment Info</h2>
                                     <hr>
@@ -381,7 +390,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card form-section">
+                            </div>
+                            <div class="form-section">
+
+
+                            <div class="card">
                                 <div class="card-body">
                                     <h2>Nominee Info</h2>
                                     <hr>
@@ -476,6 +489,7 @@
                                     </div>
                                 </div>
                             </div>
+</div>
                             <div class="form-navigation">
                                 <button type="button" class="previous btn btn-info pull-left">&lt; Previous</button>
                                 <button type="button" class="next btn btn-info pull-right">Next &gt;</button>
@@ -502,11 +516,11 @@
     </div>
 @endsection
 @push('js')
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+         
         $(function() {
             var $sections = $('.form-section');
-            alert();
+          
             function navigateTo(index) {
                 $sections.removeClass('current').eq(index).addClass('current');
                 $('.form-navigation .previous').toggle(index > 0);
