@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuth\AdminController;
 use App\Http\Controllers\backend\CustomerController;
+use App\Http\Controllers\backend\TeamLeaderController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\UserController;
 
@@ -37,8 +38,13 @@ Route::group(['middleware' => 'UserAuth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     //customer Route
     Route::controller(CustomerController::class)->group(function () {
-        Route::get('/customer','customer')->name('customer');
+        Route::get('/customer', 'customer')->name('customer');
         Route::get('/add/customer', 'addCustomer')->name('add.customer');
     });
 
+    //teamLeader Route
+    Route::controller(TeamLeaderController::class)->group(function () {
+        Route::get('/teamLeader', 'teamLeader')->name('teamLeader');
+        Route::post('/add/teamleader', 'addTeamleader')->name('add.teamleader');
+    });
 });
