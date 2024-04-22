@@ -61,10 +61,16 @@ class TeamLeaderController extends Controller
             $teamLeader->image = $this->SaveImage($request);
         }
         $teamLeader->save();
-        return back()->with('success','TeamLeader Ipdate Successfull');
+        return back()->with('success','TeamLeader Update Successfull');
     }
     // deleteTeamleader
-    public function deleteTeamleader(){
-        
+    public function deleteTeamleader($id){
+        $teamLeader = TeamLeader::find($id);
+        if ($teamLeader->image){
+            unlink($teamLeader->image);
+        }
+        $teamLeader->delete();
+        return back()->with('success','TeamLeader Deleted Successfull');
+
     }
 }
