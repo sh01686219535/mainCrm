@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuth\AdminController;
+use App\Http\Controllers\backend\CustomerController;
+use App\Http\Controllers\backend\SalesPersonController;
+use App\Http\Controllers\backend\TeamLeaderController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\UserController;
 use Laravel\Socialite\Facades\Socialite;
@@ -34,8 +37,30 @@ Route::get('/verify/{email}/{code}', [UserController::class, 'verifyEmail'])->na
 
 
 Route::group(['middleware' => 'UserAuth'], function () {
+    
     //Dashboard Route
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    
+    //customer Route
+    Route::controller(CustomerController::class)->group(function () {
+        Route::get('/customer', 'customer')->name('customer');
+        Route::get('/add/customer', 'addCustomer')->name('add.customer');
+    });
+
+    //teamLeader Route
+    Route::controller(TeamLeaderController::class)->group(function () {
+        Route::get('/teamLeader', 'teamLeader')->name('teamLeader');
+        Route::post('/add/teamleader', 'addTeamleader')->name('add.teamleader');
+        Route::post('/update/teamleader', 'updateTeamleader')->name('update.teamleader');
+        Route::get('/delete/teamleader/{id}', 'deleteTeamleader')->name('delete.teamleader');
+    });
+    //Sales Person Route
+    Route::controller(SalesPersonController::class)->group(function () {
+        Route::get('/sales/person', 'salesPerson')->name('sales.person');
+        Route::post('/add/salesPerson', 'addSalesPerson')->name('add.salesPerson');
+        Route::post('/update/salesPerson', 'updateSalesPerson')->name('update.salesPerson');
+        Route::get('/delete/salesPerson/{id}', 'deleteSalesPerson')->name('delete.salesPerson');
+    });
 });
 
 Route::get('/google/redirect',function(){

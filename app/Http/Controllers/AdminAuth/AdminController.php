@@ -176,6 +176,7 @@ class AdminController extends Controller
                 $generatedUrl = route('verifyEmail', [$findUser->email, $code]);
         
                 Mail::to($findUser->email)->send(new UserVerification($generatedUrl));
+                return redirect('/login')->with('success', 'Registration Successfull');
             }
     
             // Set session variables
