@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\SalesPerson;
+use App\Models\TeamLeader;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -13,6 +15,8 @@ class CustomerController extends Controller
     }
     //addCustomer
     public function addCustomer(){
-        return view('backEnd.customer.addCustomer');
+        $salesPerson = SalesPerson::all();
+        $teamLeader = TeamLeader::all();
+        return view('backEnd.customer.addCustomer',compact('salesPerson','teamLeader'));
     }
 }
