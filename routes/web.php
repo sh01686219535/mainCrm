@@ -62,11 +62,10 @@ Route::group(['middleware' => 'UserAuth'], function () {
         Route::get('/delete/salesPerson/{id}', 'deleteSalesPerson')->name('delete.salesPerson');
     });
 });
-
-Route::get('/google/redirect',function(){
-    
+Route::get('/google/redirect', function () {
     return Socialite::driver('google')->redirect();
 });
+
 Route::get('/google/callback', function () {
     $user = Socialite::driver('google')->user();
     $userEmail = $user->getEmail();
@@ -90,10 +89,10 @@ Route::get('/google/callback', function () {
         return redirect('dashboard');
     }
 });
-Route::get('/facebook/redirect',function(){
-    
-    return Socialite::driver('google')->redirect();
+Route::get('/facebook/redirect', function () {
+    return Socialite::driver('facebook')->redirect();
 });
+
 Route::get('/facebook/callback', function () {
     $user = Socialite::driver('facebook')->user();
     $userEmail = $user->getEmail();
