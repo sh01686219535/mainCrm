@@ -43,6 +43,7 @@ Route::group(['middleware' => 'UserAuth'], function () {
     Route::controller(CustomerController::class)->group(function () {
         Route::get('/customer', 'customer')->name('customer');
         Route::get('/add/customer', 'addCustomer')->name('add.customer');
+        Route::post('/save/customer', 'storeCustomer')->name('save.customer');
     });
 
     //teamLeader Route
