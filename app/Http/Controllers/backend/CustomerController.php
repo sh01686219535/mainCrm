@@ -25,12 +25,11 @@ class CustomerController extends Controller
         $request->validate([
             'name'=>'required',
             'phone'=>'required',
-            'phone'=>'required',
         ]);
         $customer = new Customer();
         $customer->name = $request->name;
         $customer->fatherName = $request->fatherName;
-        $customer->motherNamespouseName = $request->motherNamespouseName;
+        $customer->motherName = $request->motherName;
         $customer->spouseName = $request->spouseName;
         $customer->dateOfBirth = $request->dateOfBirth;
         $customer->dateOfBirthSpouse = $request->dateOfBirthSpouse;
@@ -64,7 +63,7 @@ class CustomerController extends Controller
         $customer->bookingMoneyDate = $request->bookingMoneyDate;
         $customer->paymentType = $request->paymentType;
         $customer->noOfInstallment = $request->noOfInstallment;
-        $customer->instPerMonth = $request->instPerMonth;
+        $customer->instPerMonth = round($request->instPerMonth);
         $customer->mainAmount = $request->mainAmount;
         $customer->agreedAmount = $request->agreedAmount;
         $customer->inStallmentStart = $request->inStallmentStart;
@@ -79,14 +78,31 @@ class CustomerController extends Controller
         $customer->referenceCellNumerB = $request->referenceCellNumerB;
         $customer->salesPerson_id = $request->salesPerson_id;
         $customer->teamLeader_id = $request->teamLeader_id;
-        $customer->userImage = $this->makeUserImg($request);
+        if ($request->file('nomineeImage')) {
+            $customer->userImage = $this->makeUserImg($request);
+        }
+       if ($request->file('nomineeImage')) {
         $customer->nomineeImage = $this->makeNomineeImg($request);
+       }
         $customer->save();
         return back()->with('success','Customer Created Successfully');
     }
     // makeUserImg
     public function makeUserImg($request){
         $img = $request->file('userImage');
-        // $imgName = 
+        $imgName = rand().'.'.$img->getClientOriginalExtension();
+        $directory = 'backEndAsset/UserImg/';
+        $imgUrl = $imgName.$directory;
+        $img->move($imgName.$directory);
+        return  $imgUrl;
+    }
+    // makeNomineeImg
+    public function makeNomineeImg($request){
+        $img = $request->file('nomineeImage');
+        $imgName = rand().'.'.$img->getClientOriginalExtension();
+        $directory = 'backEndAsset/nomineeImage/';
+        $imgUrl = $imgName.$directory;
+        $img->move($imgName.$directory);
+        return  $imgUrl;
     }
 }

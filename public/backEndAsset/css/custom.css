@@ -46,3 +46,9 @@
 .dummy {
     color: rgb(0, 0, 0)
 }
+/* showNImage */
+.imageUN{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+}

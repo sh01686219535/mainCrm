@@ -36,29 +36,28 @@
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="name">Full Name</label>
-                                                    <input type="text" class="form-control" id="name" name="name"
-                                                        placeholder="Enter Full Name" required>
+                                                    <input type="text" class="form-control" id="name" name="name" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="fatherName">Father Name</label>
                                                     <input type="text" class="form-control" id="fatherName"
-                                                        name="fatherName" placeholder="Enter Father Name">
+                                                        name="fatherName" >
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="motherName">Mother Name</label>
                                                     <input type="text" class="form-control" id="motherName"
-                                                        name="motherName" placeholder="Enter Mother Name">
+                                                        name="motherName">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="spouseName">Spouse Name(If Any)</label>
                                                     <input type="text" class="form-control" id="spouseName"
-                                                        name="spouseName" placeholder="Enter Spouse Name">
+                                                        name="spouseName" >
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -85,29 +84,27 @@
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="phone">Phone Number</label>
-                                                    <input type="text" class="form-control" id="phone" name="phone"
-                                                        placeholder="Enter Phone Number" required>
+                                                    <input type="text" class="form-control" id="phone" name="phone" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="email">Email Address</label>
-                                                    <input type="email" class="form-control" id="email" name="email"
-                                                        placeholder="Enter Email Address">
+                                                    <input type="email" class="form-control" id="email" name="email">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="nidNumber">Nid Number</label>
                                                     <input type="number" class="form-control" id="nidNumber"
-                                                        name="nidNumber" placeholder="Enter Nid Number">
+                                                        name="nidNumber">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="PassportNumber">Passport Number</label>
                                                     <input type="number" class="form-control" id="PassportNumber"
-                                                        name="PassportNumber" placeholder="Enter Passport Number">
+                                                        name="PassportNumber" >
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -121,49 +118,49 @@
                                                 <div class="form-group">
                                                     <label for="Religion">Religion</label>
                                                     <input type="text" class="form-control" id="Religion"
-                                                        name="religion" placeholder="Enter Religion">
+                                                        name="religion" >
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="profession">Profession</label>
                                                     <input type="text" class="form-control" id="profession"
-                                                        name="profession" placeholder="Enter profession">
+                                                        name="profession" >
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="facebookId">Facebook Id</label>
                                                     <input type="text" class="form-control" id="facebookId"
-                                                        name="facebookId" placeholder="Enter Facebook Id">
+                                                        name="facebookId" >
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="presentAddress">Present Address</label>
                                                     <input type="text" class="form-control" id="presentAddress"
-                                                        name="presentAddress" placeholder="Enter Present Address">
+                                                        name="presentAddress">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="permanentAddress">Permanent Address</label>
                                                     <input type="text" class="form-control" id="permanentAddress"
-                                                        name="permanentAddress" placeholder="Enter Permanent Address">
+                                                        name="permanentAddress">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="officeAddress">Office Address</label>
                                                     <input type="text" class="form-control" id="officeAddress"
-                                                        name="officeAddress" placeholder="Enter Office Address">
+                                                        name="officeAddress">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="password">Password</label>
                                                     <input type="password" class="form-control" id="password"
-                                                        name="password" placeholder="Enter Password">
+                                                        name="password">
                                                 </div>
                                             </div>
                                         </div>
@@ -209,24 +206,21 @@
                                                 <div class="form-group">
                                                     <label for="ownershipSize">Suite Ownership Size(SFT)</label>
                                                     <input type="number" class="form-control" id="ownershipSize"
-                                                        name="ownershipSize" placeholder="Enter Suite Ownership Size"
-                                                        onchange="calculateOwnership()">
+                                                        name="ownershipSize" onchange="calculateOwnership()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
-                                                    <label for="noOffOwnership">No. Off Ownership</label>
+                                                    <label for="noOffOwnership">No. Of Ownership</label>
                                                     <input type="number" class="form-control" id="noOffOwnership"
-                                                        name="noOffOwnership" placeholder="Enter No. Off Ownership"
-                                                        onkeyup="calculateOwnership()">
+                                                        name="noOffOwnership" onkeyup="calculateOwnership()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="pricePerOwnership">Price Per Ownership</label>
                                                     <input type="number" class="form-control" id="pricePerOwnership"
-                                                        name="pricePerOwnership" placeholder="Enter Price Per Ownership"
-                                                        onkeyup="calculatetotal()">
+                                                        name="pricePerOwnership" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -234,39 +228,35 @@
                                                     <label for="pricePerOwnershipInWord">Price Per Ownership(In
                                                         Word)</label>
                                                     <input type="text" class="form-control"
-                                                        id="pricePerOwnershipInWord" name="pricePerOwnershipInWord"
-                                                        placeholder="Enter Price Per Ownership(In Word)">
+                                                        id="pricePerOwnershipInWord" name="pricePerOwnershipInWord">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="totalPrice">Total Price</label>
                                                     <input type="number" class="form-control" id="totalPrice"
-                                                        name="totalPrice" placeholder="Enter Total Price"
-                                                        onchange="calculatetotal()">
+                                                        name="totalPrice" onchange="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="totalPriceInWord">Total Price(In Word)</label>
                                                     <input type="number" class="form-control" id="totalPriceInWord"
-                                                        name="totalPriceInWord" placeholder="Enter Total Price(In Word)">
+                                                        name="totalPriceInWord">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="specialDiscount">Special Discount</label>
                                                     <input type="number" class="form-control" id="specialDiscount"
-                                                        name="specialDiscount" placeholder="Enter Special Discount"
-                                                        onkeyup="calculatetotal()">
+                                                        name="specialDiscount" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="specialDiscountInWord">Special Discount(In Word)</label>
                                                     <input type="number" class="form-control" id="specialDiscountInWord"
-                                                        name="specialDiscountInWord"
-                                                        placeholder="Enter Special Discount(In Word)">
+                                                        name="specialDiscountInWord">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -296,24 +286,21 @@
                                                 <div class="form-group">
                                                     <label for="bookingMoney">Booking Money</label>
                                                     <input type="number" class="form-control" id="bookingMoney"
-                                                        name="bookingMoney" placeholder="Enter Booking Money"
-                                                        onkeyup="calculatetotal()">
+                                                        name="bookingMoney" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="bookingMoneyInWord">Booking Money(In Word)</label>
-                                                    <input type="number" class="form-control" id="bookingMoneyInWord"
-                                                        name="bookingMoneyInWord"
-                                                        placeholder="Enter Booking Money(In Word)">
+                                                    <input type="text" class="form-control" id="bookingMoneyInWord"
+                                                        name="bookingMoneyInWord">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="bookingMoneyDate">Booking Money(Date)</label>
                                                     <input type="date" class="form-control" id="bookingMoneyDate"
-                                                        name="bookingMoneyDate"
-                                                        placeholder="Enter Booking Money(In Word)">
+                                                        name="bookingMoneyDate">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -331,32 +318,28 @@
                                                 <div class="form-group">
                                                     <label for="noOfInstallment">No. Of Installment</label>
                                                     <input type="number" class="form-control" id="noOfInstallment"
-                                                        name="noOfInstallment" placeholder="Enter No. Of Installment"
-                                                        onkeyup="calculatetotal()">
+                                                        name="noOfInstallment" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="instPerMonth">Inst. Per Month</label>
                                                     <input type="number" class="form-control" id="instPerMonth"
-                                                        name="instPerMonth" placeholder="Enter Inst. Per Month"
-                                                        onkeyup="calculatetotal()">
+                                                        name="instPerMonth" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="mainAmount">Main Amount</label>
                                                     <input type="number" class="form-control" id="mainAmount"
-                                                        name="mainAmount" placeholder="Enter Main Amount"
-                                                        onchange="calculatetotal()">
+                                                        name="mainAmount" onchange="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="agreedAmount">Agreed Amount</label>
                                                     <input type="number" class="form-control" id="agreedAmount"
-                                                        name="agreedAmount" placeholder="Enter Agreed Amount"
-                                                        onchange="calculateOwnership()">
+                                                        name="agreedAmount" onchange="calculateOwnership()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -396,51 +379,49 @@
                                                 <div class="form-group">
                                                     <label for="nomineeName">Nominee Name</label>
                                                     <input type="text" class="form-control" id="nomineeName"
-                                                        name="nomineeName" placeholder="Enter Nominee Name">
+                                                        name="nomineeName">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="nomineeNumber">Nominee Cell Number</label>
                                                     <input type="number" class="form-control" id="nomineeNumber"
-                                                        name="nomineeNumber" placeholder="Enter Nominee Phone Number">
+                                                        name="nomineeNumber" >
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="relationToNominee">Relation To Nominee</label>
                                                     <input type="text" class="form-control" id="relationToNominee"
-                                                        name="relationToNominee" placeholder="Enter Relation To Nominee">
+                                                        name="relationToNominee" >
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceNameA">Reference Name(A)</label>
                                                     <input type="text" class="form-control" id="referenceNameA"
-                                                        name="referenceNameA" placeholder="Enter Reference Name(A)">
+                                                        name="referenceNameA" >
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceCellNumerA">Reference Cell Number(A)</label>
                                                     <input type="number" class="form-control" id="referenceCellNumerA"
-                                                        name="referenceCellNumerA"
-                                                        placeholder="Enter Reference Cell Number(A)">
+                                                        name="referenceCellNumerA">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceNameb">Reference Name(B)</label>
                                                     <input type="text" class="form-control" id="referenceNameb"
-                                                        name="referenceNameb" placeholder="Enter Reference Name(A)">
+                                                        name="referenceNameb">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceCellNumerB">Reference Cell Number(B)</label>
                                                     <input type="number" class="form-control" id="referenceCellNumerB"
-                                                        name="referenceCellNumerB"
-                                                        placeholder="Enter Reference Cell Number(B)">
+                                                        name="referenceCellNumerB">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -473,6 +454,10 @@
                                                     <label for="userImage">User Image</label>
                                                     <input type="file" class="form-control" id="userImage"
                                                         name="userImage">
+                                                    <img class="imageUN" id="showImage"
+                                                        src="{{ asset('backEndAsset/img/previewImage.png') }}"
+                                                        alt="" class="image-style mb-3">
+
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -480,6 +465,9 @@
                                                     <label for="nomineeImage">Nominee Image</label>
                                                     <input type="file" class="form-control" id="nomineeImage"
                                                         name="nomineeImage">
+                                                    <img class="imageUN" id="showNImage"
+                                                        src="{{ asset('backEndAsset/img/previewImage.png') }}"
+                                                        alt="" class="image-style mb-3">
                                                 </div>
                                             </div>
                                         </div>
@@ -512,6 +500,28 @@
     </div>
 @endsection
 @push('js')
+    <script>
+        //   userImage  
+        $(document).ready(function() {
+            $('#userImage').change('click', function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+        });
+        //nominee image 
+        $(document).ready(function() {
+            $('#nomineeImage').change('click', function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showNImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+        });
+    </script>
     {{-- preview next button --}}
     <script>
         $(function() {
@@ -581,8 +591,221 @@
             var totalMin = total - bookingMoney;
             document.getElementById("mainAmount").value = totalMin;
             //    per Installment
-            var perInstallment = totalMin / noOfInstallment;
+            var perInstallment = Math.round(totalMin / noOfInstallment);
             document.getElementById("instPerMonth").value = perInstallment;
         }
+    </script>
+    <script>
+        // monthly increment
+        $('#perMonth').on('change', function() {
+            var startMonth = $(this).val();
+            var noInstallment = $('#noOfInstallment').val();
+            if (startMonth && noInstallment && !isNaN(noInstallment)) {
+                var startDate = new Date(startMonth);
+                var endDate = new Date(startDate);
+                endDate.setMonth(startDate.getMonth() + parseInt(noInstallment) - 1);
+                $('#inStallmentTo').val(formatDate(endDate));
+            } else {
+
+            }
+        });
+
+        $('#noOfInstallment').on('input', function() {
+            var startMonth = $('#inStallmentStart').val();
+            var noInstallment = $(this).val();
+
+            if (startMonth && noInstallment && !isNaN(noInstallment)) {
+                var startDate = new Date(startMonth);
+                var endDate = new Date(startDate);
+                endDate.setMonth(startDate.getMonth() + parseInt(noInstallment) - 1);
+                $('#inStallmentTo').val(formatDate(endDate));
+            } else {
+
+            }
+        });
+
+        function formatDate(date) {
+            var dd = date.getDate();
+            var mm = date.getMonth() + 1; // January is 0!
+            var yyyy = date.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+
+            return yyyy + '-' + mm + '-' + dd;
+        }
+        // Quarter Month
+        $('#quarterly').on('change', function() {
+            if ($(this).prop('checked')) {
+                $('#inStallmentStart').on('change', calculateEndDate);
+                $('#noOfInstallment').on('input', calculateEndDate);
+            } else {
+                $('#inStallmentStart').off('change', calculateEndDate);
+                $('#noOfInstallment').off('input', calculateEndDate);
+            }
+        });
+
+        function calculateEndDate() {
+            var startMonth = $('#inStallmentStart').val();
+            var noInstallment = $('#noOfInstallment').val();
+
+            if (startMonth && noInstallment && !isNaN(noInstallment)) {
+                var startDate = new Date(startMonth);
+                var endDate = new Date(startDate);
+                endDate.setMonth(startDate.getMonth() - 1 + parseInt(noInstallment) * 3);
+                $('#inStallmentTo').val(formatDate(endDate));
+            } else {
+
+            }
+        }
+
+        function formatDate(date) {
+            var dd = date.getDate();
+            var mm = date.getMonth() + 1; // January is 0!
+            var yyyy = date.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+
+            return yyyy + '-' + mm + '-' + dd;
+        }
+        // Half Yearly
+
+        $('#halfYearly').on('change', function() {
+            if ($(this).prop('checked')) {
+                $('#inStallmentStart').on('change', calculateHalfEndDate);
+                $('#noOfInstallment').on('input', calculateHalfEndDate);
+            } else {
+                $('#inStallmentStart').off('change', calculateHalfEndDate);
+                $('#noOfInstallment').off('input', calculateHalfEndDate);
+            }
+        });
+
+        function calculateHalfEndDate() {
+            var startMonth = $('#inStallmentStart').val();
+            var noInstallment = $('#noOfInstallment').val();
+
+            if (startMonth && noInstallment && !isNaN(noInstallment)) {
+                var startDate = new Date(startMonth);
+                var endDate = new Date(startDate);
+                endDate.setMonth(startDate.getMonth() - 1 + parseInt(noInstallment) * 6);
+                $('#inStallmentTo').val(formatDate(endDate));
+            } else {
+
+            }
+        }
+
+        function formatDate(date) {
+            var dd = date.getDate();
+            var mm = date.getMonth() + 1; // January is 0!
+            var yyyy = date.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+
+            return yyyy + '-' + mm + '-' + dd;
+        }
+        // end Half Yearly
+        //  Yearly
+
+        $('#yearly').on('change', function() {
+            if ($(this).prop('checked')) {
+
+                $('#inStallmentStart').on('change', calculateYearlyEndDate);
+                $('#noOfInstallment').on('input', calculateYearlyEndDate);
+            } else {
+                $('#inStallmentStart').off('change', calculateYearlyEndDate);
+                $('#noOfInstallment').off('input', calculateYearlyEndDate);
+            }
+        });
+
+        function calculateYearlyEndDate() {
+            var startMonth = $('#inStallmentStart').val();
+            var noInstallment = $('#noOfInstallment').val();
+
+            if (startMonth && noInstallment && !isNaN(noInstallment)) {
+                var startDate = new Date(startMonth);
+                var endDate = new Date(startDate);
+                endDate.setMonth(startDate.getMonth() - 1 + parseInt(noInstallment) * 12);
+                $('#inStallmentTo').val(formatDate(endDate));
+            } else {
+
+            }
+        }
+
+        function formatDate(date) {
+            var dd = date.getDate();
+            var mm = date.getMonth() + 1; // January is 0!
+            var yyyy = date.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+
+            return yyyy + '-' + mm + '-' + dd;
+        }
+        // end  Yearly
+        //  Yearly
+
+        $('#atATime').on('change', function() {
+            if ($(this).prop('checked')) {
+                $('#noOfInstallment').val(3);
+                $('#inStallmentStart').on('change', calculateAtAtimeEndDate);
+                $('#noOfInstallment').on('input', calculateAtAtimeEndDate);
+            } else {
+                $('#inStallmentStart').off('change', calculateAtAtimeEndDate);
+                $('#noOfInstallment').off('input', calculateAtAtimeEndDate);
+            }
+        });
+
+        function calculateAtAtimeEndDate() {
+            var startMonth = $('#inStallmentStart').val();
+            var noInstallment = $('#noOfInstallment').val();
+
+            if (startMonth && noInstallment && !isNaN(noInstallment)) {
+                var startDate = new Date(startMonth);
+                var endDate = new Date(startDate);
+                endDate.setMonth(startDate.getMonth() - 1 + parseInt(noInstallment) * 1);
+                $('#inStallmentTo').val(formatDate(endDate));
+            } else {
+
+            }
+        }
+
+        function formatDate(date) {
+            var dd = date.getDate();
+            var mm = date.getMonth() + 1; // January is 0!
+            var yyyy = date.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+
+            return yyyy + '-' + mm + '-' + dd;
+        }
+        // end  Yearly
     </script>
 @endpush
