@@ -33,7 +33,36 @@ class LeadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'country' => 'required',
+            'source' => 'required',
+            'sales_people_id' => 'required',
+        ]);
+        $lead = new Lead();
+        $lead->name = $request->name;
+        $lead->email = $request->email;
+        $lead->phone = $request->phone;
+        $lead->address = $request->address;
+        $lead->city = $request->city;
+        $lead->state = $request->state;
+        $lead->company = $request->company;
+        $lead->position = $request->position;
+        $lead->zip_code = $request->zip_code;
+        $lead->country = $request->country;
+        $lead->source = $request->source;
+        $lead->website = $request->website;
+        $lead->description = $request->description;
+        $lead->status = $request->status;
+        $lead->sales_people_id = $request->sales_people_id;
+        $lead->team_leader_id = $request->team_leader_id;
+        $lead->save();
+        return back()->with('success','Lead added Successfully');
     }
 
     /**
