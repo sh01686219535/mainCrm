@@ -52,3 +52,10 @@
     height:150px;
     border-radius: 50%;
 }
+/* Add Lead */
+.form-section.current {
+    display: inherit;
+}
+.dummy {
+    color: rgb(0, 0, 0)
+}

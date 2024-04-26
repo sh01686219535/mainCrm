@@ -40,7 +40,7 @@ class SalesPersonController extends Controller
     public function SaveImage($request){
         $image = $request->file('image');
         $imageName = rand().'.'.$image->getClientOriginalExtension();
-        $directory = 'backEndAsset/SalesPerson-img/';
+        $directory = 'backEndAsset/projectImg/SalesPerson-img/';
         $imageUrl = $directory.$imageName;
         $image->move($directory,$imageName);
         return $imageUrl;

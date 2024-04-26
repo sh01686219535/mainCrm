@@ -91,18 +91,18 @@ class CustomerController extends Controller
     public function makeUserImg($request){
         $img = $request->file('userImage');
         $imgName = rand().'.'.$img->getClientOriginalExtension();
-        $directory = 'backEndAsset/UserImg/';
-        $imgUrl = $imgName.$directory;
-        $img->move($imgName.$directory);
+        $directory = 'backEndAsset/projectImg/UserImg/';
+        $imgUrl = $directory.$imgName;
+        $img->move($directory,$imgName);
         return  $imgUrl;
     }
     // makeNomineeImg
     public function makeNomineeImg($request){
         $img = $request->file('nomineeImage');
         $imgName = rand().'.'.$img->getClientOriginalExtension();
-        $directory = 'backEndAsset/nomineeImage/';
-        $imgUrl = $imgName.$directory;
-        $img->move($imgName.$directory);
+        $directory = 'backEndAsset/projectImg/nomineeImage/';
+        $imgUrl = $directory.$imgName;
+        $img->move($directory,$imgName);
         return  $imgUrl;
     }
     //approveCustomer
