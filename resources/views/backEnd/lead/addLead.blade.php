@@ -26,12 +26,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <form action="{{route('lead.store')}}" class="form-demo">
+                        <form action="{{route('lead.store')}}" method="post" class="form-demo">
                             @csrf
                             <div class="form-section ">
                             <div class="card">
                                 <div class="card-body">
-                                    <h2>Lead Info</h2>
+                                    <h2>Add New Lead</h2>
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
@@ -161,6 +161,9 @@
                                                     @endforeach
                                                 </select>
                                             </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                            <input type="submit" class="btn btn-outline-success" value="Save">
                                         </div>
                                         
                                         
