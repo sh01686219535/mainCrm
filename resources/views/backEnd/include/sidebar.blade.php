@@ -11,8 +11,6 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
             <a href="{{route('dashboard')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -35,8 +33,16 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('customer')}}" class="nav-link">
-                  <i class="far fa-user nav-icon"></i>
+                  <i class="far fa-circle nav-icon"></i>
                   <p>Customer</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('approve.customer')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Approve Customer</p>
                 </a>
               </li>
             </ul>
@@ -54,7 +60,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('lead.create')}}" class="nav-link">
-                  <i class="far fa-user nav-icon"></i>
+                  <i class="far fa-circle nav-icon"></i>
                   <p>Lead</p>
                 </a>
               </li>

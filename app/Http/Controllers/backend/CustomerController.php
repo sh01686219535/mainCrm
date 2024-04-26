@@ -105,4 +105,9 @@ class CustomerController extends Controller
         $img->move($imgName.$directory);
         return  $imgUrl;
     }
+    //approveCustomer
+    public function approveCustomer(){
+        $customer = Customer::where('status','pending')->get();
+        return view('backEnd.customer.approveCustomer',compact('customer'));
+    }
 }
