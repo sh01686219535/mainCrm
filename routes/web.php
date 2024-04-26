@@ -6,6 +6,7 @@ use App\Http\Controllers\backend\CustomerController;
 use App\Http\Controllers\backend\SalesPersonController;
 use App\Http\Controllers\backend\TeamLeaderController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\LeadController;
 use App\Http\Controllers\UserController;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -61,11 +62,16 @@ Route::group(['middleware' => 'UserAuth'], function () {
         Route::post('/update/salesPerson', 'updateSalesPerson')->name('update.salesPerson');
         Route::get('/delete/salesPerson/{id}', 'deleteSalesPerson')->name('delete.salesPerson');
     });
+    //Lead Route
+    Route::resource('lead',LeadController::class);
 });
+
+
+
+//Socialite
 Route::get('/google/redirect', function () {
     return Socialite::driver('google')->redirect();
 });
-
 Route::get('/google/callback', function () {
     $user = Socialite::driver('google')->user();
     $userEmail = $user->getEmail();
