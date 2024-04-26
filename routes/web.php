@@ -7,6 +7,8 @@ use App\Http\Controllers\backend\SalesPersonController;
 use App\Http\Controllers\backend\TeamLeaderController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\UserController;
+use Laravel\Socialite\Facades\Socialite;
+
 
 Route::redirect('/', 'dashboard');
 //Auth Register Route
@@ -30,8 +32,8 @@ Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 Route::get('/verify/{email}/{code}', [UserController::class, 'verifyEmail'])->name('verifyEmail');
 
 //googleLogin 
-Route::get('googleLogin', [AdminController::class, 'googleLogin']);
-Route::get('/auth/google/callback', [AdminController::class, 'googleHandler']);
+// Route::get('googleLogin', [AdminController::class, 'googleLogin']);
+// Route::get('/auth/google/callback', [AdminController::class, 'googleHandler']);
 
 
 Route::group(['middleware' => 'UserAuth'], function () {
@@ -60,4 +62,58 @@ Route::group(['middleware' => 'UserAuth'], function () {
         Route::post('/update/salesPerson', 'updateSalesPerson')->name('update.salesPerson');
         Route::get('/delete/salesPerson/{id}', 'deleteSalesPerson')->name('delete.salesPerson');
     });
+});
+Route::get('/google/redirect', function () {
+    return Socialite::driver('google')->redirect();
+});
+
+Route::get('/google/callback', function () {
+    $user = Socialite::driver('google')->user();
+    $userEmail = $user->getEmail();
+    $userName = strtolower(implode('_',explode(' ',$user->getName())));
+    $getUser = \App\Models\User::where('email',$userEmail)->first();
+    if ($getUser) {
+        \Illuminate\Support\Facades\Auth::login($getUser);
+    
+        return redirect('dashboard');
+    } else {
+        // Create or retrieve the user instance from your application's User model
+        $user = \App\Models\User::create([
+            'name' => $userName,
+            'email' => $userEmail,
+            'password' => bcrypt('111111'),
+        ]);
+    
+        // Log in the newly created user
+        \Illuminate\Support\Facades\Auth::login($user);
+    
+        return redirect('dashboard');
+    }
+});
+Route::get('/facebook/redirect', function () {
+    return Socialite::driver('facebook')->redirect();
+});
+
+Route::get('/facebook/callback', function () {
+    $user = Socialite::driver('facebook')->user();
+    $userEmail = $user->getEmail();
+    $userName = strtolower(implode('_',explode(' ',$user->getName())));
+    $getUser = \App\Models\User::where('email',$userEmail)->first();
+    if ($getUser) {
+        \Illuminate\Support\Facades\Auth::login($getUser);
+    
+        return redirect('dashboard');
+    } else {
+        // Create or retrieve the user instance from your application's User model
+        $user = \App\Models\User::create([
+            'name' => $userName,
+            'email' => $userEmail,
+            'password' => bcrypt('111111'),
+        ]);
+    
+        // Log in the newly created user
+        \Illuminate\Support\Facades\Auth::login($user);
+    
+        return redirect('dashboard');
+    }
 });
