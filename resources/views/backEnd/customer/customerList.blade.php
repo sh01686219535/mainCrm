@@ -12,7 +12,7 @@ Approve Customer
                         <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
-                                    <h1>Approve Customer</h1>
+                                    <h1>Customer List</h1>
                                     <!-- <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                                             class="fa fa-plus"></i> Approve Customer</a> -->
                                 </div>
@@ -30,7 +30,6 @@ Approve Customer
                                                 <th>Email</th>
                                                 <th>Designation</th>
                                                 <th>Image</th>
-                                                <th>Approve</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -48,10 +47,7 @@ Approve Customer
                                                             alt="">
                                                     </td>
                                                     <td>
-                                                        <a href="{{route('customer.status.change',$item->id)}}" class="btn btn-success">Approve</a>
-                                                    </td>
-                                                    <td>
-                                                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editExampleModal{{$item->id}}"><i class="fa fa-edit"></i></a>
+                                                        <a href="{{route('customer.edit',$item->id)}}" class="btn btn-primary" ><i class="fa fa-edit"></i></a>
                                                         <a href="{{route('delete.customer',$item->id)}}" class="delete btn btn-danger"><i
                                                                 class="fa fa-trash"></i></a>
                                                 </tr>

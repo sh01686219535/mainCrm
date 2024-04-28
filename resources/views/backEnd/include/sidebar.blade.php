@@ -46,6 +46,14 @@
                 </a>
               </li>
             </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('customer.list')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Customer List</p>
+                </a>
+              </li>
+            </ul>
           </li>
           {{-- Lead start --}}
           <li class="nav-item">
@@ -68,7 +76,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('lead.index')}}" class="nav-link">
-                  <i class="far fa-user nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                   <p>Lead List</p>
                 </a>
               </li>

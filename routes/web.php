@@ -48,6 +48,11 @@ Route::group(['middleware' => 'UserAuth'], function () {
         Route::get('/add/customer', 'addCustomer')->name('add.customer');
         Route::post('/save/customer', 'storeCustomer')->name('save.customer');
         Route::get('/approve/customer', 'approveCustomer')->name('approve.customer');
+        Route::get('/customer/status/change/{id}', 'customerStatusChange')->name('customer.status.change');
+        Route::get('/delete/customer/{id}', 'deleteCustomer')->name('delete.customer');
+        Route::get('/customer/list', 'customerList')->name('customer.list');
+        Route::get('/customer/edit/{id}', 'customerEdit')->name('customer.edit');
+        Route::post('/update/customer', 'updateCustomer')->name('update.customer');
     });
 
     //teamLeader Route
