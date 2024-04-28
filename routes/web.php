@@ -6,8 +6,8 @@ use App\Http\Controllers\backend\CustomerController;
 use App\Http\Controllers\backend\SalesPersonController;
 use App\Http\Controllers\backend\TeamLeaderController;
 use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\LeadController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\backend\LeadController;
+use App\Http\Controllers\backend\UserController;
 use Laravel\Socialite\Facades\Socialite;
 
 

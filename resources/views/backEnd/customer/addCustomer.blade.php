@@ -36,14 +36,15 @@
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="name">Full Name</label>
-                                                    <input type="text" class="form-control" id="name" name="name" required>
+                                                    <input type="text" class="form-control" id="name" name="name"
+                                                        required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="fatherName">Father Name</label>
                                                     <input type="text" class="form-control" id="fatherName"
-                                                        name="fatherName" >
+                                                        name="fatherName">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -57,7 +58,7 @@
                                                 <div class="form-group">
                                                     <label for="spouseName">Spouse Name(If Any)</label>
                                                     <input type="text" class="form-control" id="spouseName"
-                                                        name="spouseName" >
+                                                        name="spouseName">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -84,13 +85,15 @@
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="phone">Phone Number</label>
-                                                    <input type="text" class="form-control" id="phone" name="phone" required>
+                                                    <input type="text" class="form-control" id="phone" name="phone"
+                                                        required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="email">Email Address</label>
-                                                    <input type="email" class="form-control" id="email" name="email">
+                                                    <input type="email" class="form-control" id="email"
+                                                        name="email">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -104,7 +107,7 @@
                                                 <div class="form-group">
                                                     <label for="PassportNumber">Passport Number</label>
                                                     <input type="number" class="form-control" id="PassportNumber"
-                                                        name="PassportNumber" >
+                                                        name="PassportNumber">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -118,21 +121,21 @@
                                                 <div class="form-group">
                                                     <label for="Religion">Religion</label>
                                                     <input type="text" class="form-control" id="Religion"
-                                                        name="religion" >
+                                                        name="religion">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="profession">Profession</label>
                                                     <input type="text" class="form-control" id="profession"
-                                                        name="profession" >
+                                                        name="profession">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="facebookId">Facebook Id</label>
                                                     <input type="text" class="form-control" id="facebookId"
-                                                        name="facebookId" >
+                                                        name="facebookId">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -386,21 +389,21 @@
                                                 <div class="form-group">
                                                     <label for="nomineeNumber">Nominee Cell Number</label>
                                                     <input type="number" class="form-control" id="nomineeNumber"
-                                                        name="nomineeNumber" >
+                                                        name="nomineeNumber">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="relationToNominee">Relation To Nominee</label>
                                                     <input type="text" class="form-control" id="relationToNominee"
-                                                        name="relationToNominee" >
+                                                        name="relationToNominee">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceNameA">Reference Name(A)</label>
                                                     <input type="text" class="form-control" id="referenceNameA"
-                                                        name="referenceNameA" >
+                                                        name="referenceNameA">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -596,18 +599,18 @@
         }
     </script>
     <script>
-        // monthly increment
-        $('#perMonth').on('change', function() {
-            var startMonth = $(this).val();
-            var noInstallment = $('#noOfInstallment').val();
-            if (startMonth && noInstallment && !isNaN(noInstallment)) {
-                var startDate = new Date(startMonth);
-                var endDate = new Date(startDate);
-                endDate.setMonth(startDate.getMonth() + parseInt(noInstallment) - 1);
-                $('#inStallmentTo').val(formatDate(endDate));
-            } else {
-
-            }
+        $(document).ready(function() {
+            $('#modeOfPayment').on('change', function() {
+                var perMonth = ($(this).val() == 'perMonth');
+                if (perMonth) {
+                    var startMonth = $('#inStallmentStart').val();
+                    var noInstallment = $('#noOfInstallment').val();
+                    var startDate = new Date(startMonth);
+                    var endDate = new Date(startDate);
+                    endDate.setMonth(startDate.getMonth() + parseInt(noInstallment) - 1);
+                    $('#inStallmentTo').val(formatDate(endDate));
+                }
+            });
         });
 
         $('#noOfInstallment').on('input', function() {

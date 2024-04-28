@@ -53,7 +53,6 @@ class SalesPersonController extends Controller
             'phone' => 'required',
             'email' => 'required',
         ]);
-
         $salesPerson = SalesPerson::find($request->salesPerson_id);
         $salesPerson->teamLeader_id = $request->teamLeader_id;
         $salesPerson->name = $request->name;
