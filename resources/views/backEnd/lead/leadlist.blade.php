@@ -11,7 +11,11 @@
                         <div class="card-body">
                             <div class="main-body">
                                 <h1>Lead</h1>
-                                <a href="{{ route('lead.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Lead</a>
+                                <div>
+                                    <a href="{{ route('lead.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>New Lead</a>
+                                    <a href="{{ route('lead.excel') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Import Lead</a>
+                                </div>
+                                
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>

@@ -51,19 +51,19 @@
                 <span class="badge badge-info right"></span>
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            {{-- <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('lead.create')}}" class="nav-link">
                   <i class="far fa-user nav-icon"></i>
                   <p>Lead</p>
                 </a>
               </li>
-            </ul>
+            </ul> --}}
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('lead.index')}}" class="nav-link">
                   <i class="far fa-user nav-icon"></i>
-                  <p>Lead List</p>
+                  <p>Lead</p>
                 </a>
               </li>
             </ul>

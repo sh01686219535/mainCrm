@@ -64,6 +64,7 @@ Route::group(['middleware' => 'UserAuth'], function () {
     });
     //Lead Route
     Route::resource('lead',LeadController::class);
+    Route::get('lead/excel',[LeadController::class,'lead_excel'])->name('lead.excel');
 });
 
 
