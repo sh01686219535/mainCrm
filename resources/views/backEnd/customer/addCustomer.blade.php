@@ -600,16 +600,56 @@
     </script>
     <script>
         $(document).ready(function() {
+           
+           
             $('#modeOfPayment').on('change', function() {
-                var perMonth = ($(this).val() == 'perMonth');
-                if (perMonth) {
+                //var perMonth = ($(this).val() == 'perMonth');
+                /*if (perMonth) {
                     var startMonth = $('#inStallmentStart').val();
                     var noInstallment = $('#noOfInstallment').val();
                     var startDate = new Date(startMonth);
                     var endDate = new Date(startDate);
                     endDate.setMonth(startDate.getMonth() + parseInt(noInstallment) - 1);
                     $('#inStallmentTo').val(formatDate(endDate));
-                }
+                }*/
+                const selectedOption = $(this).find('option:selected');
+
+        const selectedValue = selectedOption.val();
+        if (selectedValue == 'quarterly') {
+            alert('yo');
+                $('#inStallmentStart').on('change', calculateEndDate);
+                $('#noOfInstallment').on('input', calculateEndDate);
+            } else {
+                $('#inStallmentStart').off('change', calculateEndDate);
+                $('#noOfInstallment').off('input', calculateEndDate);
+            }
+
+            if (selectedValue == 'halfYearly') {
+                $('#inStallmentStart').on('change', calculateHalfEndDate);
+                $('#noOfInstallment').on('input', calculateHalfEndDate);
+            } else {
+                $('#inStallmentStart').off('change', calculateHalfEndDate);
+                $('#noOfInstallment').off('input', calculateHalfEndDate);
+            }
+
+            if (selectedValue == 'yearly') {
+
+$('#inStallmentStart').on('change', calculateYearlyEndDate);
+$('#noOfInstallment').on('input', calculateYearlyEndDate);
+} else {
+$('#inStallmentStart').off('change', calculateYearlyEndDate);
+$('#noOfInstallment').off('input', calculateYearlyEndDate);
+}
+
+if (selectedValue == 'atATime') {
+                $('#noOfInstallment').val(3);
+                $('#inStallmentStart').on('change', calculateAtAtimeEndDate);
+                $('#noOfInstallment').on('input', calculateAtAtimeEndDate);
+            } else {
+                $('#inStallmentStart').off('change', calculateAtAtimeEndDate);
+                $('#noOfInstallment').off('input', calculateAtAtimeEndDate);
+            }
+               
             });
         });
 

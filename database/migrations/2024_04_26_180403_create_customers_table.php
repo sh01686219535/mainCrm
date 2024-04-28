@@ -64,8 +64,7 @@ return new class extends Migration
             $table->string('referenceCellNumerB')->nullable();
             $table->string('userImage')->nullable();
             $table->string('nomineeImage')->nullable();
-            $table->string('referenceCellNumerB')->nullable();
-            $table->enum('status',['pending','approved'])->default('pending');
+//            $table->enum('status',['pending','approved'])->default('pending');
             $table->unsignedBigInteger('salesPerson_id')->nullable();
             $table->foreign('salesPerson_id')->references('id')->on('sales_people')->onDelete('cascade');
             $table->unsignedBigInteger('teamLeader_id')->nullable();
