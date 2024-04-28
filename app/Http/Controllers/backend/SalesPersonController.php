@@ -76,4 +76,8 @@ class SalesPersonController extends Controller
         return back()->with('success','Sales Person Deleted Successfull');
 
     }
+    public function lead_excel(){
+        return view('backEnd.lead.lead_excel');
+    }
+    
 }
