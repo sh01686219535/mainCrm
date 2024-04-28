@@ -16,7 +16,7 @@ class LeadController extends Controller
     public function index()
     {
         $lead = Lead::all();
-        return view('backEnd.lead.lead',compact('lead'));
+        return view('backEnd.lead.leadlist',compact('lead'));
     }
 
     /**
@@ -79,7 +79,10 @@ class LeadController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $lead = Lead::find($id);
+        $teamLeader = TeamLeader::all();
+        $salesPerson = SalesPerson::all();
+        return view('backEnd.lead.editLead',compact('lead','teamLeader','salesPerson'));
     }
 
     /**
@@ -87,7 +90,36 @@ class LeadController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'country' => 'required',
+            'source' => 'required',
+            'sales_people_id' => 'required',
+        ]);
+        $lead = Lead::find($id);
+        $lead->name = $request->name;
+        $lead->email = $request->email;
+        $lead->phone = $request->phone;
+        $lead->address = $request->address;
+        $lead->city = $request->city;
+        $lead->state = $request->state;
+        $lead->company = $request->company;
+        $lead->position = $request->position;
+        $lead->zip_code = $request->zip_code;
+        $lead->country = $request->country;
+        $lead->source = $request->source;
+        $lead->website = $request->website;
+        $lead->description = $request->description;
+        $lead->status = $request->status;
+        $lead->sales_people_id = $request->sales_people_id;
+        $lead->team_leader_id = $request->team_leader_id;
+        $lead->save();
+        return back()->with('success','Lead Updated Successfully');
     }
 
     /**
@@ -95,6 +127,8 @@ class LeadController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Lead::find($id)->delete();
+        return back()->with('danger','Lead Deleted Successfully');
+
     }
 }
