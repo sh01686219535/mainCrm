@@ -13,7 +13,7 @@
                                 <h1>Lead</h1>
                                 <div>
                                     <a href="{{ route('lead.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>New Lead</a>
-                                    <a href="{{ route('lead.excel') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Import Lead</a>
+                                    <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-plus"></i>Import Lead</a>
                                 </div>
                                 
                                 @if ($errors->any())
@@ -80,4 +80,30 @@
         </div>
     </div>
 </div>
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="{{ route('lead.excel') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="modal-body">
+            <p>Note: Duplicate email rows are not allowed. Rows with empty first column will be ignored.</p>
+            <input type="file" name="excel_file" id="excel_file" class="form-control">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+    </form>
+
+      </div>
+    </div>
+  </div>
 @endsection

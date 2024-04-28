@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuth\AdminController;
 use App\Http\Controllers\backend\CustomerController;
+use App\Http\Controllers\backend\ExcelController;
 use App\Http\Controllers\backend\SalesPersonController;
 use App\Http\Controllers\backend\TeamLeaderController;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -64,7 +65,8 @@ Route::group(['middleware' => 'UserAuth'], function () {
     });
     //Lead Route
     Route::resource('lead',LeadController::class);
-    Route::get('lead/excel',[SalesPersonController::class,'lead_excel'])->name('lead.excel');
+    Route::post('lead/excel',[ExcelController::class,'lead_excel'])->name('lead.excel');
+    
 });
 
 
