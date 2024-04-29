@@ -35,3 +35,27 @@
 .swal2-popup .swal2-title {
     font-size: 23px !important;
 }
+/* add customer  */
+.form-section {
+    display: none;
+}
+
+.form-section.current {
+    display: inherit;
+}
+.dummy {
+    color: rgb(0, 0, 0)
+}
+/* showNImage */
+.imageUN{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+}
+/* Add Lead */
+.form-section.current {
+    display: inherit;
+}
+.dummy {
+    color: rgb(0, 0, 0)
+}

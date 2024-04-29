@@ -7,8 +7,8 @@ use App\Http\Controllers\backend\ExcelController;
 use App\Http\Controllers\backend\SalesPersonController;
 use App\Http\Controllers\backend\TeamLeaderController;
 use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\LeadController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\backend\LeadController;
+use App\Http\Controllers\backend\UserController;
 use Laravel\Socialite\Facades\Socialite;
 
 
@@ -47,6 +47,13 @@ Route::group(['middleware' => 'UserAuth'], function () {
     Route::controller(CustomerController::class)->group(function () {
         Route::get('/customer', 'customer')->name('customer');
         Route::get('/add/customer', 'addCustomer')->name('add.customer');
+        Route::post('/save/customer', 'storeCustomer')->name('save.customer');
+        Route::get('/approve/customer', 'approveCustomer')->name('approve.customer');
+        Route::get('/customer/status/change/{id}', 'customerStatusChange')->name('customer.status.change');
+        Route::get('/delete/customer/{id}', 'deleteCustomer')->name('delete.customer');
+        Route::get('/customer/list', 'customerList')->name('customer.list');
+        Route::get('/customer/edit/{id}', 'customerEdit')->name('customer.edit');
+        Route::post('/update/customer', 'updateCustomer')->name('update.customer');
     });
 
     //teamLeader Route

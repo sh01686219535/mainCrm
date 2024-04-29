@@ -40,7 +40,7 @@ class SalesPersonController extends Controller
     public function SaveImage($request){
         $image = $request->file('image');
         $imageName = rand().'.'.$image->getClientOriginalExtension();
-        $directory = 'backEndAsset/SalesPerson-img/';
+        $directory = 'backEndAsset/projectImg/SalesPerson-img/';
         $imageUrl = $directory.$imageName;
         $image->move($directory,$imageName);
         return $imageUrl;
@@ -53,7 +53,6 @@ class SalesPersonController extends Controller
             'phone' => 'required',
             'email' => 'required',
         ]);
-
         $salesPerson = SalesPerson::find($request->salesPerson_id);
         $salesPerson->teamLeader_id = $request->teamLeader_id;
         $salesPerson->name = $request->name;
