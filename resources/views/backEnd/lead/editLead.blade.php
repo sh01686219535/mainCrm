@@ -1,6 +1,6 @@
 @extends('backEnd.dashboard.home.master')
 
-@section('title', 'Add Customer')
+@section('title', 'Add Lead')
 
 @push('css')
     <style>
