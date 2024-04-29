@@ -76,6 +76,10 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('lead.index')}}" class="nav-link">
+
+
+                <i class="far fa-circle nav-icon"></i>
+                  <p>Lead List</p>
                   <i class="far fa-user nav-icon"></i>
                   <p>Lead</p>
                 </a>

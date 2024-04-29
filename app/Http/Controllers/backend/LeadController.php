@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\backend;
 
+
+use  App\Http\Controllers\Controller;
+
 use App\Models\Lead;
 use App\Models\SalesPerson;
 use App\Models\TeamLeader;
