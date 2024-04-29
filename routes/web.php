@@ -66,6 +66,7 @@ Route::group(['middleware' => 'UserAuth'], function () {
     //Lead Route
     Route::resource('lead',LeadController::class);
     Route::post('lead/excel',[ExcelController::class,'lead_excel'])->name('lead.excel');
+    Route::post('lead/export-excel',[ExcelController::class,'exportExcel'])->name('lead.exportExcel');
     
 });
 

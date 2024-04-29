@@ -11,10 +11,17 @@
                         <div class="card-body">
                             <div class="main-body">
                                 <h1>Lead</h1>
+                                <form action="{{ route('lead.exportExcel') }}" method="post" target="blank">
+                                    @csrf
                                 <div>
                                     <a href="{{ route('lead.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>New Lead</a>
                                     <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-plus"></i>Import Lead</a>
+                                    
+                                       
+                                        <input type="submit" class="btn btn-success" value="Export">
+                                    
                                 </div>
+                            </form>
                                 
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
