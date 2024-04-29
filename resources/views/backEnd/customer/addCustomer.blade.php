@@ -319,16 +319,31 @@
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
+                                                    <label for="inStallmentStart">InStallment Start</label>
+                                                    <input type="date" class="form-control" id="inStallmentStart"
+                                                        name="inStallmentStart">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="form-group">
                                                     <label for="noOfInstallment">No. Of Installment</label>
                                                     <input type="number" class="form-control" id="noOfInstallment"
                                                         name="noOfInstallment" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
+                                            
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="instPerMonth">Inst. Per Month</label>
                                                     <input type="number" class="form-control" id="instPerMonth"
                                                         name="instPerMonth" onkeyup="calculatetotal()">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="form-group">
+                                                    <label for="inStallmentTo">InStallment To</label>
+                                                    <input type="date" class="form-control" id="inStallmentTo"
+                                                        name="inStallmentTo">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -345,20 +360,8 @@
                                                         name="agreedAmount" onchange="calculateOwnership()">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="form-group">
-                                                    <label for="inStallmentStart">InStallment Start</label>
-                                                    <input type="date" class="form-control" id="inStallmentStart"
-                                                        name="inStallmentStart">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="form-group">
-                                                    <label for="inStallmentTo">InStallment To</label>
-                                                    <input type="date" class="form-control" id="inStallmentTo"
-                                                        name="inStallmentTo">
-                                                </div>
-                                            </div>
+                                            
+                                            
                                             <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                                 <div class="form-group">
                                                     <label for="description">Other Description</label>
@@ -615,8 +618,25 @@
                 const selectedOption = $(this).find('option:selected');
 
         const selectedValue = selectedOption.val();
+        if (selectedValue == 'perMonth') {
+            $('#noOfInstallment').on('input', function() {
+            var startMonth = $('#inStallmentStart').val();
+            var noInstallment = $(this).val();
+            
+            if (startMonth && noInstallment && !isNaN(noInstallment)) {
+                var startDate = new Date(startMonth);
+                var endDate = new Date(startDate);
+                endDate.setMonth(startDate.getMonth() + parseInt(noInstallment) - 1);
+                $('#inStallmentTo').val(formatDate(endDate));
+            } else {
+
+            }
+            });
+        }else{
+
+        }
         if (selectedValue == 'quarterly') {
-            alert('yo');
+            
                 $('#inStallmentStart').on('change', calculateEndDate);
                 $('#noOfInstallment').on('input', calculateEndDate);
             } else {
