@@ -1,6 +1,6 @@
 @extends('backEnd.dashboard.home.master')
 
-@section('title', 'Add Lead')
+@section('title', 'Edit Lead')
 
 @push('css')
     <style>
@@ -17,18 +17,23 @@
 
 @section('content')
 <div class="content-wrapper">
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-xl-12">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
+                        <div class="card">
+                            <div class="card-head">
+                                <h2>Edit Lead</h2>
+                            </div>
+                            <div class="card-body ">
+                                <div class="main-body">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
                     <form action="{{ route('lead.update',$lead->id) }}" method="post" class="form-demo">
                         @csrf
                         @method('PUT')
-                        <div class="form-section">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h2>Edit Lead</h2>
-                                    <hr>
+                        
                                     <div class="row">
                                         <div class="col-xl-3">
                                             <div class="form-group">
@@ -169,14 +174,21 @@
                                             <input type="submit" class="btn btn-outline-success" value="Save">
                                         </div>
                                     </div>
+                                
+                    </form>
+                    </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-            </div>
+
+                    </div><!-- /.col -->
+
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
         </div>
-    </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
 </div>
 @endsection
 
