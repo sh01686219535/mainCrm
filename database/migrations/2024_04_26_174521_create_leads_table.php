@@ -27,10 +27,6 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('status');
             $table->string('source');
-            $table->unsignedBigInteger('sales_people_id');
-            $table->foreign('sales_people_id')->references('id')->on('sales_people')->onDelete('cascade');
-            $table->unsignedBigInteger('team_leader_id')->nullable();
-            $table->foreign('team_leader_id')->references('id')->on('team_leaders')->onDelete('cascade');
             $table->timestamps();
         });
     }

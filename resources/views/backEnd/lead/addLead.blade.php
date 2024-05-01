@@ -113,7 +113,7 @@ Add Lead
                                                         <select class="form-control" name="status" id="status">
                                                             <option value="">Select</option>
                                                             <option value="Contacted">Contacted</option>
-                                                            <option value="Contacted">Customer</option>
+                                                            <option value="Customer">Customer</option>
                                                             <option value="New">New</option>
                                                             <option value="Proposal_Sent">Proposal sent</option>
                                                             <option value="Qualified">Qualified</option>
@@ -132,35 +132,12 @@ Add Lead
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                    <div class="form-group">
-                                                        <label for="teamLeader">Team Leader</label>
-                                                        <select class="form-control" name="team_leader_id" id="teamLeader">
-                                                            <option value="">Select</option>
-                                                            @foreach ($teamLeader as $value)
-                                                                <option value="{{ $value->id }}">{{ $value->name }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                    <div class="form-group">
-                                                        <label for="sales_people_id">Sales Officer</label>
-                                                        <select class="form-control" name="sales_people_id"
-                                                            id="sales_people_id">
-                                                            <option value="">Select</option>
-                                                            @foreach ($salesPerson as $value)
-                                                                <option value="{{ $value->id }}">{{ $value->name }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                    <input type="submit" class="btn btn-outline-success" value="Save">
-                                                </div>                
+                                                <br>
+                                                               
                                             </div>
+                                            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                <input type="submit" class="btn btn-outline-success" value="Save">
+                                            </div> 
                                         </form>
                                     </div>
                                 </div>

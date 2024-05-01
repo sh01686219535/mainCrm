@@ -53,8 +53,6 @@ class LeadController extends Controller
         $lead->website = $request->website;
         $lead->description = $request->description;
         $lead->status = $request->status;
-        $lead->sales_people_id = $request->sales_people_id;
-        $lead->team_leader_id = $request->team_leader_id;
         $lead->save();
 
         return back()->with('success', 'Lead added Successfully');
@@ -84,17 +82,17 @@ class LeadController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            'state' => 'required',
-            'country' => 'required',
-            'source' => 'required',
-            'sales_people_id' => 'required',
-        ]);
+        // $this->validate($request, [
+        //     'name' => 'required',
+        //     'email' => 'required',
+        //     'phone' => 'required',
+        //     'address' => 'required',
+        //     'city' => 'required',
+        //     'state' => 'required',
+        //     'country' => 'required',
+        //     'source' => 'required',
+            
+        // ]);
 
         $lead = Lead::find($id);
         $lead->name = $request->name;
@@ -111,8 +109,6 @@ class LeadController extends Controller
         $lead->website = $request->website;
         $lead->description = $request->description;
         $lead->status = $request->status;
-        $lead->sales_people_id = $request->sales_people_id;
-        $lead->team_leader_id = $request->team_leader_id;
         $lead->save();
 
 

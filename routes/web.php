@@ -9,6 +9,7 @@ use App\Http\Controllers\backend\TeamLeaderController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\backend\LeadController;
 use App\Http\Controllers\backend\UserController;
+use App\Http\Controllers\TaskController;
 use Laravel\Socialite\Facades\Socialite;
 
 
@@ -75,6 +76,8 @@ Route::group(['middleware' => 'UserAuth'], function () {
     Route::post('lead/excel',[ExcelController::class,'lead_excel'])->name('lead.excel');
     Route::post('lead/export-excel',[ExcelController::class,'exportExcel'])->name('lead.exportExcel');
     
+    //Task Route
+    Route::resource('task',TaskController::class);
 });
 
 

@@ -77,6 +77,28 @@
           
           </li>
           {{-- Lead end --}}
+          {{-- Lead start --}}
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Task
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right"></span>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('task.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Task List</p>
+                </a>
+              </li>
+            </ul>
+          
+          </li>
+          {{-- Lead end --}}
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
