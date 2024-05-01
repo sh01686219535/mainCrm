@@ -9,13 +9,14 @@
         }
 
         .dummy {
-            color: rgb(0, 0, 0)
+            color: rgb(0, 0, 0);
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endpush
 
 @section('content')
+<<<<<<< HEAD
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -61,6 +62,26 @@
                                                         <textarea class="form-control" name="address" id="address" cols="" rows="">{{ $lead->address }}</textarea>
                                                     </div>
                                                 </div>
+=======
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-xl-12">
+                    <form action="{{ route('lead.update', $lead->id) }}" method="post" class="form-demo">
+                        @csrf
+                        @method('PUT')
+                        <div class="form-section">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2>Edit Lead</h2>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-xl-3">
+                                            <div class="form-group">
+                                                <label for="name">Full Name</label>
+                                                <input type="text" value="{{ $lead->name }}" class="form-control" id="name" name="name">
+>>>>>>> 1a7d122b77a7adadc5dd26de3d4da9be8b0b7e64
                                             </div>
 
                                             <!-- Additional form rows can be added here -->
