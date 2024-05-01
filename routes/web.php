@@ -74,7 +74,13 @@ Route::group(['middleware' => 'UserAuth'], function () {
     Route::resource('lead',LeadController::class);
     Route::post('lead/excel',[ExcelController::class,'lead_excel'])->name('lead.excel');
     Route::post('lead/export-excel',[ExcelController::class,'exportExcel'])->name('lead.exportExcel');
-    
+    // Payment Route
+     Route::controller(PaymentController::class)->group(function () {
+        Route::get('/payment', 'payment')->name('payment');
+    //     Route::post('/add/salesPerson', 'addSalesPerson')->name('add.salesPerson');
+    //     Route::post('/update/salesPerson', 'updateSalesPerson')->name('update.salesPerson');
+    //     Route::get('/delete/salesPerson/{id}', 'deleteSalesPerson')->name('delete.salesPerson');
+    });
 });
 
 

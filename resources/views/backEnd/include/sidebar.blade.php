@@ -65,7 +65,6 @@
                 <span class="badge badge-info right"></span>
               </p>
             </a>
-
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('lead.index')}}" class="nav-link">
@@ -77,6 +76,27 @@
           
           </li>
           {{-- Lead end --}}
+            {{-- payment start --}}
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                  Payment
+                  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info right"></span>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('payment')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Payment</p>
+                  </a>
+                </li>
+              </ul>
+            
+            </li>
+            {{-- payment end --}}
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
