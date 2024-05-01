@@ -1,6 +1,6 @@
 @extends('backEnd.dashboard.home.master')
 
-@section('title', 'Add Customer')
+@section('title', 'Edit Lead')
 
 @push('css')
     <style>
@@ -9,7 +9,7 @@
         }
 
         .dummy {
-            color: rgb(0, 0, 0)
+            color: rgb(0, 0, 0);
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-xl-12">
-                    <form action="{{ route('lead.update',$lead->id) }}" method="post" class="form-demo">
+                    <form action="{{ route('lead.update', $lead->id) }}" method="post" class="form-demo">
                         @csrf
                         @method('PUT')
                         <div class="form-section">

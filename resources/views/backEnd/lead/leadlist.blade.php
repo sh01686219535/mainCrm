@@ -70,7 +70,7 @@
                                         <td>{{ $item->salesPerson->name ?? '' }}</td>
                                         <td>{{ $item->teamLeader->name ?? '' }}</td>
                                         <td>
-                                            <a href="{{route('lead.edit',$item->id)}}" class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
+                                            <a href="{{ route('lead.edit', $item->id) }}" class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
                                             <form action="{{ route('lead.destroy', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')

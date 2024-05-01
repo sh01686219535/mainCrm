@@ -19,7 +19,7 @@ class LeadController extends Controller
     public function index()
     {
         $lead = Lead::all();
-        return view('backEnd.lead.leadlist',compact('lead'));
+        return view('backEnd.lead.leadlist', compact('lead'));
     }
 
     /**
@@ -29,7 +29,7 @@ class LeadController extends Controller
     {
         $teamLeader = TeamLeader::all();
         $salesPerson = SalesPerson::all();
-        return view('backEnd.lead.addLead',compact('teamLeader','salesPerson'));
+        return view('backEnd.lead.addLead', compact('teamLeader', 'salesPerson'));
     }
 
     /**
@@ -37,7 +37,7 @@ class LeadController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $lead = new Lead();
         $lead->name = $request->name;
         $lead->email = $request->email;
@@ -56,8 +56,8 @@ class LeadController extends Controller
         $lead->sales_people_id = $request->sales_people_id;
         $lead->team_leader_id = $request->team_leader_id;
         $lead->save();
-        
-        return back()->with('success','Lead added Successfully');
+
+        return back()->with('success', 'Lead added Successfully');
     }
 
     /**
@@ -73,10 +73,10 @@ class LeadController extends Controller
      */
     public function edit(string $id)
     {
-        $lead = Lead::find($id);
+        $lead = Lead::findOrFail($id); // Use findOrFail to automatically handle 404 if the lead doesn't exist
         $teamLeader = TeamLeader::all();
         $salesPerson = SalesPerson::all();
-        return view('backEnd.lead.editLead',compact('lead','teamLeader','salesPerson'));
+        return view('backEnd.lead.editLead', compact('lead', 'teamLeader', 'salesPerson'));
     }
 
     /**
@@ -84,7 +84,7 @@ class LeadController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
@@ -114,9 +114,9 @@ class LeadController extends Controller
         $lead->sales_people_id = $request->sales_people_id;
         $lead->team_leader_id = $request->team_leader_id;
         $lead->save();
-        
 
-        return back()->with('success','Lead Updated Successfully');
+
+        return back()->with('success', 'Lead Updated Successfully');
     }
 
     /**
@@ -125,9 +125,8 @@ class LeadController extends Controller
     public function destroy(string $id)
     {
         Lead::find($id)->delete();
-        return back()->with('danger','Lead Deleted Successfully');
-
+        return back()->with('danger', 'Lead Deleted Successfully');
     }
     //Excel Import Page
-    
+
 }
