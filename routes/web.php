@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuth\AdminController;
+use App\Http\Controllers\backend\AjaxController;
 use App\Http\Controllers\backend\CustomerController;
 use App\Http\Controllers\backend\ExcelController;
 use App\Http\Controllers\backend\SalesPersonController;
 use App\Http\Controllers\backend\TeamLeaderController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\backend\LeadController;
+use App\Http\Controllers\backend\PaymentController;
 use App\Http\Controllers\backend\UserController;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -77,7 +79,14 @@ Route::group(['middleware' => 'UserAuth'], function () {
     // Payment Route
      Route::controller(PaymentController::class)->group(function () {
         Route::get('/payment', 'payment')->name('payment');
-    //     Route::post('/add/salesPerson', 'addSalesPerson')->name('add.salesPerson');
+        Route::get('/add/payment', 'addPayment')->name('add.payment');
+    //     Route::post('/update/salesPerson', 'updateSalesPerson')->name('update.salesPerson');
+    //     Route::get('/delete/salesPerson/{id}', 'deleteSalesPerson')->name('delete.salesPerson');
+    });
+    // Payment ajax route
+    Route::controller(AjaxController::class)->group(function () {
+        Route::get('/getCustomer', 'getCustomer');
+        // Route::get('/add/payment', 'addPayment')->name('add.payment');
     //     Route::post('/update/salesPerson', 'updateSalesPerson')->name('update.salesPerson');
     //     Route::get('/delete/salesPerson/{id}', 'deleteSalesPerson')->name('delete.salesPerson');
     });
