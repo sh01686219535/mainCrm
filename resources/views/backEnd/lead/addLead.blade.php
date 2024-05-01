@@ -3,9 +3,12 @@
 Add Lead
 @endsection
 @push('css')
+    
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endpush
+
 @section('content')
+
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -172,14 +175,13 @@ Add Lead
         <!-- /.content-header -->
 
         <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-            </div>
-            <!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
-    </div>
-    </div>
+</div>
+
+
 @endsection
+
 @push('js')
+
+    {{-- Additional JavaScript if needed --}}
+
 @endpush

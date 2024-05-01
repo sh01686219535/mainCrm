@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuth\AdminController;
 use App\Http\Controllers\backend\CustomerController;
+use App\Http\Controllers\backend\ExcelController;
 use App\Http\Controllers\backend\SalesPersonController;
 use App\Http\Controllers\backend\TeamLeaderController;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -48,6 +49,11 @@ Route::group(['middleware' => 'UserAuth'], function () {
         Route::get('/add/customer', 'addCustomer')->name('add.customer');
         Route::post('/save/customer', 'storeCustomer')->name('save.customer');
         Route::get('/approve/customer', 'approveCustomer')->name('approve.customer');
+        Route::get('/customer/status/change/{id}', 'customerStatusChange')->name('customer.status.change');
+        Route::get('/delete/customer/{id}', 'deleteCustomer')->name('delete.customer');
+        Route::get('/customer/list', 'customerList')->name('customer.list');
+        Route::get('/customer/edit/{id}', 'customerEdit')->name('customer.edit');
+        Route::post('/update/customer', 'updateCustomer')->name('update.customer');
     });
 
     //teamLeader Route
@@ -66,6 +72,9 @@ Route::group(['middleware' => 'UserAuth'], function () {
     });
     //Lead Route
     Route::resource('lead',LeadController::class);
+    Route::post('lead/excel',[ExcelController::class,'lead_excel'])->name('lead.excel');
+    Route::post('lead/export-excel',[ExcelController::class,'exportExcel'])->name('lead.exportExcel');
+    
 });
 
 

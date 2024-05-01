@@ -1,6 +1,6 @@
 @extends('backEnd.dashboard.home.master')
 @section('title')
-    Add Customer
+    Customer Edit
 @endsection
 @push('css')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -24,40 +24,41 @@
                         </div>
                     @endif
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <form action="{{ route('save.customer') }}" class="form-demo" method="post"
+                        <form action="{{ route('update.customer') }}" class="form-demo" method="post"
                             enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="customer_id" value="{{$customer->id}}">
                             <div class="form-section ">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h2>Personal Info</h2>
+                                        <h2>Personal Info Update</h2>
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="name">Full Name</label>
-                                                    <input type="text" class="form-control" id="name" name="name"
+                                                    <input type="text" class="form-control" id="name" name="name" value="{{$customer->name}}"
                                                         required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="fatherName">Father Name</label>
-                                                    <input type="text" class="form-control" id="fatherName"
+                                                    <input type="text" class="form-control" id="fatherName" value="{{$customer->fatherName}}"
                                                         name="fatherName">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="motherName">Mother Name</label>
-                                                    <input type="text" class="form-control" id="motherName"
+                                                    <input type="text" class="form-control" id="motherName" value="{{$customer->motherName}}"
                                                         name="motherName">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="spouseName">Spouse Name(If Any)</label>
-                                                    <input type="text" class="form-control" id="spouseName"
+                                                    <input type="text" class="form-control" id="spouseName" value="{{$customer->spouseName}}"
                                                         name="spouseName">
                                                 </div>
                                             </div>
@@ -65,48 +66,48 @@
                                                 <div class="form-group">
                                                     <label for="dateOfBirth">Date of Birth</label>
                                                     <input type="date" class="form-control" id="dateOfBirth"
-                                                        name="dateOfBirth">
+                                                        name="dateOfBirth" value="{{$customer->dateOfBirth}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="dateOfBirthSpouse">Date of Birth(Spouse)</label>
                                                     <input type="date" class="form-control" id="dateOfBirthSpouse"
-                                                        name="dateOfBirthSpouse">
+                                                        name="dateOfBirthSpouse"  value="{{$customer->dateOfBirthSpouse}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="marriageDay">Marriage Day</label>
                                                     <input type="date" class="form-control" id="marriageDay"
-                                                        name="marriageDay">
+                                                        name="marriageDay" value="{{$customer->marriageDay}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="phone">Phone Number</label>
-                                                    <input type="text" class="form-control" id="phone" name="phone"
+                                                    <input type="text" class="form-control" id="phone" name="phone" value="{{$customer->phone}}"
                                                         required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="email">Email Address</label>
-                                                    <input type="email" class="form-control" id="email"
+                                                    <input type="email" class="form-control" id="email" value="{{$customer->email}}"
                                                         name="email">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="nidNumber">Nid Number</label>
-                                                    <input type="number" class="form-control" id="nidNumber"
+                                                    <input type="number" class="form-control" id="nidNumber" value="{{$customer->nidNumber}}"
                                                         name="nidNumber">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="PassportNumber">Passport Number</label>
-                                                    <input type="number" class="form-control" id="PassportNumber"
+                                                    <input type="number" class="form-control" id="PassportNumber" value="{{$customer->PassportNumber}}"
                                                         name="PassportNumber">
                                                 </div>
                                             </div>
@@ -114,49 +115,49 @@
                                                 <div class="form-group">
                                                     <label for="Nationality">Nationality</label>
                                                     <input type="text" class="form-control" id="Nationality"
-                                                        name="nationality" value="Bangladeshi">
+                                                        name="nationality" value="{{$customer->nationality}}" >
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="Religion">Religion</label>
                                                     <input type="text" class="form-control" id="Religion"
-                                                        name="religion">
+                                                        name="religion" value="{{$customer->religion}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="profession">Profession</label>
                                                     <input type="text" class="form-control" id="profession"
-                                                        name="profession">
+                                                        name="profession" value="{{$customer->profession}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="facebookId">Facebook Id</label>
                                                     <input type="text" class="form-control" id="facebookId"
-                                                        name="facebookId">
+                                                        name="facebookId" value="{{$customer->facebookId}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="presentAddress">Present Address</label>
                                                     <input type="text" class="form-control" id="presentAddress"
-                                                        name="presentAddress">
+                                                        name="presentAddress"  value="{{$customer->presentAddress}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="permanentAddress">Permanent Address</label>
                                                     <input type="text" class="form-control" id="permanentAddress"
-                                                        name="permanentAddress">
+                                                        name="permanentAddress" value="{{$customer->permanentAddress}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="officeAddress">Office Address</label>
                                                     <input type="text" class="form-control" id="officeAddress"
-                                                        name="officeAddress">
+                                                        name="officeAddress" value="{{$customer->officeAddress}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -183,25 +184,27 @@
                                                 <div class="form-group">
                                                     <label for="projectName">Project Name</label>
                                                     <input type="text" class="form-control" id="projectName"
-                                                        name="projectName" value="Your Project Name">
+                                                        name="projectName" value="{{$customer->projectName}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="projectAddress">Project Address</label>
                                                     <input type="text" class="form-control" id="projectAddress"
-                                                        name="projectAddress" value="Enter Project Address">
+                                                        name="projectAddress" value="{{$customer->projectAddress}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="categoryOfOwnership">Category Of Ownership</label>
-                                                    <select name="categoryOfOwnership" id="categoryOfOwnership"
-                                                        class="form-control">
-                                                        <option value=""> Select Category Of Ownership</option>
-                                                        <option value="executive">Executive</option>
-                                                        <option value="premiun">Premiun</option>
-                                                        <option value="royal">Royal</option>
+                                                    <select name="categoryOfOwnership" id="categoryOfOwnership" class="form-control">
+                                                        <option value="">Select Category Of Ownership</option>
+                                                        <option value="executive" {{$customer->categoryOfOwnership == 'executive' ? 'selected' : ''}}>Executive</option>
+                                                        <option value="premium" {{$customer->categoryOfOwnership == 'premium' ? 'selected' : ''}}>Premium</option>
+                                                        <option value="royal" {{$customer->categoryOfOwnership == 'royal' ? 'selected' : ''}}>Royal</option>
+                                                        @if(!in_array($customer->categoryOfOwnership, ['executive', 'premium', 'royal']))
+                                                            <option value="{{$customer->categoryOfOwnership}}" selected>{{$customer->categoryOfOwnership}}</option>
+                                                        @endif
                                                     </select>
                                                 </div>
                                             </div>
@@ -209,21 +212,21 @@
                                                 <div class="form-group">
                                                     <label for="ownershipSize">Suite Ownership Size(SFT)</label>
                                                     <input type="number" class="form-control" id="ownershipSize"
-                                                        name="ownershipSize" onchange="calculateOwnership()">
+                                                        name="ownershipSize" value="{{$customer->ownershipSize}}" onchange="calculateOwnership()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="noOffOwnership">No. Of Ownership</label>
                                                     <input type="number" class="form-control" id="noOffOwnership"
-                                                        name="noOffOwnership" onkeyup="calculateOwnership()">
+                                                        name="noOffOwnership"  value="{{$customer->noOffOwnership}}" onkeyup="calculateOwnership()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="pricePerOwnership">Price Per Ownership</label>
                                                     <input type="number" class="form-control" id="pricePerOwnership"
-                                                        name="pricePerOwnership" onkeyup="calculatetotal()">
+                                                        name="pricePerOwnership" value="{{$customer->pricePerOwnership}}" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -231,35 +234,35 @@
                                                     <label for="pricePerOwnershipInWord">Price Per Ownership(In
                                                         Word)</label>
                                                     <input type="text" class="form-control"
-                                                        id="pricePerOwnershipInWord" name="pricePerOwnershipInWord">
+                                                        id="pricePerOwnershipInWord" name="pricePerOwnershipInWord" value="{{$customer->pricePerOwnershipInWord}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="totalPrice">Total Price</label>
                                                     <input type="number" class="form-control" id="totalPrice"
-                                                        name="totalPrice" onchange="calculatetotal()">
+                                                        name="totalPrice" onchange="calculatetotal()" value="{{$customer->totalPrice}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="totalPriceInWord">Total Price(In Word)</label>
                                                     <input type="number" class="form-control" id="totalPriceInWord"
-                                                        name="totalPriceInWord">
+                                                        name="totalPriceInWord" value="{{$customer->totalPriceInWord}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="specialDiscount">Special Discount</label>
                                                     <input type="number" class="form-control" id="specialDiscount"
-                                                        name="specialDiscount" onkeyup="calculatetotal()">
+                                                        name="specialDiscount" onkeyup="calculatetotal()" value="{{$customer->specialDiscount}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="specialDiscountInWord">Special Discount(In Word)</label>
                                                     <input type="number" class="form-control" id="specialDiscountInWord"
-                                                        name="specialDiscountInWord">
+                                                        name="specialDiscountInWord" value="{{$customer->specialDiscountInWord}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -267,11 +270,11 @@
                                                     Payment</label>
                                                 <select name="modeOfPayment" id="modeOfPayment" class="form-control">
                                                     <option value="">Select Mode Of Payment</option>
-                                                    <option value="perMonth">Per Month</option>
-                                                    <option value="quarterly">Quarterly</option>
-                                                    <option value="halfYearly">Half Yearly</option>
-                                                    <option value="yearly">Yearly</option>
-                                                    <option value="atATime">At a Time</option>
+                                                    <option value="perMonth" {{$customer->modeOfPayment == 'perMonth' ? 'selected' : ''}}>Per Month</option>
+                                                    <option value="quarterly" {{$customer->modeOfPayment == 'quarterly' ? 'selected' : ''}}>Quarterly</option>
+                                                    <option value="halfYearly" {{$customer->modeOfPayment == 'halfYearly' ? 'selected' : ''}}>Half Yearly</option>
+                                                    <option value="yearly" {{$customer->modeOfPayment == 'yearly' ? 'selected' : ''}}>Yearly</option>
+                                                    <option value="atATime" {{$customer->modeOfPayment == 'atATime' ? 'selected' : ''}}>At a Time</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -289,21 +292,21 @@
                                                 <div class="form-group">
                                                     <label for="bookingMoney">Booking Money</label>
                                                     <input type="number" class="form-control" id="bookingMoney"
-                                                        name="bookingMoney" onkeyup="calculatetotal()">
+                                                        name="bookingMoney" onkeyup="calculatetotal()" value="{{$customer->bookingMoney}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="bookingMoneyInWord">Booking Money(In Word)</label>
                                                     <input type="text" class="form-control" id="bookingMoneyInWord"
-                                                        name="bookingMoneyInWord">
+                                                        name="bookingMoneyInWord" value="{{$customer->bookingMoneyInWord}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="bookingMoneyDate">Booking Money(Date)</label>
                                                     <input type="date" class="form-control" id="bookingMoneyDate"
-                                                        name="bookingMoneyDate">
+                                                        name="bookingMoneyDate" value="{{$customer->bookingMoneyDate}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -311,61 +314,58 @@
                                                     <label for="paymentType">Payment Type</label>
                                                     <select name="paymentType" id="paymentType" class="form-control">
                                                         <option value=""> Select Payment Type</option>
-                                                        <option value="cash">CASH</option>
-                                                        <option value="chq">CHQ</option>
-                                                        <option value="online">Online</option>
+                                                        <option value="cash" {{$customer->paymentType == 'cash' ? 'selected' : ''}}>CASH</option>
+                                                        <option value="chq" {{$customer->paymentType == 'chq' ? 'selected' : ''}}>CHQ</option>
+                                                        <option value="online" {{$customer->paymentType == 'online' ? 'selected' : ''}}>Online</option>
                                                     </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="form-group">
-                                                    <label for="inStallmentStart">InStallment Start</label>
-                                                    <input type="date" class="form-control" id="inStallmentStart"
-                                                        name="inStallmentStart">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="noOfInstallment">No. Of Installment</label>
                                                     <input type="number" class="form-control" id="noOfInstallment"
-                                                        name="noOfInstallment" onkeyup="calculatetotal()">
+                                                        name="noOfInstallment" onkeyup="calculatetotal()" value="{{$customer->noOfInstallment}}">
                                                 </div>
                                             </div>
-
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="instPerMonth">Inst. Per Month</label>
                                                     <input type="number" class="form-control" id="instPerMonth"
-                                                        name="instPerMonth" onkeyup="calculatetotal()">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="form-group">
-                                                    <label for="inStallmentTo">InStallment To</label>
-                                                    <input type="date" class="form-control" id="inStallmentTo"
-                                                        name="inStallmentTo">
+                                                        name="instPerMonth" onkeyup="calculatetotal()" value="{{$customer->instPerMonth}}"> 
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="mainAmount">Main Amount</label>
                                                     <input type="number" class="form-control" id="mainAmount"
-                                                        name="mainAmount" onchange="calculatetotal()">
+                                                        name="mainAmount" onchange="calculatetotal()" value="{{$customer->mainAmount}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="agreedAmount">Agreed Amount</label>
                                                     <input type="number" class="form-control" id="agreedAmount"
-                                                        name="agreedAmount" onchange="calculateOwnership()">
+                                                        name="agreedAmount" onchange="calculateOwnership()" value="{{$customer->agreedAmount}}">
                                                 </div>
                                             </div>
-
-
+                                            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="form-group">
+                                                    <label for="inStallmentStart">InStallment Start</label>
+                                                    <input type="date" class="form-control" id="inStallmentStart"
+                                                        name="inStallmentStart" value="{{$customer->inStallmentStart}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="form-group">
+                                                    <label for="inStallmentTo">InStallment To</label>
+                                                    <input type="date" class="form-control" id="inStallmentTo"
+                                                        name="inStallmentTo" value="{{$customer->inStallmentTo}}">
+                                                </div>
+                                            </div>
                                             <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                                 <div class="form-group">
                                                     <label for="description">Other Description</label>
-                                                    <textarea name="description" id="description" class="form-control" placeholder="Enter Other Description"></textarea>
+                                                    <textarea name="description" id="description" class="form-control" placeholder="Enter Other Description">{{$customer->description}}</textarea>
                                                 </div>
                                             </div>
 
@@ -385,49 +385,49 @@
                                                 <div class="form-group">
                                                     <label for="nomineeName">Nominee Name</label>
                                                     <input type="text" class="form-control" id="nomineeName"
-                                                        name="nomineeName">
+                                                        name="nomineeName" value="{{$customer->nomineeName}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="nomineeNumber">Nominee Cell Number</label>
                                                     <input type="number" class="form-control" id="nomineeNumber"
-                                                        name="nomineeNumber">
+                                                        name="nomineeNumber" value="{{$customer->nomineeNumber}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="relationToNominee">Relation To Nominee</label>
                                                     <input type="text" class="form-control" id="relationToNominee"
-                                                        name="relationToNominee">
+                                                        name="relationToNominee" value="{{$customer->relationToNominee}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceNameA">Reference Name(A)</label>
                                                     <input type="text" class="form-control" id="referenceNameA"
-                                                        name="referenceNameA">
+                                                        name="referenceNameA" value="{{$customer->referenceNameA}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceCellNumerA">Reference Cell Number(A)</label>
                                                     <input type="number" class="form-control" id="referenceCellNumerA"
-                                                        name="referenceCellNumerA">
+                                                        name="referenceCellNumerA" value="{{$customer->referenceCellNumerA}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceNameb">Reference Name(B)</label>
                                                     <input type="text" class="form-control" id="referenceNameb"
-                                                        name="referenceNameb">
+                                                        name="referenceNameb" value="{{$customer->referenceNameb}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceCellNumerB">Reference Cell Number(B)</label>
                                                     <input type="number" class="form-control" id="referenceCellNumerB"
-                                                        name="referenceCellNumerB">
+                                                        name="referenceCellNumerB" value="{{$customer->referenceCellNumerB}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -437,7 +437,7 @@
                                                         class="form-control">
                                                         <option value=""> Select Sales Person</option>
                                                         @foreach ($salesPerson as $item)
-                                                            <option value="{{ $item->id }}">{{ $item->name }}
+                                                            <option value="{{ $item->id }}" {{$item->id == $customer->salesPerson_id ? 'selected' : ''}}>{{ $item->name }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -449,7 +449,7 @@
                                                     <select name="teamLeader_id" id="teamLeader_id" class="form-control">
                                                         <option value=""> Select Team Leader</option>
                                                         @foreach ($teamLeader as $item)
-                                                            <option value="{{ $item->id }}">{{ $item->name }}
+                                                            <option value="{{ $item->id }}" {{$item->id == $customer->teamLeader_id ? 'selected' : ''}}>{{ $item->name }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -460,10 +460,15 @@
                                                     <label for="userImage">User Image</label>
                                                     <input type="file" class="form-control" id="userImage"
                                                         name="userImage">
-                                                    <img class="imageUN" id="showImage"
+                                                        @if($customer->userImage)
+                                                            <img class="imageUN"
+                                                        src="{{ asset($customer->userImage) }}"
+                                                        alt="" class="image-style mb-3">
+                                                        @else
+                                                            <img class="imageUN" id="showImage"
                                                         src="{{ asset('backEndAsset/img/previewImage.png') }}"
                                                         alt="" class="image-style mb-3">
-
+                                                        @endif
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -471,9 +476,16 @@
                                                     <label for="nomineeImage">Nominee Image</label>
                                                     <input type="file" class="form-control" id="nomineeImage"
                                                         name="nomineeImage">
-                                                    <img class="imageUN" id="showNImage"
+                                                        @if($customer->nomineeImage)
+                                                            <img class="imageUN" 
+                                                        src="{{ asset($customer->nomineeImage) }}"
+                                                        alt="" class="image-style mb-3">
+                                                        @else
+                                                            <img class="imageUN" id="showNImage"
                                                         src="{{ asset('backEndAsset/img/previewImage.png') }}"
                                                         alt="" class="image-style mb-3">
+                                                        @endif
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -603,73 +615,16 @@
     </script>
     <script>
         $(document).ready(function() {
-
-
             $('#modeOfPayment').on('change', function() {
-                //var perMonth = ($(this).val() == 'perMonth');
-                /*if (perMonth) {
+                var perMonth = ($(this).val() == 'perMonth');
+                if (perMonth) {
                     var startMonth = $('#inStallmentStart').val();
                     var noInstallment = $('#noOfInstallment').val();
                     var startDate = new Date(startMonth);
                     var endDate = new Date(startDate);
                     endDate.setMonth(startDate.getMonth() + parseInt(noInstallment) - 1);
                     $('#inStallmentTo').val(formatDate(endDate));
-                }*/
-                const selectedOption = $(this).find('option:selected');
-
-                const selectedValue = selectedOption.val();
-                if (selectedValue == 'perMonth') {
-                    $('#noOfInstallment').on('input', function() {
-                        var startMonth = $('#inStallmentStart').val();
-                        var noInstallment = $(this).val();
-
-                        if (startMonth && noInstallment && !isNaN(noInstallment)) {
-                            var startDate = new Date(startMonth);
-                            var endDate = new Date(startDate);
-                            endDate.setMonth(startDate.getMonth() + parseInt(noInstallment) - 1);
-                            $('#inStallmentTo').val(formatDate(endDate));
-                        } else {
-
-                        }
-                    });
-                } else {
-
                 }
-                if (selectedValue == 'quarterly') {
-
-                    $('#inStallmentStart').on('change', calculateEndDate);
-                    $('#noOfInstallment').on('input', calculateEndDate);
-                } else {
-                    $('#inStallmentStart').off('change', calculateEndDate);
-                    $('#noOfInstallment').off('input', calculateEndDate);
-                }
-
-                if (selectedValue == 'halfYearly') {
-                    $('#inStallmentStart').on('change', calculateHalfEndDate);
-                    $('#noOfInstallment').on('input', calculateHalfEndDate);
-                } else {
-                    $('#inStallmentStart').off('change', calculateHalfEndDate);
-                    $('#noOfInstallment').off('input', calculateHalfEndDate);
-                }
-
-                if (selectedValue == 'yearly') {
-
-                    $('#inStallmentStart').on('change', calculateYearlyEndDate);
-                    $('#noOfInstallment').on('input', calculateYearlyEndDate);
-                } else {
-                    $('#inStallmentStart').off('change', calculateYearlyEndDate);
-                    $('#noOfInstallment').off('input', calculateYearlyEndDate);
-                }
-
-                if (selectedValue == 'atATime') {
-                    $('#noOfInstallment').val(3);
-                    $('#inStallmentStart').on('change', calculateAtAtimeEndDate);
-                    $('#noOfInstallment').on('input', calculateAtAtimeEndDate);
-                } else {
-                    $('#inStallmentStart').off('change', calculateAtAtimeEndDate);
-                    $('#noOfInstallment').off('input', calculateAtAtimeEndDate);
-                }
-
             });
         });
 
