@@ -197,12 +197,14 @@
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="categoryOfOwnership">Category Of Ownership</label>
-                                                    <select name="categoryOfOwnership" id="categoryOfOwnership"
-                                                        class="form-control">
-                                                        <option value=""> Select Category Of Ownership</option>
-                                                        <option value="executive">Executive</option>
-                                                        <option value="premiun">Premiun</option>
-                                                        <option value="royal">Royal</option>
+                                                    <select name="categoryOfOwnership" id="categoryOfOwnership" class="form-control">
+                                                        <option value="">Select Category Of Ownership</option>
+                                                        <option value="executive" {{$customer->categoryOfOwnership == 'executive' ? 'selected' : ''}}>Executive</option>
+                                                        <option value="premium" {{$customer->categoryOfOwnership == 'premium' ? 'selected' : ''}}>Premium</option>
+                                                        <option value="royal" {{$customer->categoryOfOwnership == 'royal' ? 'selected' : ''}}>Royal</option>
+                                                        @if(!in_array($customer->categoryOfOwnership, ['executive', 'premium', 'royal']))
+                                                            <option value="{{$customer->categoryOfOwnership}}" selected>{{$customer->categoryOfOwnership}}</option>
+                                                        @endif
                                                     </select>
                                                 </div>
                                             </div>
@@ -268,11 +270,11 @@
                                                     Payment</label>
                                                 <select name="modeOfPayment" id="modeOfPayment" class="form-control">
                                                     <option value="">Select Mode Of Payment</option>
-                                                    <option value="perMonth">Per Month</option>
-                                                    <option value="quarterly">Quarterly</option>
-                                                    <option value="halfYearly">Half Yearly</option>
-                                                    <option value="yearly">Yearly</option>
-                                                    <option value="atATime">At a Time</option>
+                                                    <option value="perMonth" {{$customer->modeOfPayment == 'perMonth' ? 'selected' : ''}}>Per Month</option>
+                                                    <option value="quarterly" {{$customer->modeOfPayment == 'quarterly' ? 'selected' : ''}}>Quarterly</option>
+                                                    <option value="halfYearly" {{$customer->modeOfPayment == 'halfYearly' ? 'selected' : ''}}>Half Yearly</option>
+                                                    <option value="yearly" {{$customer->modeOfPayment == 'yearly' ? 'selected' : ''}}>Yearly</option>
+                                                    <option value="atATime" {{$customer->modeOfPayment == 'atATime' ? 'selected' : ''}}>At a Time</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -312,9 +314,9 @@
                                                     <label for="paymentType">Payment Type</label>
                                                     <select name="paymentType" id="paymentType" class="form-control">
                                                         <option value=""> Select Payment Type</option>
-                                                        <option value="cash">CASH</option>
-                                                        <option value="chq">CHQ</option>
-                                                        <option value="online">Online</option>
+                                                        <option value="cash" {{$customer->paymentType == 'cash' ? 'selected' : ''}}>CASH</option>
+                                                        <option value="chq" {{$customer->paymentType == 'chq' ? 'selected' : ''}}>CHQ</option>
+                                                        <option value="online" {{$customer->paymentType == 'online' ? 'selected' : ''}}>Online</option>
                                                     </select>
                                                 </div>
                                             </div>
