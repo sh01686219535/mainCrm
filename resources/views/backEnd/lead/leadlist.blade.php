@@ -51,8 +51,6 @@
                                     <th>Address</th>
                                     <th>Status</th>
                                     <th>Source</th>
-                                    <th>Sales Person</th>
-                                    <th>Team Leader</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -67,10 +65,8 @@
                                         <td>{{ $item->address }}</td>
                                         <td>{{ $item->status }}</td>
                                         <td>{{ $item->source }}</td>
-                                        <td>{{ $item->salesPerson->name ?? '' }}</td>
-                                        <td>{{ $item->teamLeader->name ?? '' }}</td>
                                         <td>
-                                            <a href="{{route('lead.edit',$item->id)}}" class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
+                                            <a href="{{ route('lead.edit', $item->id) }}" class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
                                             <form action="{{ route('lead.destroy', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
