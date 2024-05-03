@@ -26,7 +26,7 @@
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <form action="{{ route('lead.store') }}" method="post"
+                                        <form action="{{ route('payment.store') }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
@@ -34,10 +34,9 @@
                                                     <div class="form-group">
                                                         <label for="customer_id">Customer</label>
                                                         <select name="customer_id" id="customer_id" class="form-control">
-                                                            <option value="">Selecct Customer</option>
+                                                            <option value="">Select Customer</option>
                                                             @foreach ($customer as $item)
-                                                                <option value="{{ $item->id }}">{{ $item->phone }}
-                                                                </option>
+                                                                <option value="{{ $item->id }}">{{ $item->phone }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -81,14 +80,14 @@
                                                     <div class="form-group">
                                                         <label for="dueAmount">Due Amount</label>
                                                         <input type="text" class="form-control" id="dueAmount"
-                                                            name="dueAmount">
+                                                            name="dueAmount" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
                                                         <label for="paidAmount">Paid Amount</label>
                                                         <input type="text" class="form-control" id="paidAmount"
-                                                            name="paidAmount">
+                                                            name="paidAmount" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -127,26 +126,38 @@
     {{-- customer_ajax call --}}
     <script>
         $(document).ready(function() {
-            $("#customer_id").change(function() {
-                alert();
-                var customer_id = $(this).val()
-                alert(customer_id);
-                $.ajax({
-                    url: '/getCustomer',
-                    type: 'get',
-                    dataType: 'json',
-                    data: {
-                        customer_id + customer_id
+        $("#customer_id").change(function() {
+            var customer_id = $(this).val();
+            $.ajax({
+                url: '/getCustomer',
+                type: 'get',
+                dataType: 'json',
+                data: {
+                    customer_id: customer_id 
+                },
+                success: function(data) {
+                    if (data.length > 0) {
+                        var customer = data[0];
+                        var payment = data[1];
+                        var mainAmount = customer.mainAmount;
+                        var main = mainAmount - payment;
+                        // console.log(main);
+                        $("#startdate").val(customer.inStallmentStart);
+                        $("#endDate").val(customer.inStallmentTo);
+                        $("#totalInstallment").val(customer.noOfInstallment);
+                        $("#perInstallment").val(customer.instPerMonth);
+                        $("#mainAmount").val(customer.mainAmount);
+                        $("#dueAmount").val(main);
+                        $("#paidAmount").val(payment);
+                    } else {
+                        console.error("No customer data found for the selected ID.");
                     }
-                    success: function(data) {
-
-                    },
-                    error: function(xhr, error, status) {
-                        console.error(xhr.responseText);
-                    };
-
-                });
-            })
-        })
+                },
+                error: function(xhr, error, status) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    });
     </script>
 @endpush

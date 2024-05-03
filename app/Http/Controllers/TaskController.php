@@ -86,18 +86,11 @@ class TaskController extends Controller
         if($request->hasFile('file')){
             $extension = $request->file('file')->getClientOriginalExtension();
             $fileName = 'backEndAsset/file/'.uniqid().'.'.$extension;
-            try {
-                $request->file('file')->move('backEndAsset/file', $fileName);
-            } catch (\Exception $e) {
-                // Log or display the error message
-                dd($e->getMessage());
-            }
-            $task->file = $fileName;
+            $request->file('file')->move('backEndAsset/file', $fileName);
             if(File::exists($task->file)){
                 File::delete($task->file);
             }
-        }else{
-            $fileName = $request->file;
+            $task->file = $fileName;
         }
         $task->title = $request->title;
         $task->description = $request->description;
@@ -108,9 +101,8 @@ class TaskController extends Controller
         $task->status = $request->status;
         $task->sales_people_id  = $request->sales_people_id ;
         $task->team_leader_id = $request->team_leader_id;
-        if ($request->file('file')) {
-            $task->file = $fileName;
-        }
+    
+        
         $task->save();
         return to_route('task.index')->with('success','Task Updated Successfully');
     }

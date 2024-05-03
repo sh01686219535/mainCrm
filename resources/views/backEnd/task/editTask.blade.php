@@ -31,7 +31,7 @@
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
                                         <form action="{{ route('task.update', $task->id) }}" method="post"
-                                            class="form-demo">
+                                            class="form-demo" enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
 
@@ -146,6 +146,7 @@
                                                         <label for="file">Attach File</label>
                                                         <input type="file" class="form-control" id="file"
                                                             name="file">
+                                                            <img src="{{asset($task->file )}}" width="50" height="50">
                                                        
                                                     </div>
                                                 </div>
