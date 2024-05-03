@@ -65,47 +65,40 @@
                 <span class="badge badge-info right"></span>
               </p>
             </a>
+
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('lead.index')}}" class="nav-link">
-<<<<<<< HEAD
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lead List</p>
-=======
-
-
-                <i class="far fa-circle nav-icon"></i>
-                  <p>Lead List</p>
-                  <i class="far fa-user nav-icon"></i>
-                  <p>Lead</p>
->>>>>>> 1a7d122b77a7adadc5dd26de3d4da9be8b0b7e64
                 </a>
               </li>
             </ul>
           
           </li>
           {{-- Lead end --}}
-            {{-- payment start --}}
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                  Payment
-                  <i class="fas fa-angle-left right"></i>
-                  <span class="badge badge-info right"></span>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="{{route('payment')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Payment</p>
-                  </a>
-                </li>
-              </ul>
-            
-            </li>
-            {{-- payment end --}}
+          {{-- Lead start --}}
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Task
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right"></span>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('task.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Task List</p>
+                </a>
+              </li>
+            </ul>
+          
+          </li>
+          {{-- Lead end --}}
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>

@@ -10,12 +10,5 @@ class Lead extends Model
     use HasFactory;
     protected $guarded = [];
 
-    //salesPerson
-    public function salesPerson(){
-        return $this->belongsTo(SalesPerson::class,'sales_people_id');
-    }
-    //teamLeader
-    public function teamLeader(){
-        return $this->belongsTo(TeamLeader::class,'team_leader_id ');
-    }
+    
 }
