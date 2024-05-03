@@ -86,18 +86,12 @@ class TaskController extends Controller
         if($request->hasFile('file')){
             $extension = $request->file('file')->getClientOriginalExtension();
             $fileName = 'backEndAsset/file/'.uniqid().'.'.$extension;
-            try {
-                $request->file('file')->move('backEndAsset/file', $fileName);
-            } catch (\Exception $e) {
-                // Log or display the error message
-                dd($e->getMessage());
+            $request->file('file')->move('backEndAsset/file', $fileName);
+                
+            if (File::exists($task->file)) {
+                    File::delete($task->file);
             }
             $task->file = $fileName;
-            if(File::exists($task->file)){
-                File::delete($task->file);
-            }
-        }else{
-            $fileName = $request->file;
         }
         $task->title = $request->title;
         $task->description = $request->description;
