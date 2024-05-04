@@ -98,7 +98,7 @@
             
             </li>
             {{-- payment end --}}
-          {{-- Lead start --}}
+          {{-- Task start --}}
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -119,7 +119,30 @@
             </ul>
           
           </li>
-          {{-- Lead end --}}
+          {{-- Task end --}}
+
+          {{-- Projects start --}}
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Projects
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right"></span>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('project.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project</p>
+                </a>
+              </li>
+            </ul>
+          
+          </li>
+          {{-- Projects end --}}
 
           <li class="nav-item">
             <a href="#" class="nav-link">
