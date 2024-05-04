@@ -10,6 +10,7 @@ use App\Http\Controllers\backend\TeamLeaderController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\backend\LeadController;
 use App\Http\Controllers\backend\PaymentController;
+use App\Http\Controllers\backend\SettingController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\TaskController;
 use Laravel\Socialite\Facades\Socialite;
@@ -83,17 +84,19 @@ Route::group(['middleware' => 'UserAuth'], function () {
         Route::get('/payment', 'payment')->name('payment');
         Route::get('/add/payment', 'addPayment')->name('add.payment');
         Route::post('/payment/store', 'paymentStore')->name('payment.store');
-    //     Route::get('/delete/salesPerson/{id}', 'deleteSalesPerson')->name('delete.salesPerson');
     });
     // Payment ajax route
     Route::controller(AjaxController::class)->group(function () {
         Route::get('/getCustomer', 'getCustomer');
-        // Route::get('/add/payment', 'addPayment')->name('add.payment');
+    });
+
+    // setting Route
+    Route::controller(SettingController::class)->group(function () {
+        Route::get('/setting', 'setting')->name('setting');
+        Route::post('/setting/store', 'settingStore')->name('setting.store');
     //     Route::post('/update/salesPerson', 'updateSalesPerson')->name('update.salesPerson');
     //     Route::get('/delete/salesPerson/{id}', 'deleteSalesPerson')->name('delete.salesPerson');
     });
-
-    
     //Task Route
     Route::resource('task',TaskController::class);
 
