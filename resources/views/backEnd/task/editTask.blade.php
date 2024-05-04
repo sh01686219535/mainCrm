@@ -144,10 +144,12 @@
                                                 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                     <div class="form-group">
                                                         <label for="file">Attach File</label>
-                                                        <input type="file" class="form-control" id="file"
+                                                        <input type="file" value="{{ $task->file }}" class="form-control" id="file"
                                                             name="file">
-                                                            <img src="{{asset($task->file )}}" width="50" height="50">
-                                                       
+                                                            @if($task->file)
+                                                            <p>Current File: {{ $task->file }}</p>
+                                                            @endif
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
