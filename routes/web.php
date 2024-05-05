@@ -13,6 +13,7 @@ use App\Http\Controllers\backend\PaymentController;
 use App\Http\Controllers\backend\SettingController;
 use App\Http\Controllers\backend\ProjectController;
 use App\Http\Controllers\backend\UserController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\TaskController;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -102,6 +103,8 @@ Route::group(['middleware' => 'UserAuth'], function () {
     Route::resource('task',TaskController::class);
     //Project Route
     Route::resource('project',ProjectController::class);
+    //Invoice Route
+    Route::resource('invoice',InvoiceController::class);
 
 });
 
