@@ -12,6 +12,7 @@ use App\Http\Controllers\backend\LeadController;
 use App\Http\Controllers\backend\PaymentController;
 use App\Http\Controllers\backend\SettingController;
 use App\Http\Controllers\backend\ProjectController;
+use App\Http\Controllers\backend\ReportController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\TaskController;
 use Laravel\Socialite\Facades\Socialite;
@@ -95,17 +96,19 @@ Route::group(['middleware' => 'UserAuth'], function () {
     Route::controller(SettingController::class)->group(function () {
         Route::get('/setting', 'setting')->name('setting');
         Route::post('/setting/store', 'settingStore')->name('setting.store');
-    //     Route::post('/update/salesPerson', 'updateSalesPerson')->name('update.salesPerson');
-    //     Route::get('/delete/salesPerson/{id}', 'deleteSalesPerson')->name('delete.salesPerson');
     });
+    // Report Route
+    Route::controller(ReportController::class)->group(function () {
+        Route::get('/report', 'Report')->name('report');
+        // Route::post('/setting/store', 'settingStore')->name('setting.store');
+    });
+
     //Task Route
     Route::resource('task',TaskController::class);
     //Project Route
     Route::resource('project',ProjectController::class);
 
 });
-
-
 
 //Socialite
 Route::get('/google/redirect', function () {
