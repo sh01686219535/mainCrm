@@ -33,7 +33,7 @@
                                                 </div>
                                                 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                     <div class="form-group">
-                                                        <label for="customer_id ">Customer</label>
+                                                        <label for="customer_id">Customer</label>
                                                         <Select class="form-control" id="customer_id" name="customer_id">
                                                             <option value="">Select</option>
                                                             @foreach ($customer as $item)

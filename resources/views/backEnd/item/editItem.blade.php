@@ -15,19 +15,20 @@
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
                             <div class="card-head">
-                                <h2>Add New Item</h2>
+                                <h2>Edit Item</h2>
                             </div>
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <form action="{{ route('item.store') }}" method="post"
+                                        <form action="{{ route('item.update',$item->id) }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
+                                            @method('PUT')
                                             <div class="row">
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                                     <div class="form-group">
                                                         <label for="name">Item Name</label>
-                                                        <input type="text" class="form-control" id="name"
+                                                        <input type="text" value="{{ $item->name }}" class="form-control" id="name"
                                                             name="name">
                                                     </div>
                                                 </div>
@@ -36,20 +37,20 @@
                                                         <label for="item_group">Item Group</label>
                                                         <select class="form-control" id="item_group" name="item_group">
                                                             <option value="">Select</option>
-                                                            <option value="Product">Product</option>
-                                                            <option value="Service">Service</option>
+                                                            <option value="Product" {{ $item->item_group == 'Product' ? 'selected' : '' }}>Product</option>
+                                                            <option value="Service" {{ $item->item_group == 'Product' ? 'Task_Hour' : '' }}>Service</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                                     <div class="form-group">
                                                         <label for="customer_id">Description</label>
-                                                        <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+                                                        <textarea class="form-control" name="description" id="description" cols="30" rows="10">{{ $item->description }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                <input type="submit" class="btn btn-outline-success" value="Save">
+                                                <input type="submit" class="btn btn-outline-success" value="Update">
                                             </div>
                                         </form>
                                     </div>

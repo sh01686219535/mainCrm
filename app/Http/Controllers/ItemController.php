@@ -29,7 +29,12 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = new Item();
+        $item->name = $request->name;
+        $item->description = $request->description;
+        $item->item_group = $request->item_group;
+        $item->save();
+        return to_route('item.index')->with('success','Item Created Successfully');
     }
 
     /**
@@ -45,7 +50,8 @@ class ItemController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $item = Item::find($id);
+        return view('backEnd.item.editItem', compact('item'));
     }
 
     /**
@@ -53,7 +59,13 @@ class ItemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $item = Item::find($id);
+        $item->name = $request->name;
+        $item->description = $request->description;
+        $item->item_group = $request->item_group;
+        $item->save();
+        return to_route('item.index')->with('success','Item Updated Successfully');
+
     }
 
     /**
@@ -61,6 +73,9 @@ class ItemController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $item = Item::findOrFail($id);
+        
+        $item->delete();
+        return back()->with('success', 'Item Deleted Successfully');
     }
 }

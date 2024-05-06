@@ -15,19 +15,17 @@
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
                             <div class="card-head">
-                                <h2>Add New Project</h2>
+                                <h2>Create New Invoice</h2>
                             </div>
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <form action="{{ route('project.store') }}" method="post"
+                                        <form action="{{ route('invoice.store') }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="row my-3 d-flex">
-                                                    <div class="add-btn m-3">
-                                                        <a class="btn btn-info" style="color: floralwhite" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i>Add Customer</a>
-                                                    </div>
+                                                    
                                                     <div class="col-lg-6">
                                                         <label for="">Customer</label>
                                                         <select class="form-control" name="customer_id">
@@ -39,12 +37,16 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-lg-6">
+                                                        <label for="invoice_no">Invoice No</label>
+                                                        <input type="text" name="invoice_no" id="invoice_no" value="{{ $serialNum }}" class="form-control">
+                                                    </div>
+                                                    <div class="col-lg-6">
                                                         <label for="billing_address">Billing Address</label>
                                                         <textarea class="form-control" name="billing_address" id="billing_address"></textarea>
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <label for="project_id ">Project</label>
-                                                        <select class="form-control" name="project_id ">
+                                                        <label for="project_id">Project</label>
+                                                        <select class="form-control" name="project_id">
 
                                                             <option value="">Select</option>
                                                             @foreach ($project as $value)
@@ -333,8 +335,8 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-lg-3">
-                                                        <label for="">Sales Person</label>
-                                                        <select class="form-control" name="customer_id">
+                                                        <label for="sales_people_id">Sales Person</label>
+                                                        <select class="form-control" name="sales_people_id">
 
                                                             <option value="">Select</option>
                                                             @foreach ($salesPerson as $value)
@@ -352,13 +354,13 @@
                                                     <div class="row">
                                                         <div class="col-md-3 mb-3">
 
-                                                            <label for="example-text-input" class="form-label">Service & Product Name </label>
-                                                            <select class="form-control service_id" name="service_id[]">
+                                                            <label for="example-text-input" class="form-label">Item</label>
+                                                            <select class="form-control service_id" name="item_id[]">
 
-                                                                <option value="">Select Service & Product</option>
-                                                                {{-- @foreach ($service as $value)
+                                                                <option value="">Select</option>
+                                                                @foreach ($item as $value)
                                                                 <option value="{{ $value->id }}">{{ $value->name }}</option>
-                                                                @endforeach --}}
+                                                                @endforeach
                                                             </select>
 
                                                         </div>
@@ -370,7 +372,7 @@
 
                                                             <label for="amount" class="form-label">Amount</label>
                                                             <input class="form-control amount" type="text" name="amount[]">
-                                                            <input class="form-control singleamount" type="hidden" name="singleamount[]">
+                                                            
 
                                                         </div>
                                                         <div class="col-md-2 mt-4">
@@ -378,7 +380,7 @@
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <label for="total">Total Amount</label>
-                                                            <input type="text" name="total" id="total" class="form-control" readonly>
+                                                            <input type="text" name="total" id="total_amount" class="form-control" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -428,26 +430,25 @@
             $(".show_transaction").prepend(` <div class="row">
                                                         <div class="col-md-3 mb-3">
 
-                                                            <label for="example-text-input" class="form-label">Service & Product Name </label>
-                                                            <select class="form-control service_id" name="service_id[]" >
+                                                            <label for="example-text-input" class="form-label">Item</label>
+                                                            <select class="form-control service_id" name="service_id[]">
 
-                                                                <option value="">Select Service & Product</option>
-                                                               
+                                                                <option value="">Select</option>
+                                                                @foreach ($item as $value)
+                                                                <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                                                @endforeach
                                                             </select>
 
                                                         </div>
                                                         <div class="col-md-3 mb-3">
-
-                                                            <label for="quantity" class="form-label quantity">Quantity</label>
-                                                            <input class="form-control quantity" type="number" name="quantity[]" id="quantity" value="1" placeholder="Enter Quantity">
-
+                                                            <label for="quantity" class="form-label">Quantity</label>
+                                                            <input class="form-control quantity" type="number" name="quantity[]" value="1" placeholder="Enter Quantity">
                                                         </div>
                                                         <div class="col-md-3 mb-3">
 
-                                                            <label for="quantity" class="form-label">Amount</label>
-                                                            <input class="form-control amount" type="text" name="amount[]" id="amount">
-                                                            <input class="form-control singleamount" type="hidden" name="singleamount[]">
-
+                                                            <label for="amount" class="form-label">Amount</label>
+                                                            <input class="form-control amount" type="text" name="amount[]">
+                                                            
 
                                                         </div>
                                                         <div class="col-md-2 mt-4">

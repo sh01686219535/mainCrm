@@ -9,4 +9,8 @@ class Invoice extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function items(){
+        return $this->belongsToMany(Item::class,'item_invoice')->withPivot('quantity','amount');
+    }
 }

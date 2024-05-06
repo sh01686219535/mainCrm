@@ -10,7 +10,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="main-body">
-                                    <h1>Projects</h1>
+                                    <h1>Invoices</h1>
                                     <div>
                                         <a href="{{ route('invoice.create') }}" class="btn btn-primary"><i
                                                 class="fa fa-plus"></i>New Invoice</a>
