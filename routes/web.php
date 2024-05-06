@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuth\AdminController;
 use App\Http\Controllers\backend\AjaxController;
 use App\Http\Controllers\backend\CustomerController;
+use App\Http\Controllers\backend\EstimatesController;
 use App\Http\Controllers\backend\ExcelController;
 use App\Http\Controllers\backend\SalesPersonController;
 use App\Http\Controllers\backend\TeamLeaderController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\backend\SettingController;
 use App\Http\Controllers\backend\ProjectController;
 use App\Http\Controllers\backend\ReportController;
 use App\Http\Controllers\backend\UserController;
+use App\Http\Controllers\backend\VendorController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\TaskController;
@@ -101,12 +103,15 @@ Route::group(['middleware' => 'UserAuth'], function () {
     });
     // Report Route
     Route::controller(ReportController::class)->group(function () {
-        Route::get('/report', 'Report')->name('report');
-        // Route::post('/setting/store', 'settingStore')->name('setting.store');
+        Route::get('/task/report', 'taskReport')->name('task.report');
+        Route::get('/lead/report', 'leadReportList')->name('lead.report');
     });
-
+    //estimates Route
+    Route::resource('estimates', EstimatesController::class);
     //Task Route
     Route::resource('task',TaskController::class);
+    //vendor Route
+    Route::resource('vendor',VendorController::class);
     //Project Route
     Route::resource('project',ProjectController::class);
     //Invoice Route

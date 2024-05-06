@@ -63,6 +63,25 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
+                Vendor
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right"></span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('vendor.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Vendor List</p>
+                </a>
+              </li>
+            </ul>
+          
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
                 Lead
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right"></span>
@@ -94,6 +113,14 @@
                 <a href="{{route('invoice.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Invoice</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('estimates.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Estimates</p>
                 </a>
               </li>
             </ul>
@@ -222,9 +249,17 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('report')}}" class="nav-link">
+                <a href="{{route('task.report')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Report</p>
+                  <p>Task</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('lead.report')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lead</p>
                 </a>
               </li>
             </ul>
