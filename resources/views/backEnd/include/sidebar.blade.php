@@ -63,6 +63,25 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
+                Vendor
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right"></span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('vendor.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Vendor List</p>
+                </a>
+              </li>
+            </ul>
+          
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
                 Lead
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right"></span>
@@ -94,6 +113,14 @@
                 <a href="{{route('invoice.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Invoice</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('estimates.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Estimates</p>
                 </a>
               </li>
             </ul>
@@ -213,59 +240,26 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fa fa-copy"></i>
+              {{-- <i class="nav-icon fa-solid fa-gear"></i> --}}
               <p>
-                UI Elements
+                Report
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="{{route('task.report')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>General</p>
+                  <p>Task</p>
                 </a>
               </li>
+            </ul>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="{{route('lead.report')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Icons</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/buttons.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Buttons</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/sliders.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Sliders</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/modals.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Modals & Alerts</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/navbar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Navbar & Tabs</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/timeline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Timeline</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/ribbons.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ribbons</p>
+                  <p>Lead</p>
                 </a>
               </li>
             </ul>
@@ -288,24 +282,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Tables
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
-                </a>
-              </li>
-            
-            </ul>
-          </li>
+         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
