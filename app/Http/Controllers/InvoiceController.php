@@ -39,7 +39,7 @@ class InvoiceController extends Controller
             $serialPrefix = '#';
             $newNumericPart = $numericPart + 1;
 
-            $paddedNumericPart = str_pad($newNumericPart, 1, '0', STR_PAD_LEFT);
+            $paddedNumericPart = str_pad($newNumericPart, 4, '0', STR_PAD_LEFT);
 
             $newSerialNum = $serialPrefix . $paddedNumericPart;
 
@@ -47,7 +47,7 @@ class InvoiceController extends Controller
 
             while ($existingSerial) {
                 $newNumericPart++; 
-                $paddedNumericPart = str_pad($newNumericPart, 1, '0', STR_PAD_LEFT);
+                $paddedNumericPart = str_pad($newNumericPart, 4, '0', STR_PAD_LEFT);
 
                 $newSerialNum = $serialPrefix . $paddedNumericPart;
                 $existingSerial = Invoice::where('invoice_no', $newSerialNum)->exists(); 
@@ -82,12 +82,12 @@ class InvoiceController extends Controller
         $invoice->term_condition = $request->term_condition;
         $invoice->total = $request->total;
         $invoice->admin_note = $request->admin_note;
-        $invoice->admin_note = $request->admin_note;
-        $invoice->admin_note = $request->admin_note;
        
         $invoice->save();
         $itemIds = $request->input('item_id');
+        
         $quantities = $request->input('quantity');
+        // dd($itemIds);
         $amounts = $request->input('amount');
         foreach ($itemIds as $key => $itemId) {
             $quantity = $quantities[$key];

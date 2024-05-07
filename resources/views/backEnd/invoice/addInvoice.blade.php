@@ -431,7 +431,7 @@
                                                         <div class="col-md-3 mb-3">
 
                                                             <label for="example-text-input" class="form-label">Item</label>
-                                                            <select class="form-control service_id" name="service_id[]">
+                                                            <select class="form-control service_id" name="item_id[]">
 
                                                                 <option value="">Select</option>
                                                                 @foreach ($item as $value)
@@ -448,8 +448,7 @@
 
                                                             <label for="amount" class="form-label">Amount</label>
                                                             <input class="form-control amount" type="text" name="amount[]">
-                                                            
-
+                                
                                                         </div>
                                                         <div class="col-md-2 mt-4">
                                                             <button class="btn btn-danger remove_item_btn">Remove</button>
