@@ -59,7 +59,7 @@
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
           </div>
           <!-- /.col -->
-        </div>
+        </div>estimates
       </form>
 
       <div class="social-auth-links text-center mb-3">

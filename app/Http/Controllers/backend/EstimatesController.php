@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
+use App\Models\Extimats;
+use App\Models\Item;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class EstimatesController extends Controller
@@ -13,6 +17,7 @@ class EstimatesController extends Controller
     public function index()
     {
         //
+        return view('backEnd.estimates.index');
     }
 
     /**
@@ -21,6 +26,37 @@ class EstimatesController extends Controller
     public function create()
     {
         //
+        $customer = Customer::all();
+        $project = Project::all();
+        $item = Item::all();
+        // $lastInves = Extimats::orderBy('id', 'desc')->first();
+
+        // // Start with a default serial number
+        // $serialNum = '#0001';
+
+        // if ($lastInves && $lastInves->invoice_no) {
+        //     $numericPart = substr($lastInves->invoice_no, 1);
+        //     $serialPrefix = '#';
+        //     $newNumericPart = $numericPart + 1;
+
+        //     $paddedNumericPart = str_pad($newNumericPart, 4, '0', STR_PAD_LEFT);
+
+        //     $newSerialNum = $serialPrefix . $paddedNumericPart;
+
+        //     $existingSerial = Extimats::where('invoice_no', $newSerialNum)->exists();
+
+        //     while ($existingSerial) {
+        //         $newNumericPart++; 
+        //         $paddedNumericPart = str_pad($newNumericPart, 4, '0', STR_PAD_LEFT);
+
+        //         $newSerialNum = $serialPrefix . $paddedNumericPart;
+        //         $existingSerial = Extimats::where('invoice_no', $newSerialNum)->exists(); 
+        //     }
+        //     $serialNum = $newSerialNum;
+        //     // dd($serialNum);
+        // }
+        return view('backEnd.estimates.addEstimates',compact('customer','project','item'));
+
     }
 
     /**
