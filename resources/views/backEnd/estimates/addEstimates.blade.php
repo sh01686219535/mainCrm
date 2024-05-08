@@ -27,9 +27,8 @@
                                                 <div class="row my-3 d-flex">
 
                                                     <div class="col-lg-6">
-                                                        <label for="">Customer</label>
-                                                        <select class="form-control" name="customer_id">
-
+                                                        <label for="customer_id">Customer</label>
+                                                        <select class="form-control" name="customer_id" id="customer_id">
                                                             <option value="">Select Customer</option>
                                                             @foreach ($customer as $value)
                                                                 <option value="{{ $value->id }}">{{ $value->name }}
@@ -39,7 +38,7 @@
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label for="project_id">Project</label>
-                                                        <select class="form-control" name="project_id">
+                                                        <select class="form-control" name="project_id" id="project_id">
 
                                                             <option value="">Select</option>
                                                             @foreach ($project as $value)
@@ -101,8 +100,8 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-lg-3">
-                                                        <label for="due_date">Tag</label>
-                                                        <select name="discount_type" class="form-control" id="currency">
+                                                        <label for="tag">Tag</label>
+                                                        <select name="tag" class="form-control" id="tag">
                                                             <option value="">Select Tag</option>
                                                             <option value="beforeTax">Before Tax</option>
                                                             <option value="afterTax">After Tax</option>

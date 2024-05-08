@@ -17,7 +17,8 @@ class EstimatesController extends Controller
     public function index()
     {
         //
-        return view('backEnd.estimates.index');
+        $extimats = Extimats::all();
+        return view('backEnd.estimates.index',compact('extimats'));
     }
 
     /**
@@ -29,32 +30,6 @@ class EstimatesController extends Controller
         $customer = Customer::all();
         $project = Project::all();
         $item = Item::all();
-        // $lastInves = Extimats::orderBy('id', 'desc')->first();
-
-        // // Start with a default serial number
-        // $serialNum = '#0001';
-
-        // if ($lastInves && $lastInves->invoice_no) {
-        //     $numericPart = substr($lastInves->invoice_no, 1);
-        //     $serialPrefix = '#';
-        //     $newNumericPart = $numericPart + 1;
-
-        //     $paddedNumericPart = str_pad($newNumericPart, 4, '0', STR_PAD_LEFT);
-
-        //     $newSerialNum = $serialPrefix . $paddedNumericPart;
-
-        //     $existingSerial = Extimats::where('invoice_no', $newSerialNum)->exists();
-
-        //     while ($existingSerial) {
-        //         $newNumericPart++; 
-        //         $paddedNumericPart = str_pad($newNumericPart, 4, '0', STR_PAD_LEFT);
-
-        //         $newSerialNum = $serialPrefix . $paddedNumericPart;
-        //         $existingSerial = Extimats::where('invoice_no', $newSerialNum)->exists(); 
-        //     }
-        //     $serialNum = $newSerialNum;
-        //     // dd($serialNum);
-        // }
         return view('backEnd.estimates.addEstimates',compact('customer','project','item'));
 
     }
@@ -65,6 +40,40 @@ class EstimatesController extends Controller
     public function store(Request $request)
     {
         //
+        $invoice = new Extimats();
+        $invoice->customer_id  = $request->customer_id;
+        $invoice->project_id  = $request->project_id;
+        $invoice->estimate_date = $request->estimate_date;
+        $invoice->expiry_date  = $request->expiry_date ;
+        $invoice->billing_address = $request->billing_address;
+        $invoice->status = $request->status;
+        $invoice->currency = $request->currency;
+        $invoice->city  = $request->city ;
+        $invoice->state  = $request->state ;
+        $invoice->discount_type  = $request->discount_type ;
+        $invoice->tag  = $request->tag ;
+        $invoice->zip  = $request->zip ;
+        $invoice->country = $request->country;
+        $invoice->total = $request->total;
+        $invoice->admin_note = $request->admin_note;
+        $invoice->client_note = $request->client_note;
+        $invoice->term_condition = $request->term_condition;
+        $invoice->save();
+
+        $itemIds = $request->input('item_id');
+        
+        $quantities = $request->input('quantity');
+        // dd($itemIds);
+        $amounts = $request->input('amount');
+        foreach ($itemIds as $key => $itemId) {
+            $quantity = $quantities[$key];
+            $amount = $amounts[$key];
+            $invoice->items()->attach($itemId,[
+                'quantity' => $quantity,
+                'amount' => $amount
+            ]);
+        }
+        return to_route('estimates.index')->with('success', 'Estimates Created Successfully');
     }
 
     /**
@@ -97,5 +106,7 @@ class EstimatesController extends Controller
     public function destroy(string $id)
     {
         //
+        Extimats::find($id)->delete();
+        return back()->with('success', 'Estimates Deleted Successfully');
     }
 }
