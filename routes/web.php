@@ -16,6 +16,8 @@ use App\Http\Controllers\backend\ProjectController;
 use App\Http\Controllers\backend\ReportController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\VendorController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\TaskController;
@@ -118,6 +120,10 @@ Route::group(['middleware' => 'UserAuth'], function () {
     Route::resource('invoice',InvoiceController::class);
     //Item Route
     Route::resource('item',ItemController::class);
+    //Category Route
+    Route::resource('category',CategoryController::class);
+    //Expense Route
+    Route::resource('expense',ExpenseController::class);
 
 });
 

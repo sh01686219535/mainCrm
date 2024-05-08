@@ -203,6 +203,29 @@
           </li>
           {{-- Projects end --}}
 
+          {{-- Expense start --}}
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Expense
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right"></span>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('category.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Category</p>
+                </a>
+              </li>
+            </ul>
+          
+          </li>
+          {{-- Expense end --}}
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>

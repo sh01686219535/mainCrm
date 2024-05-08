@@ -1,5 +1,5 @@
 @extends('backEnd.dashboard.home.master')
-@section('title', 'Projects')
+@section('title', 'Category')
 
 @section('content')
     <div class="content-wrapper">
@@ -10,10 +10,10 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="main-body">
-                                    <h1>Items</h1>
+                                    <h1>Categories</h1>
                                     <div>
-                                        <a href="{{ route('item.create') }}" class="btn btn-primary"><i
-                                                class="fa fa-plus"></i>New Item</a>
+                                        <a href="{{ route('category.create') }}"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                                class="fa fa-plus"></i>New Category</a>
                                     </div>
                                    
                                     @if ($errors->any())
@@ -38,28 +38,27 @@
                                 <thead>
                                     <tr>
                                         <th>Sl</th>
-                                        <th>Item Name</th>
-                                        <th>item_group</th>
-                                        <th>Description</th>
+                                        <th>Title</th>
+                                        <th>Details</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php $i = 1 @endphp
-                                    @foreach ($item as $item)
+                                    @foreach ($category as $item)
                                         <tr>
                                             <td>{{ $i++ }}</td>
-                                            <td>{{ $item->name }}</td>
-                                            <td>{{ $item->item_group }}</td>
-                                            <td>{{ Str::limit($item->description,10)  }}</td>
+                                            <td>{{ $item->title }}</td>
+                                            <td>{{ Str::limit($item->details,10)  }}</td>
                                             <td>
-                                                <a href="{{ route('item.edit', $item->id) }}"
-                                                    class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
-                                                <form action="{{ route('item.destroy', $item->id) }}" method="POST">
+                                                {{-- <a href="{{ route('category.edit', $item->id) }}"
+                                                    class="btn btn-outline-primary"><i class="fa fa-edit"></i></a> --}}
+                                                <form action="{{ route('category.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-outline-danger" id="delete"><i class="fas fa-trash"></i></button>
                                                 </form>
+                                                
                                             </td>
                                         </tr>
                                     @endforeach
@@ -79,14 +78,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add  Category</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('lead.excel') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
-                        <p>Note: Duplicate email rows are not allowed. Rows with empty first column will be ignored.</p>
-                        <input type="file" name="excel_file" id="excel_file" class="form-control">
+                        <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+                    </div>
+                    <div class="modal-body">
+                        <textarea name="details" id="details" class="form-control" placeholder="details" cols="30" rows="10"></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
