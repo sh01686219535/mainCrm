@@ -129,6 +129,7 @@ class InvoiceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Invoice::findOrFail($id)->delete();
+        return back()->with('success','Invoice Deleted Successfully');
     }
 }

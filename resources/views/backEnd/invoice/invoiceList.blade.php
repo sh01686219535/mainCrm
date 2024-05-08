@@ -1,5 +1,5 @@
 @extends('backEnd.dashboard.home.master')
-@section('title', 'Projects')
+@section('title', 'Invoices')
 
 @section('content')
     <div class="content-wrapper">
@@ -37,30 +37,41 @@
                             <table class="table table-hover table-bodered" id="example">
                                 <thead>
                                     <tr>
-                                        <th>invoice_no</th>
-                                        <th>total</th>
-                                        <th>invoice_date</th>
-                                        <th>customer_id</th>
-                                        <th>project_id</th>
-                                        <th>Status</th>
+                                        <th>Invoice No</th>
+                                        <th>Total</th>
+                                        <th>Invoice Date</th>
+                                        <th>Due Date</th>
+                                        <th>Customer</th>
+                                        <th>Sales People </th>
+                                        <th>Project</th>
+                                        <th>Currency</th>
+                                        <th>Action</th>
                                        
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php $i = 1 @endphp
-                                    {{-- @foreach ($invoice as $item)
+                                    @foreach ($invoice as $item)
                                         <tr>
-                                            <td>{{ $i++ }}</td>
-                                            <td>{{ $item->title }}</td>
+                                            {{-- <td>{{ $i++ }}</td> --}}
+                                            <td>{{ $item->invoice_no }}</td>
+                                            <td>{{ $item->total }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($item->invoice_date)->format('d-M-y') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($item->due_date)->format('d-M-y') }}</td>
                                             <td>{{ $item->customer->name ?? '' }}</td>
-                                            <td>{{ $item->billing_type  }}</td>
-                                            <td>{{ $item->status }}</td>
-
-                                            
-                                            <td>{{ $item->billing_rate }}</td> --}}
+                                            <td>{{ $item->salesperson->name ?? ''  }}</td>
+                                            <td>{{ $item->project->title ?? '' }}</td>
+                                            <td>{{ $item->currency }}</td>
+                                            <td>
+                                                <form action="{{ route('invoice.destroy',$item->id) }}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-outline-danger" id="delete"><i class="fas fa-trash"></i></button>
+                                                </form>
+                                            </td>
                                             
                                         </tr>
-                                    {{-- @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
