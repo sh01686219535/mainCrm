@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Expense;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ExpenseController extends Controller
 {
@@ -71,7 +72,10 @@ class ExpenseController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::all();
+        $customer = Customer::all();
+        $expense = Expense::findOrFail($id);
+        return view('backEnd.expense.editExpense',compact('category','customer','expense'));
     }
 
     /**
@@ -79,7 +83,34 @@ class ExpenseController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $expense = Expense::findOrFail($id);
+        $this->validate($request,[
+            'category_id' => 'required',
+            'amount' => 'required',
+            'date' => 'required',
+            'currency' => 'required',
+        ]);
+        if($request->hasFile('file')){
+            $extension = $request->file('file')->getClientOriginalExtension();
+            $fileName = 'backEndAsset/expenseFile/'.uniqid().'.'.$extension;
+            $request->file('file')->move('backEndAsset/expenseFile',$fileName);
+            if (File::exists($expense->file)) {
+                File::delete($expense->file);
+        }
+        $expense->file = $fileName;
+        }
+        $expense->customer_id = $request->customer_id;
+        $expense->category_id  = $request->category_id ;
+        $expense->name = $request->name;
+        $expense->amount = $request->amount;
+        $expense->date = $request->date;
+        $expense->note = $request->note;
+        $expense->currency = $request->currency;
+        $expense->payment_mode = $request->payment_mode;
+    
+        
+        $expense->save();
+        return to_route('expense.index')->with('success','Expense Updated Successfully');
     }
 
     /**
