@@ -1,6 +1,6 @@
 @extends('backEnd.dashboard.home.master')
 @section('title')
-    Edit Item
+    Edit Category
 @endsection
 @push('css')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -15,37 +15,26 @@
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
                             <div class="card-head">
-                                <h2>Edit Item</h2>
+                                <h2>Edit Category</h2>
                             </div>
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <form action="{{ route('item.update',$item->id) }}" method="post"
+                                        <form action="{{ route('category.update',$category->id) }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
                                             <div class="row">
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                                     <div class="form-group">
-                                                        <label for="name">Item Name</label>
-                                                        <input type="text" value="{{ $item->name }}" class="form-control" id="name"
-                                                            name="name">
+                                                        <label for="title">Title</label>
+                                                        <input type="text" value="{{ $category->title }}" name="title" id="title" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                                     <div class="form-group">
-                                                        <label for="item_group">Item Group</label>
-                                                        <select class="form-control" id="item_group" name="item_group">
-                                                            <option value="">Select</option>
-                                                            <option value="Product" {{ $item->item_group == 'Product' ? 'selected' : '' }}>Product</option>
-                                                            <option value="Service" {{ $item->item_group == 'Product' ? 'Task_Hour' : '' }}>Service</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                                    <div class="form-group">
-                                                        <label for="customer_id">Description</label>
-                                                        <textarea class="form-control" name="description" id="description" cols="30" rows="10">{{ $item->description }}</textarea>
+                                                        <label for="details">Details</label>
+                                                        <textarea name="details" id="details" class="form-control" cols="30" rows="10">{{ $category->details }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>

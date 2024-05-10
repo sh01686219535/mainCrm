@@ -9,4 +9,10 @@ class Expense extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function customer(){
+        return $this->belongsTo(Customer::class);
+    }
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -1,5 +1,5 @@
 @extends('backEnd.dashboard.home.master')
-@section('title', 'Projects')
+@section('title', 'Items')
 
 @section('content')
     <div class="content-wrapper">
