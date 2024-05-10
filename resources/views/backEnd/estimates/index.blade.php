@@ -58,13 +58,13 @@
                                             <td>{{ $item->estimate_date }}</td>
                                             <td>{{ $item->status }}</td>
                                             <td>
-                                                <a class="btn btn-primary" data-bs-toggle="modal"
+                                                <a class="btn btn-primary action-btn" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal{{ $item->id }}"><i
                                                         class="fa fa-eye"></i></a>
-                                                <form action="{{ route('estimates.destroy', $item->id) }}" method="POST">
+                                                <form action="{{ route('estimates.destroy', $item->id) }}" class="action-btn" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" id="delete" class="btn btn-danger"><i
+                                                    <button type="submit" id="delete" class="btn btn-danger action-btn"><i
                                                             class="fa fa-trash"></i></button>
                                                 </form>
                                                 <!-- Modal -->

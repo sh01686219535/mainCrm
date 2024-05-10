@@ -16,13 +16,10 @@
                                 <div>
                                     <a href="{{ route('lead.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>New Lead</a>
                                     <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-plus"></i>Import Lead</a>
-                                    
-                                       
-                                        <input type="submit" class="btn btn-success" value="Export">
-                                    
+                                    <input type="submit" class="btn btn-success" value="Export">
                                 </div>
                             </form>
-                                
+
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>
@@ -51,7 +48,7 @@
                                     <th>Address</th>
                                     <th>Status</th>
                                     <th>Source</th>
-                                    <th>Action</th>
+                                    <th style="width:30% !important">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,15 +59,15 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->phone }}</td>
-                                        <td>{{ $item->address }}</td>
+                                        <td>{{ Str::limit($item->address,10) }}</td>
                                         <td>{{ $item->status }}</td>
                                         <td>{{ $item->source }}</td>
                                         <td>
-                                            <a href="{{ route('lead.edit', $item->id) }}" class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
-                                            <form action="{{ route('lead.destroy', $item->id) }}" method="POST">
+                                            <a href="{{ route('lead.edit', $item->id) }}" class="btn btn-outline-primary action-btn"><i class="fa fa-edit"></i></a>
+                                            <form action="{{ route('lead.destroy', $item->id) }}" method="POST" class="action-btn">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash"></i></button>
+                                                <button type="submit" class="btn btn-outline-danger action-btn" ><i class="fa fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>

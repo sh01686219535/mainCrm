@@ -12,14 +12,17 @@ class CustomerController extends Controller
 {
     //customer
     public function customer(){
-        return view('backEnd.customer.customer');
-    }
-    //addCustomer
-    public function addCustomer(){
+        // return view('backEnd.customer.customer');
         $salesPerson = SalesPerson::all();
         $teamLeader = TeamLeader::all();
         return view('backEnd.customer.addCustomer',compact('salesPerson','teamLeader'));
     }
+    //addCustomer
+    // public function addCustomer(){
+    //     $salesPerson = SalesPerson::all();
+    //     $teamLeader = TeamLeader::all();
+    //     return view('backEnd.customer.addCustomer',compact('salesPerson','teamLeader'));
+    // }
     //storeCustomer
     public function storeCustomer(Request $request){
         $request->validate([

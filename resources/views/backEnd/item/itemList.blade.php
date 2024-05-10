@@ -1,6 +1,5 @@
 @extends('backEnd.dashboard.home.master')
-@section('title', 'Projects')
-
+@section('title', 'Items List')
 @section('content')
     <div class="content-wrapper">
         <div class="content-header">
@@ -54,11 +53,11 @@
                                             <td>{{ Str::limit($item->description,10)  }}</td>
                                             <td>
                                                 <a href="{{ route('item.edit', $item->id) }}"
-                                                    class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
-                                                <form action="{{ route('item.destroy', $item->id) }}" method="POST">
+                                                    class="btn btn-outline-primary action-btn"><i class="fa fa-edit"></i></a>
+                                                <form class="action-btn" action="{{ route('item.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger" id="delete"><i class="fas fa-trash"></i></button>
+                                                    <button type="submit" class="action-btn btn btn-outline-danger" id="delete"><i class="fas fa-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

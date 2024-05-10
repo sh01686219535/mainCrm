@@ -46,7 +46,6 @@
                                         <th>Project</th>
                                         <th>Currency</th>
                                         <th>Action</th>
-                                       
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -63,11 +62,39 @@
                                             <td>{{ $item->project->title ?? '' }}</td>
                                             <td>{{ $item->currency }}</td>
                                             <td>
-                                                <form action="{{ route('invoice.destroy',$item->id) }}" method="post">
+                                                <a class="btn btn-primary action-btn" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal{{ $item->id }}"><i
+                                                    class="fa fa-eye"></i></a>
+                                                <form action="{{ route('invoice.destroy',$item->id) }}" method="post" class="action-btn">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger" id="delete"><i class="fas fa-trash"></i></button>
+                                                    <button type="submit" class="btn btn-outline-danger action-btn" id="delete"><i class="fas fa-trash"></i></button>
                                                 </form>
+                                                 <!-- Modal -->
+                                                 <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Invoice
+                                                                    Info</h1>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                @foreach ($invoice as $estimate)
+                                                                    @foreach ($estimate->items as $item)
+                                                                        <p>Item : {{ $item->name ?? '' }}</p>
+                                                                        <p>Quantity : {{ $item->pivot->quantity ?? '' }}
+                                                                        </p>
+                                                                        <p>Amount : {{ $item->pivot->amount ?? '' }}</p>
+                                                                        <p>------------------</p>
+                                                                    @endforeach
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </td>
                                             
                                         </tr>

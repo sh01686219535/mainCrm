@@ -65,11 +65,11 @@
                                             <td>{{ $item->status }}</td>
                                             <td>
                                                 <a href="{{ route('task.edit', $item->id) }}"
-                                                    class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
-                                                <form action="{{ route('task.destroy', $item->id) }}" method="POST">
+                                                    class="btn btn-outline-primary action-btn"><i class="fa fa-edit"></i></a>
+                                                <form class="action-btn" action="{{ route('task.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger" id="delete"><i
+                                                    <button type="submit" class="action-btn btn btn-outline-danger" id="delete"><i
                                                             class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>

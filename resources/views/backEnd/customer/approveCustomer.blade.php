@@ -51,8 +51,8 @@ Approve Customer
                                                         <a href="{{route('customer.status.change',$item->id)}}" class="btn btn-success">Approve</a>
                                                     </td>
                                                     <td>
-                                                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editExampleModal{{$item->id}}"><i class="fa fa-edit"></i></a>
-                                                        <a href="{{route('delete.customer',$item->id)}}" class="delete btn btn-danger"><i
+                                                        <a class="btn btn-primary action-btn" data-bs-toggle="modal" data-bs-target="#editExampleModal{{$item->id}}"><i class="fa fa-edit"></i></a>
+                                                        <a href="{{route('delete.customer',$item->id)}}" class="delete btn btn-danger action-btn"><i
                                                                 class="fa fa-trash"></i></a>
                                                 </tr>
                                             @endforeach

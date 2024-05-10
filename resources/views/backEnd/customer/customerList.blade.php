@@ -1,6 +1,6 @@
 @extends('backEnd.dashboard.home.master')
 @section('title')
-Approve Customer
+Customer List
 @endsection
 @section('content')
     <div class="content-wrapper">
@@ -47,8 +47,8 @@ Approve Customer
                                                             alt="">
                                                     </td>
                                                     <td>
-                                                        <a href="{{route('customer.edit',$item->id)}}" class="btn btn-primary" ><i class="fa fa-edit"></i></a>
-                                                        <a href="{{route('delete.customer',$item->id)}}" class="delete btn btn-danger"><i
+                                                        <a href="{{route('customer.edit',$item->id)}}" class="btn btn-primary action-btn" ><i class="fa fa-edit"></i></a>
+                                                        <a href="{{route('delete.customer',$item->id)}}" class="delete btn btn-danger action-btn"><i
                                                                 class="fa fa-trash"></i></a>
                                                 </tr>
                                             @endforeach

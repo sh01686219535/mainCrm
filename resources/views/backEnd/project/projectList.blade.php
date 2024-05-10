@@ -64,11 +64,11 @@
                                             <td>{{ \Carbon\Carbon::parse($item->deadline)->format("d-M-y") }}</td>
                                             <td>
                                                 <a href="{{ route('project.edit', $item->id) }}"
-                                                    class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
-                                                <form action="{{ route('project.destroy', $item->id) }}" method="POST">
+                                                    class="btn btn-outline-primary action-btn"><i class="fa fa-edit"></i></a>
+                                                <form class="action-btn" action="{{ route('project.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger" id="delete"><i
+                                                    <button type="submit" class="btn btn-outline-danger action-btn" id="delete"><i
                                                             class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>

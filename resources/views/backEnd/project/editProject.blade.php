@@ -14,8 +14,8 @@
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
-                            <div class="card-head">
-                                <h2>Add New Project</h2>
+                            <div class="card-head m-3">
+                                <h2>Project Update</h2>
                             </div>
                             <div class="card-body ">
                                 <div class="main-body">

@@ -24,6 +24,7 @@ class VendorController extends Controller
     public function create()
     {
         //
+        return view('backEnd.vendor.addVendor');
     }
 
     /**
@@ -61,6 +62,8 @@ class VendorController extends Controller
     public function edit(string $id)
     {
         //
+        $vendor = Vendor::find($id);
+        return view('backEnd.vendor.editVendor',compact('vendor'));
     }
 
     /**
@@ -81,7 +84,7 @@ class VendorController extends Controller
         $vendor->country = $request->country;
         $vendor->notes = $request->notes;
         $vendor->save();
-        return back()->with('message','Vendor Updated Successfully');
+        return redirect('vendor')->with('message','Vendor Updated Successfully');
     }
 
     /**
