@@ -121,8 +121,8 @@ Sales Person
                                                             alt="">
                                                     </td>
                                                     <td>
-                                                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editExampleModal{{$item->id}}"><i class="fa fa-edit"></i></a>
-                                                        <a href="{{route('delete.salesPerson',$item->id)}}" class="delete btn btn-danger"><i
+                                                        <a class="btn btn-primary action-btn" data-bs-toggle="modal" data-bs-target="#editExampleModal{{$item->id}}"><i class="fa fa-edit"></i></a>
+                                                        <a href="{{route('delete.salesPerson',$item->id)}}" class="action-btn delete btn btn-danger"><i
                                                                 class="fa fa-trash"></i></a>
                                                         <!-- Edit Teamleader modal-->
                                                         <div class="modal fade" id="editExampleModal{{$item->id}}" tabindex="-1"

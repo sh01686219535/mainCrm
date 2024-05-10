@@ -14,7 +14,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
-                            <div class="card-head">
+                            <div class="card-head m-3">
                                 <h2>Add New Item</h2>
                             </div>
                             <div class="card-body ">

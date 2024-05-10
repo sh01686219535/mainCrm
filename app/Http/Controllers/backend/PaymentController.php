@@ -13,7 +13,8 @@ class PaymentController extends Controller
     //payment
     public function payment()
     {
-        return view('backEnd.payment.payment');
+        $payment = Payment::all();
+        return view('backEnd.payment.payment',compact('payment'));
     }
     // addPayment
     public function addPayment()
@@ -33,6 +34,13 @@ class PaymentController extends Controller
         $payment->mainAmount = $request->mainAmount;
         $payment->amount = $request->amount;
         $payment->save();
-        return back()->with('message','Payment Stored Successfully');
+        return redirect('/payment')->with('message','Payment Stored Successfully');
+    }
+    //paymentDelete
+    public function paymentDelete(string $id)
+    {
+        //
+        Payment::find($id)->delete();
+        return back()->with('success', 'Payment Deleted Successfully');
     }
 }

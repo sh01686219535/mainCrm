@@ -92,6 +92,7 @@ Route::group(['middleware' => 'UserAuth'], function () {
         Route::get('/payment', 'payment')->name('payment');
         Route::get('/add/payment', 'addPayment')->name('add.payment');
         Route::post('/payment/store', 'paymentStore')->name('payment.store');
+        Route::post('/payment/delete/{id}', 'paymentDelete')->name('payment.delete');
     });
     // Payment ajax route
     Route::controller(AjaxController::class)->group(function () {
