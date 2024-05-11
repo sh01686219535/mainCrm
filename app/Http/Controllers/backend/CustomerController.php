@@ -12,17 +12,10 @@ class CustomerController extends Controller
 {
     //customer
     public function customer(){
-        // return view('backEnd.customer.customer');
         $salesPerson = SalesPerson::all();
         $teamLeader = TeamLeader::all();
         return view('backEnd.customer.addCustomer',compact('salesPerson','teamLeader'));
     }
-    //addCustomer
-    // public function addCustomer(){
-    //     $salesPerson = SalesPerson::all();
-    //     $teamLeader = TeamLeader::all();
-    //     return view('backEnd.customer.addCustomer',compact('salesPerson','teamLeader'));
-    // }
     //storeCustomer
     public function storeCustomer(Request $request){
         $request->validate([
@@ -88,7 +81,7 @@ class CustomerController extends Controller
         $customer->nomineeImage = $this->makeNomineeImg($request);
        }
         $customer->save();
-        return back()->with('success','Customer Created Successfully');
+        return redirect('/approve/customer')->with('success','Customer Created Successfully');
     }
     // makeUserImg
     public function makeUserImg($request){
@@ -118,7 +111,7 @@ class CustomerController extends Controller
         $customer = Customer::find($id);
         $customer->status = 'approved';
         $customer->save();
-        return back()->with('success','Customer Approved Successfully');
+        return redirect('/customer/list')->with('success','Customer Approved Successfully');
     }
     //deleteCustomer
     public function deleteCustomer($id){
