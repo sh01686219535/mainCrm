@@ -29,23 +29,9 @@ class ReportController extends Controller
         return view('backEnd.report.task', compact('task'));
     }
     //leadReport
-    public function leadReportList(Request $request)
+    public function leadReport()
     {
-
-        $start_date = $request->from_date;
-        $end_date = $request->to_date;
-        if ($start_date &&  $end_date) {
-            try {
-                $lead = Lead::whereDate('created_at', '>=', $start_date)
-                    ->whereDate('created_at', '<=', $end_date)
-                    ->get();
-
-                return view('backEnd.report.leadReport', compact('lead'));
-            } catch (\Exception $e) {
-                return response()->view('error', ['error' => $e->getMessage()], 500);
-            }
-        }
-        $lead = Lead::all();
-        return view('backEnd.report.leadReport', compact('lead'));
+        $leads = Lead::all();
+        return view('backEnd.report.reportLead', compact('leads'));
     }
 }

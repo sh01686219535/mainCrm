@@ -44,14 +44,14 @@
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
                                                         <label for="startdate">Start Date</label>
-                                                        <input type="text" class="form-control" id="startdate"
+                                                        <input type="date" class="form-control" id="startdate"
                                                             name="startdate">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
                                                         <label for="endDate">End Date</label>
-                                                        <input type="text" class="form-control" id="endDate"
+                                                        <input type="date" class="form-control" id="endDate"
                                                             name="endDate">
                                                     </div>
                                                 </div>
