@@ -288,9 +288,25 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('lead.report')}}" class="nav-link">
+                <a href="{{route('customerLead.report')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lead</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('customer.report')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Customer</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('expense.report')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Expense</p>
                 </a>
               </li>
             </ul>

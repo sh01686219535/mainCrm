@@ -107,7 +107,9 @@ Route::group(['middleware' => 'UserAuth'], function () {
     // Report Route
     Route::controller(ReportController::class)->group(function () {
         Route::get('/task/report', 'taskReport')->name('task.report');
-        Route::get('/lead/report', 'leadReportList')->name('lead.report');
+        Route::get('/expense/report', 'expenseReport')->name('expense.report');
+        Route::get('/customer/report', 'customerReport')->name('customer.report');
+        Route::get('/customerLead/report', 'customerLeadReport')->name('customerLead.report');
     });
     //estimates Route
     Route::resource('estimates', EstimatesController::class);

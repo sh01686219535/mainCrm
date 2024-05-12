@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
+use App\Models\Expense;
 use App\Models\Lead;
 use App\Models\Task;
 use Illuminate\Http\Request;
@@ -28,10 +30,26 @@ class ReportController extends Controller
         $task = Task::all();
         return view('backEnd.report.task', compact('task'));
     }
-    //leadReport
-    public function leadReportList(Request $request)
-    {
+    // customerReport
+    public function customerReport(Request $request){
+        $start_date = $request->from_date;
+        $end_date = $request->to_date;
+        if ($start_date &&  $end_date) {
+            try {
+                $customer = Customer::whereDate('created_at', '>=', $start_date)
+                    ->whereDate('created_at', '<=', $end_date)
+                    ->get();
 
+                return view('backEnd.report.customerReport', compact('customer'));
+            } catch (\Exception $e) {
+                return response()->view('error', ['error' => $e->getMessage()], 500);
+            }
+        }
+        $customer = Customer::all();
+        return view('backEnd.report.customerReport',compact('customer'));
+    }
+    //customerLeadReport
+    public function customerLeadReport(Request $request){
         $start_date = $request->from_date;
         $end_date = $request->to_date;
         if ($start_date &&  $end_date) {
@@ -39,13 +57,29 @@ class ReportController extends Controller
                 $lead = Lead::whereDate('created_at', '>=', $start_date)
                     ->whereDate('created_at', '<=', $end_date)
                     ->get();
-
-                return view('backEnd.report.leadReport', compact('lead'));
+                return view('backEnd.report.customerLeadReport',compact('lead'));
             } catch (\Exception $e) {
                 return response()->view('error', ['error' => $e->getMessage()], 500);
             }
         }
         $lead = Lead::all();
-        return view('backEnd.report.leadReport', compact('lead'));
+        return view('backEnd.report.customerLeadReport',compact('lead'));
+    }
+    //expenseReport
+    public function expenseReport(Request $request){
+        $start_date = $request->from_date;
+        $end_date = $request->to_date;
+        if ($start_date &&  $end_date) {
+            try {
+                $expense = Expense::whereDate('created_at', '>=', $start_date)
+                    ->whereDate('created_at', '<=', $end_date)
+                    ->get();
+                return view('backEnd.report.expenseReport',compact('expense'));
+            } catch (\Exception $e) {
+                return response()->view('error', ['error' => $e->getMessage()], 500);
+            }
+        }
+        $expense = Expense::all();
+        return view('backEnd.report.expenseReport',compact('expense'));
     }
 }
