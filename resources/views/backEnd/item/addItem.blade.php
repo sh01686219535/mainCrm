@@ -14,9 +14,14 @@
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
-                            <div class="card-head m-3">
-                                <h2>Add New Item</h2>
+                            <div class="card-head main-body m-3">
+                                <h1>Item Create</h1>
+                                <a class="btn btn-primary" href="{{ route('item.index') }}"><i class="fa fa-list"></i>
+                                    Item
+                                    List</a>
                             </div>
+                        </div>
+                        <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">

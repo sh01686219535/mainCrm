@@ -23,9 +23,13 @@
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
-                            <div class="card-head m-3">
-                                <h2>Edit Lead</h2>
+                            <div class="card-head main-body m-3">
+                                <h1>Task Update</h1>
+                                <a class="btn btn-primary" href="{{ route('task.index') }}"><i class="fa fa-list"></i> Lead
+                                    Task</a>
                             </div>
+                        </div>
+                        <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -144,12 +148,12 @@
                                                 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                     <div class="form-group">
                                                         <label for="file">Attach File</label>
-                                                        <input type="file" value="{{ $task->file }}" class="form-control" id="file"
-                                                            name="file">
-                                                            @if($task->file)
+                                                        <input type="file" value="{{ $task->file }}"
+                                                            class="form-control" id="file" name="file">
+                                                        @if ($task->file)
                                                             <p>Current File: {{ $task->file }}</p>
-                                                            @endif
-                                                        
+                                                        @endif
+
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">

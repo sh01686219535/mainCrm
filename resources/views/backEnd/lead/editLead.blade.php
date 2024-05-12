@@ -23,9 +23,13 @@
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
-                            <div class="card-head m-3">
-                                <h2>Edit Lead</h2>
+                            <div class="card-head main-body m-3">
+                                <h1>Lead Update</h1>
+                                <a class="btn btn-primary" href="{{ route('lead.index') }}"><i class="fa fa-list"></i> Lead
+                                    List</a>
                             </div>
+                        </div>
+                        <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -34,39 +38,35 @@
                                             @csrf
                                             @method('PUT')
                                             <div class="row">
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="name">Full Name</label>
                                                         <input type="text" value="{{ $lead->name }}"
                                                             class="form-control" id="name" name="name">
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="email">Email</label>
                                                         <input type="email" value="{{ $lead->email }}"
                                                             class="form-control" id="email" name="email">
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="phone">Phone Number</label>
                                                         <input type="number" value="{{ $lead->phone }}"
                                                             class="form-control" id="phone" name="phone">
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="address">Address</label>
                                                         <textarea class="form-control" name="address" id="address" cols="" rows="">{{ $lead->address }}</textarea>
                                                     </div>
                                                 </div>
-                                            </div>
-
-                                            <!-- Additional form rows can be added here -->
-
-                                            <div class="row">
-                                                <div class="col-xl-3">
+                                                <!-- Additional form rows can be added here -->
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="status">Status</label>
                                                         <select class="form-control" name="status" id="status">
@@ -88,7 +88,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="source">Source</label>
                                                         <select class="form-control" name="source" id="source">
@@ -108,63 +108,55 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
-
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="website">Website</label>
                                                         <input type="text" value="{{ $lead->website }}"
                                                             class="form-control" id="website" name="website">
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="description">Description</label>
                                                         <textarea class="form-control" name="description" id="description" cols="" rows="">{{ $lead->description }}</textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="city">City</label>
                                                         <input type="text" value="{{ $lead->city }}"
                                                             class="form-control" id="city" name="city">
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="state">State</label>
                                                         <input type="text" value="{{ $lead->state }}"
                                                             class="form-control" id="state" name="state">
                                                     </div>
                                                 </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="company">Company Name</label>
                                                         <input type="text" value="{{ $lead->company }}"
                                                             class="form-control" id="company" name="company">
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="position">Position</label>
                                                         <input type="text" value="{{ $lead->position }}"
                                                             class="form-control" name="position" id="position">
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="zip_code">Zip Code</label>
                                                         <input type="text" value="{{ $lead->zip_code }}"
                                                             class="form-control" id="zip_code" name="zip_code">
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3">
+                                                <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
                                                         <label for="country">Country</label>
                                                         <input type="text" value="{{ $lead->country }}"
@@ -172,7 +164,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="row">
                                                 <div class="col-xl-3">
                                                     <input type="submit" class="btn btn-outline-success" value="Save">

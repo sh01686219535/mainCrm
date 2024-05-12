@@ -1,6 +1,6 @@
 @extends('backEnd.dashboard.home.master')
 @section('title')
-    Add Item
+    Edit Item
 @endsection
 @push('css')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -14,13 +14,18 @@
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
-                            <div class="card-head m-3">
-                                <h2>Edit Item</h2>
+                            <div class="card-head main-body m-3">
+                                <h1>Item Update</h1>
+                                <a class="btn btn-primary" href="{{ route('item.index') }}"><i class="fa fa-list"></i>
+                                    Item
+                                    List</a>
                             </div>
+                        </div>
+                        <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <form action="{{ route('item.update',$item->id) }}" method="post"
+                                        <form action="{{ route('item.update', $item->id) }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
@@ -28,8 +33,8 @@
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                                     <div class="form-group">
                                                         <label for="name">Item Name</label>
-                                                        <input type="text" value="{{ $item->name }}" class="form-control" id="name"
-                                                            name="name">
+                                                        <input type="text" value="{{ $item->name }}"
+                                                            class="form-control" id="name" name="name">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
@@ -37,8 +42,12 @@
                                                         <label for="item_group">Item Group</label>
                                                         <select class="form-control" id="item_group" name="item_group">
                                                             <option value="">Select</option>
-                                                            <option value="Product" {{ $item->item_group == 'Product' ? 'selected' : '' }}>Product</option>
-                                                            <option value="Service" {{ $item->item_group == 'Product' ? 'Task_Hour' : '' }}>Service</option>
+                                                            <option value="Product"
+                                                                {{ $item->item_group == 'Product' ? 'selected' : '' }}>
+                                                                Product</option>
+                                                            <option value="Service"
+                                                                {{ $item->item_group == 'Product' ? 'Task_Hour' : '' }}>
+                                                                Service</option>
                                                         </select>
                                                     </div>
                                                 </div>

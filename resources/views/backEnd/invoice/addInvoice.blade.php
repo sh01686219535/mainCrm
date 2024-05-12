@@ -14,9 +14,14 @@
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
-                            <div class="card-head">
-                                <h2>Create New Invoice</h2>
+                            <div class="card-head main-body m-3">
+                                <h1>Invoice Create</h1>
+                                <a class="btn btn-primary" href="{{ route('invoice.index') }}"><i class="fa fa-list"></i>
+                                    Invoice
+                                    List</a>
                             </div>
+                        </div>
+                        <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -25,20 +30,22 @@
                                             @csrf
                                             <div class="row">
                                                 <div class="row my-3 d-flex">
-                                                    
+
                                                     <div class="col-lg-6">
                                                         <label for="">Customer</label>
                                                         <select class="form-control" name="customer_id">
 
                                                             <option value="">Select Customer</option>
                                                             @foreach ($customer as $value)
-                                                            <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                                                <option value="{{ $value->id }}">{{ $value->name }}
+                                                                </option>
                                                             @endforeach
                                                         </select>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label for="invoice_no">Invoice No</label>
-                                                        <input type="text" name="invoice_no" id="invoice_no" value="{{ $serialNum }}" class="form-control">
+                                                        <input type="text" name="invoice_no" id="invoice_no"
+                                                            value="{{ $serialNum }}" class="form-control">
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label for="billing_address">Billing Address</label>
@@ -50,30 +57,36 @@
 
                                                             <option value="">Select</option>
                                                             @foreach ($project as $value)
-                                                            <option value="{{ $value->id }}">{{ $value->title }}</option>
+                                                                <option value="{{ $value->id }}">{{ $value->title }}
+                                                                </option>
                                                             @endforeach
                                                         </select>
                                                     </div>
-                                                   
+
                                                     <div class="col-lg-3">
                                                         <label for="city">City</label>
-                                                        <input type="text" name="city" id="city" class="form-control">
+                                                        <input type="text" name="city" id="city"
+                                                            class="form-control">
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <label for="state">State</label>
-                                                        <input type="text" name="state" id="state" class="form-control">
+                                                        <input type="text" name="state" id="state"
+                                                            class="form-control">
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <label for="invoice_date">Invoice Date</label>
-                                                        <input type="date" name="invoice_date" id="invoice_date" class="form-control">
+                                                        <input type="date" name="invoice_date" id="invoice_date"
+                                                            class="form-control">
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <label for="due_date">Due Date</label>
-                                                        <input type="date" name="due_date" id="due_date" class="form-control">
+                                                        <input type="date" name="due_date" id="due_date"
+                                                            class="form-control">
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <label for="zip">Zip Code</label>
-                                                        <input type="text" name="zip" id="zip" class="form-control">
+                                                        <input type="text" name="zip" id="zip"
+                                                            class="form-control">
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <label for="zip">Country</label>
@@ -106,11 +119,13 @@
                                                             <option value="Bermuda">Bermuda</option>
                                                             <option value="Bhutan">Bhutan</option>
                                                             <option value="Bolivia">Bolivia</option>
-                                                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina
+                                                            </option>
                                                             <option value="Botswana">Botswana</option>
                                                             <option value="Bouvet Island">Bouvet Island</option>
                                                             <option value="Brazil">Brazil</option>
-                                                            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                                            <option value="British Indian Ocean Territory">British Indian
+                                                                Ocean Territory</option>
                                                             <option value="Brunei Darussalam">Brunei Darussalam</option>
                                                             <option value="Bulgaria">Bulgaria</option>
                                                             <option value="Burkina Faso">Burkina Faso</option>
@@ -120,16 +135,19 @@
                                                             <option value="Canada">Canada</option>
                                                             <option value="Cape Verde">Cape Verde</option>
                                                             <option value="Cayman Islands">Cayman Islands</option>
-                                                            <option value="Central African Republic">Central African Republic</option>
+                                                            <option value="Central African Republic">Central African
+                                                                Republic</option>
                                                             <option value="Chad">Chad</option>
                                                             <option value="Chile">Chile</option>
                                                             <option value="China">China</option>
                                                             <option value="Christmas Island">Christmas Island</option>
-                                                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                                                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands
+                                                            </option>
                                                             <option value="Colombia">Colombia</option>
                                                             <option value="Comoros">Comoros</option>
                                                             <option value="Congo">Congo</option>
-                                                            <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                                                            <option value="Congo, The Democratic Republic of The">Congo,
+                                                                The Democratic Republic of The</option>
                                                             <option value="Cook Islands">Cook Islands</option>
                                                             <option value="Costa Rica">Costa Rica</option>
                                                             <option value="Cote D'ivoire">Cote D'ivoire</option>
@@ -148,14 +166,16 @@
                                                             <option value="Eritrea">Eritrea</option>
                                                             <option value="Estonia">Estonia</option>
                                                             <option value="Ethiopia">Ethiopia</option>
-                                                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                                                            <option value="Falkland Islands (Malvinas)">Falkland Islands
+                                                                (Malvinas)</option>
                                                             <option value="Faroe Islands">Faroe Islands</option>
                                                             <option value="Fiji">Fiji</option>
                                                             <option value="Finland">Finland</option>
                                                             <option value="France">France</option>
                                                             <option value="French Guiana">French Guiana</option>
                                                             <option value="French Polynesia">French Polynesia</option>
-                                                            <option value="French Southern Territories">French Southern Territories</option>
+                                                            <option value="French Southern Territories">French Southern
+                                                                Territories</option>
                                                             <option value="Gabon">Gabon</option>
                                                             <option value="Gambia">Gambia</option>
                                                             <option value="Georgia">Georgia</option>
@@ -173,15 +193,18 @@
                                                             <option value="Guinea-bissau">Guinea-bissau</option>
                                                             <option value="Guyana">Guyana</option>
                                                             <option value="Haiti">Haiti</option>
-                                                            <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
-                                                            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                                                            <option value="Heard Island and Mcdonald Islands">Heard Island
+                                                                and Mcdonald Islands</option>
+                                                            <option value="Holy See (Vatican City State)">Holy See (Vatican
+                                                                City State)</option>
                                                             <option value="Honduras">Honduras</option>
                                                             <option value="Hong Kong">Hong Kong</option>
                                                             <option value="Hungary">Hungary</option>
                                                             <option value="Iceland">Iceland</option>
                                                             <option value="India">India</option>
                                                             <option value="Indonesia">Indonesia</option>
-                                                            <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                                                            <option value="Iran, Islamic Republic of">Iran, Islamic
+                                                                Republic of</option>
                                                             <option value="Iraq">Iraq</option>
                                                             <option value="Ireland">Ireland</option>
                                                             <option value="Isle of Man">Isle of Man</option>
@@ -194,21 +217,25 @@
                                                             <option value="Kazakhstan">Kazakhstan</option>
                                                             <option value="Kenya">Kenya</option>
                                                             <option value="Kiribati">Kiribati</option>
-                                                            <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                                                            <option value="Korea, Democratic People's Republic of">Korea,
+                                                                Democratic People's Republic of</option>
                                                             <option value="Korea, Republic of">Korea, Republic of</option>
                                                             <option value="Kuwait">Kuwait</option>
                                                             <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                                            <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                                                            <option value="Lao People's Democratic Republic">Lao People's
+                                                                Democratic Republic</option>
                                                             <option value="Latvia">Latvia</option>
                                                             <option value="Lebanon">Lebanon</option>
                                                             <option value="Lesotho">Lesotho</option>
                                                             <option value="Liberia">Liberia</option>
-                                                            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                                                            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya
+                                                            </option>
                                                             <option value="Liechtenstein">Liechtenstein</option>
                                                             <option value="Lithuania">Lithuania</option>
                                                             <option value="Luxembourg">Luxembourg</option>
                                                             <option value="Macao">Macao</option>
-                                                            <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                                                            <option value="Macedonia, The Former Yugoslav Republic of">
+                                                                Macedonia, The Former Yugoslav Republic of</option>
                                                             <option value="Madagascar">Madagascar</option>
                                                             <option value="Malawi">Malawi</option>
                                                             <option value="Malaysia">Malaysia</option>
@@ -221,8 +248,10 @@
                                                             <option value="Mauritius">Mauritius</option>
                                                             <option value="Mayotte">Mayotte</option>
                                                             <option value="Mexico">Mexico</option>
-                                                            <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
-                                                            <option value="Moldova, Republic of">Moldova, Republic of</option>
+                                                            <option value="Micronesia, Federated States of">Micronesia,
+                                                                Federated States of</option>
+                                                            <option value="Moldova, Republic of">Moldova, Republic of
+                                                            </option>
                                                             <option value="Monaco">Monaco</option>
                                                             <option value="Mongolia">Mongolia</option>
                                                             <option value="Montenegro">Montenegro</option>
@@ -234,7 +263,8 @@
                                                             <option value="Nauru">Nauru</option>
                                                             <option value="Nepal">Nepal</option>
                                                             <option value="Netherlands">Netherlands</option>
-                                                            <option value="Netherlands Antilles">Netherlands Antilles</option>
+                                                            <option value="Netherlands Antilles">Netherlands Antilles
+                                                            </option>
                                                             <option value="New Caledonia">New Caledonia</option>
                                                             <option value="New Zealand">New Zealand</option>
                                                             <option value="Nicaragua">Nicaragua</option>
@@ -242,12 +272,14 @@
                                                             <option value="Nigeria">Nigeria</option>
                                                             <option value="Niue">Niue</option>
                                                             <option value="Norfolk Island">Norfolk Island</option>
-                                                            <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                                            <option value="Northern Mariana Islands">Northern Mariana
+                                                                Islands</option>
                                                             <option value="Norway">Norway</option>
                                                             <option value="Oman">Oman</option>
                                                             <option value="Pakistan">Pakistan</option>
                                                             <option value="Palau">Palau</option>
-                                                            <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                                                            <option value="Palestinian Territory, Occupied">Palestinian
+                                                                Territory, Occupied</option>
                                                             <option value="Panama">Panama</option>
                                                             <option value="Papua New Guinea">Papua New Guinea</option>
                                                             <option value="Paraguay">Paraguay</option>
@@ -263,13 +295,17 @@
                                                             <option value="Russian Federation">Russian Federation</option>
                                                             <option value="Rwanda">Rwanda</option>
                                                             <option value="Saint Helena">Saint Helena</option>
-                                                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis
+                                                            </option>
                                                             <option value="Saint Lucia">Saint Lucia</option>
-                                                            <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
-                                                            <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                                                            <option value="Saint Pierre and Miquelon">Saint Pierre and
+                                                                Miquelon</option>
+                                                            <option value="Saint Vincent and The Grenadines">Saint Vincent
+                                                                and The Grenadines</option>
                                                             <option value="Samoa">Samoa</option>
                                                             <option value="San Marino">San Marino</option>
-                                                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                                            <option value="Sao Tome and Principe">Sao Tome and Principe
+                                                            </option>
                                                             <option value="Saudi Arabia">Saudi Arabia</option>
                                                             <option value="Senegal">Senegal</option>
                                                             <option value="Serbia">Serbia</option>
@@ -281,43 +317,53 @@
                                                             <option value="Solomon Islands">Solomon Islands</option>
                                                             <option value="Somalia">Somalia</option>
                                                             <option value="South Africa">South Africa</option>
-                                                            <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                                                            <option value="South Georgia and The South Sandwich Islands">
+                                                                South Georgia and The South Sandwich Islands</option>
                                                             <option value="Spain">Spain</option>
                                                             <option value="Sri Lanka">Sri Lanka</option>
                                                             <option value="Sudan">Sudan</option>
                                                             <option value="Suriname">Suriname</option>
-                                                            <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                                                            <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen
+                                                            </option>
                                                             <option value="Swaziland">Swaziland</option>
                                                             <option value="Sweden">Sweden</option>
                                                             <option value="Switzerland">Switzerland</option>
-                                                            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                                                            <option value="Syrian Arab Republic">Syrian Arab Republic
+                                                            </option>
                                                             <option value="Taiwan">Taiwan</option>
                                                             <option value="Tajikistan">Tajikistan</option>
-                                                            <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                                                            <option value="Tanzania, United Republic of">Tanzania, United
+                                                                Republic of</option>
                                                             <option value="Thailand">Thailand</option>
                                                             <option value="Timor-leste">Timor-leste</option>
                                                             <option value="Togo">Togo</option>
                                                             <option value="Tokelau">Tokelau</option>
                                                             <option value="Tonga">Tonga</option>
-                                                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                                            <option value="Trinidad and Tobago">Trinidad and Tobago
+                                                            </option>
                                                             <option value="Tunisia">Tunisia</option>
                                                             <option value="Turkey">Turkey</option>
                                                             <option value="Turkmenistan">Turkmenistan</option>
-                                                            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                                                            <option value="Turks and Caicos Islands">Turks and Caicos
+                                                                Islands</option>
                                                             <option value="Tuvalu">Tuvalu</option>
                                                             <option value="Uganda">Uganda</option>
                                                             <option value="Ukraine">Ukraine</option>
-                                                            <option value="United Arab Emirates">United Arab Emirates</option>
+                                                            <option value="United Arab Emirates">United Arab Emirates
+                                                            </option>
                                                             <option value="United Kingdom">United Kingdom</option>
                                                             <option value="United States">United States</option>
-                                                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                                            <option value="United States Minor Outlying Islands">United
+                                                                States Minor Outlying Islands</option>
                                                             <option value="Uruguay">Uruguay</option>
                                                             <option value="Uzbekistan">Uzbekistan</option>
                                                             <option value="Vanuatu">Vanuatu</option>
                                                             <option value="Venezuela">Venezuela</option>
                                                             <option value="Viet Nam">Viet Nam</option>
-                                                            <option value="Virgin Islands, British">Virgin Islands, British</option>
-                                                            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                                                            <option value="Virgin Islands, British">Virgin Islands, British
+                                                            </option>
+                                                            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.
+                                                            </option>
                                                             <option value="Wallis and Futuna">Wallis and Futuna</option>
                                                             <option value="Western Sahara">Western Sahara</option>
                                                             <option value="Yemen">Yemen</option>
@@ -340,39 +386,43 @@
 
                                                             <option value="">Select</option>
                                                             @foreach ($salesPerson as $value)
-                                                            <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                                                <option value="{{ $value->id }}">{{ $value->name }}
+                                                                </option>
                                                             @endforeach
                                                         </select>
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <hr>
-
                                                 <hr>
-
                                                 <div class="show_transaction mb-3">
                                                     <div class="row">
                                                         <div class="col-md-3 mb-3">
 
-                                                            <label for="example-text-input" class="form-label">Item</label>
+                                                            <label for="example-text-input"
+                                                                class="form-label">Item</label>
                                                             <select class="form-control service_id" name="item_id[]">
 
                                                                 <option value="">Select</option>
                                                                 @foreach ($item as $value)
-                                                                <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                                                    <option value="{{ $value->id }}">
+                                                                        {{ $value->name }}</option>
                                                                 @endforeach
                                                             </select>
 
                                                         </div>
                                                         <div class="col-md-3 mb-3">
                                                             <label for="quantity" class="form-label">Quantity</label>
-                                                            <input class="form-control quantity" type="number" name="quantity[]" value="1" placeholder="Enter Quantity">
+                                                            <input class="form-control quantity" type="number"
+                                                                name="quantity[]" value="1"
+                                                                placeholder="Enter Quantity">
                                                         </div>
                                                         <div class="col-md-3 mb-3">
 
                                                             <label for="amount" class="form-label">Amount</label>
-                                                            <input class="form-control amount" type="text" name="amount[]">
-                                                            
+                                                            <input class="form-control amount" type="text"
+                                                                name="amount[]">
+
 
                                                         </div>
                                                         <div class="col-md-2 mt-4">
@@ -380,7 +430,8 @@
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <label for="total">Total Amount</label>
-                                                            <input type="text" name="total" id="total_amount" class="form-control" readonly>
+                                                            <input type="text" name="total" id="total_amount"
+                                                                class="form-control" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -400,7 +451,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="">
-                                                    <input type="submit" value="Add" class="btn btn-primary w-25" id="add_btn">
+                                                    <input type="submit" value="Add" class="btn btn-primary w-25"
+                                                        id="add_btn">
                                                 </div>
                                         </form>
                                     </div>
@@ -422,12 +474,12 @@
 @push('js')
     {{-- Additional JavaScript if needed --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
+    <script>
+        $(document).ready(function() {
 
-        $(".add_item_btn").click(function(e) {
-            e.preventDefault();
-            $(".show_transaction").prepend(` <div class="row">
+            $(".add_item_btn").click(function(e) {
+                e.preventDefault();
+                $(".show_transaction").prepend(` <div class="row">
                                                         <div class="col-md-3 mb-3">
 
                                                             <label for="example-text-input" class="form-label">Item</label>
@@ -454,128 +506,125 @@
                                                             <button class="btn btn-danger remove_item_btn">Remove</button>
                                                         </div>
                                                     </div>`);
-        });
-        $(document).on('click', '.remove_item_btn', function(e) {
-            let row_item = $(this).parent().parent();
-            $(row_item).remove();
-        });
-    });
-
-</script>
-<script>
-    $(document).ready(function() {
-
-        // Function to calculate total amount
-        function calculateTotalAmount() {
-            var totalAmount = 0;
-            $('.amount').each(function() {
-                totalAmount += parseFloat($(this).val()) || 0;
             });
-            $('#total_amount').val(totalAmount.toFixed(2));
-            $('#due_amount').val(totalAmount.toFixed(2));
-        }
-
-        // Calculate total amount on page load
-        calculateTotalAmount();
-
-        //new
-        $('body').on('keyup', '.amount', function() {
-        calculateTotalAmount();
+            $(document).on('click', '.remove_item_btn', function(e) {
+                let row_item = $(this).parent().parent();
+                $(row_item).remove();
+            });
         });
-        $('body').on('change', '.quantity', function() {
-            var closestRow = $(this).closest('.row');
-            var quantity = $(this).val();
-            var amount = closestRow.find('.amount').val();
-            closestRow.find('.amount').val(quantity * amount);
+    </script>
+    <script>
+        $(document).ready(function() {
+
+            // Function to calculate total amount
+            function calculateTotalAmount() {
+                var totalAmount = 0;
+                $('.amount').each(function() {
+                    totalAmount += parseFloat($(this).val()) || 0;
+                });
+                $('#total_amount').val(totalAmount.toFixed(2));
+                $('#due_amount').val(totalAmount.toFixed(2));
+            }
+
+            // Calculate total amount on page load
             calculateTotalAmount();
+
+            //new
+            $('body').on('keyup', '.amount', function() {
+                calculateTotalAmount();
+            });
+            $('body').on('change', '.quantity', function() {
+                var closestRow = $(this).closest('.row');
+                var quantity = $(this).val();
+                var amount = closestRow.find('.amount').val();
+                closestRow.find('.amount').val(quantity * amount);
+                calculateTotalAmount();
+            });
+            $('body').on('change', '.service_id', function() {
+                var service_id = $(this).val();
+                var closestRow = $(this).closest('.row');
+                console.log(service_id, closestRow);
+                // Perform AJAX call to fetch price based on service_id (if needed)
+            });
+            //end
+            // $('body').on('change', '.service_id', function() {
+            //     var service_id = $(this).val();
+            //     var closestRow = $(this).closest('.row');
+            //     $.ajax({
+            //         url: '/getPrice'
+            //         , type: 'post'
+            //         , dataType: 'json'
+            //         , data: 'service_id=' + service_id
+            //         , headers: {
+            //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            //         }
+            //         , success: function(data) {
+            //             closestRow.find('.singleamount').val(data[0].price);
+            //             closestRow.find('.amount').val(data[0].price);
+
+            //             calculateTotalAmount();
+            //         }
+            //         , error: function(xhr, status, error) {
+            //             console.error(xhr.responseText);
+            //         }
+            //     });
+            // });
+
+            // $('body').on('keyup', '.quantity', function() {
+            //     var closestRow = $(this).closest('.row');
+            //     0
+            //     var quantity = $(this).val();
+            //     var amount = closestRow.find('.singleamount').val();
+            //     closestRow.find('.amount').val(quantity * amount);
+            //     // Recalculate total amount when quantity changes
+            //     calculateTotalAmount();
+            // });
+
+
+
+            // $('body').on('change', '.service_id', function() {
+            //     var service_id = $(this).val();
+            //     var closestRow = $(this).closest('.row');
+            //     console.log(service_id, closestRow);
+            //     $.ajax({
+            //         url: '/getPrice'
+            //         , type: 'post'
+            //         , dataType: 'json'
+            //         , data: 'service_id=' + service_id
+            //         , headers: {
+            //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            //         }
+            //         , success: function(data) {
+            //             // Assuming $service contains the price
+            //             // $('.amount').val(data[0].price);
+            //             closestRow.find('.singleamount').val(data[0].price);
+
+            //             closestRow.find('.amount').val(data[0].price);
+            //         }
+            //         , error: function(xhr, status, error) {
+            //             console.error(xhr.responseText);
+            //         }
+            //     });
+            // });
+
+
+            // $('body').on('change', '.quantity', function() {
+            //     var closestRow = $(this).closest('.row');
+
+            //     var quantity = $(this).val();
+            //     var amount = closestRow.find('.singleamount').val();
+            //     closestRow.find('.amount').val(quantity * amount);
+            // });
+
+
         });
-        $('body').on('change', '.service_id', function() {
-        var service_id = $(this).val();
-        var closestRow = $(this).closest('.row');
-        console.log(service_id, closestRow);
-        // Perform AJAX call to fetch price based on service_id (if needed)
-    });
-        //end
-        // $('body').on('change', '.service_id', function() {
-        //     var service_id = $(this).val();
-        //     var closestRow = $(this).closest('.row');
-        //     $.ajax({
-        //         url: '/getPrice'
-        //         , type: 'post'
-        //         , dataType: 'json'
-        //         , data: 'service_id=' + service_id
-        //         , headers: {
-        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //         }
-        //         , success: function(data) {
-        //             closestRow.find('.singleamount').val(data[0].price);
-        //             closestRow.find('.amount').val(data[0].price);
-
-        //             calculateTotalAmount();
-        //         }
-        //         , error: function(xhr, status, error) {
-        //             console.error(xhr.responseText);
-        //         }
-        //     });
-        // });
-
-        // $('body').on('keyup', '.quantity', function() {
-        //     var closestRow = $(this).closest('.row');
-        //     0
-        //     var quantity = $(this).val();
-        //     var amount = closestRow.find('.singleamount').val();
-        //     closestRow.find('.amount').val(quantity * amount);
-        //     // Recalculate total amount when quantity changes
-        //     calculateTotalAmount();
-        // });
-
-
-
-        // $('body').on('change', '.service_id', function() {
-        //     var service_id = $(this).val();
-        //     var closestRow = $(this).closest('.row');
-        //     console.log(service_id, closestRow);
-        //     $.ajax({
-        //         url: '/getPrice'
-        //         , type: 'post'
-        //         , dataType: 'json'
-        //         , data: 'service_id=' + service_id
-        //         , headers: {
-        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //         }
-        //         , success: function(data) {
-        //             // Assuming $service contains the price
-        //             // $('.amount').val(data[0].price);
-        //             closestRow.find('.singleamount').val(data[0].price);
-
-        //             closestRow.find('.amount').val(data[0].price);
-        //         }
-        //         , error: function(xhr, status, error) {
-        //             console.error(xhr.responseText);
-        //         }
-        //     });
-        // });
-
-
-        // $('body').on('change', '.quantity', function() {
-        //     var closestRow = $(this).closest('.row');
-
-        //     var quantity = $(this).val();
-        //     var amount = closestRow.find('.singleamount').val();
-        //     closestRow.find('.amount').val(quantity * amount);
-        // });
-
-
-    });
-    $(document).ready(function() {
-        $('#advance, #due_amount').on('keyup', function() {
-            var advance = parseFloat($('#advance').val()) || 0;
-            var main_amount = parseFloat($('#total_amount').val()) || 0;
-            var dueAmount = main_amount - advance;
-            $('#due_amount').val(dueAmount.toFixed(2));
+        $(document).ready(function() {
+            $('#advance, #due_amount').on('keyup', function() {
+                var advance = parseFloat($('#advance').val()) || 0;
+                var main_amount = parseFloat($('#total_amount').val()) || 0;
+                var dueAmount = main_amount - advance;
+                $('#due_amount').val(dueAmount.toFixed(2));
+            });
         });
-    });
-
-
-</script>
+    </script>
 @endpush

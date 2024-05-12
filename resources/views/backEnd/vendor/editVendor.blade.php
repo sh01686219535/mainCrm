@@ -18,8 +18,10 @@
                             <div class="card-head main-body m-3">
                                 <h1>Vendor Edit</h1>
                                 <a class="btn btn-primary" href="{{ route('vendor.index') }}"><i
-                                        class="fa fa-plus"></i>Vendor List</a>
+                                        class="fa fa-list"></i> Vendor List</a>
                             </div>
+                        </div>
+                        <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">

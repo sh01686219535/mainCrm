@@ -1,14 +1,12 @@
 @extends('backEnd.dashboard.home.master')
 @section('title')
-Add Lead
+    Add Lead
 @endsection
 @push('css')
-    
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endpush
 
 @section('content')
-
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -16,13 +14,18 @@ Add Lead
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
-                            <div class="card-head m-3">
-                                <h2>Add New Lead</h2>
+                            <div class="card-head main-body m-3">
+                                <h1>Lead Create</h1>
+                                <a class="btn btn-primary" href="{{ route('lead.index') }}"><i class="fa fa-list"></i> Lead
+                                    List</a>
                             </div>
+                        </div>
+                        <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <form action="{{ route('lead.store') }}" method="post" enctype="multipart/form-data">
+                                        <form action="{{ route('lead.store') }}" method="post"
+                                            enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
@@ -133,11 +136,11 @@ Add Lead
                                                     </div>
                                                 </div>
                                                 <br>
-                                                               
+
                                             </div>
                                             <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                 <input type="submit" class="btn btn-outline-success" value="Save">
-                                            </div> 
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -152,13 +155,9 @@ Add Lead
         <!-- /.content-header -->
 
         <!-- Main content -->
-</div>
-
-
+    </div>
 @endsection
 
 @push('js')
-
     {{-- Additional JavaScript if needed --}}
-
 @endpush

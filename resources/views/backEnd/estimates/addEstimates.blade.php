@@ -14,9 +14,14 @@
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
-                            <div class="card-head">
-                                <h2>Create New Estimate</h2>
+                            <div class="card-head main-body m-3">
+                                <h1>Estimate Create</h1>
+                                <a class="btn btn-primary" href="{{ route('estimates.index') }}"><i class="fa fa-list"></i>
+                                    Estimate
+                                    List</a>
                             </div>
+                        </div>
+                        <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -25,7 +30,6 @@
                                             @csrf
                                             <div class="row">
                                                 <div class="row my-3 d-flex">
-
                                                     <div class="col-lg-6">
                                                         <label for="customer_id">Customer</label>
                                                         <select class="form-control" name="customer_id" id="customer_id">

@@ -14,13 +14,17 @@
                 <div class="row mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
-                            <div class="card-head">
-                                <h2>Edit Category</h2>
+                            <div class="card-head main-body m-3">
+                                <h1>Category Update</h1>
+                                <a class="btn btn-primary" href="{{ route('category.index') }}"><i class="fa fa-list"></i>
+                                    Category</a>
                             </div>
+                        </div>
+                        <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <form action="{{ route('category.update',$category->id) }}" method="post"
+                                        <form action="{{ route('category.update', $category->id) }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
@@ -28,7 +32,8 @@
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                                     <div class="form-group">
                                                         <label for="title">Title</label>
-                                                        <input type="text" value="{{ $category->title }}" name="title" id="title" class="form-control">
+                                                        <input type="text" value="{{ $category->title }}" name="title"
+                                                            id="title" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
