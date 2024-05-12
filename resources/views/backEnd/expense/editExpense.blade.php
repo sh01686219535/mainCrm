@@ -66,8 +66,9 @@
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                                     <div class="form-group">
                                                         <label for="date">Date</label>
-                                                        <input type="date" value="{{ $expense->date }}" class="form-control" id="date"
+                                                        <input type="date" value="{{ \Carbon\Carbon::parse($expense->date)->format('Y-m-d') }}" class="form-control" id="date"
                                                             name="date">
+                        
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
@@ -97,9 +98,9 @@
                                                         <label for="payment_mode">payment_mode</label>
                                                         <select class="form-control" id="payment_mode" name="payment_mode">
                                                             <option value="">Select</option>
-                                                            <option value="Bank" {{ $expense->currency == 'Bank' ? 'selected' : '' }}>Bank</option>
-                                                            <option value="Online Payment" {{ $expense->currency == 'Online Payment' ? 'selected' : '' }}>Online Payment</option>
-                                                            <option value="Cash" {{ $expense->currency == 'Cash' ? 'selected' : '' }}>Cash</option>
+                                                            <option value="Bank" {{ $expense->payment_mode == 'Bank' ? 'selected' : '' }}>Bank</option>
+                                                            <option value="Online Payment" {{ $expense->payment_mode == 'Online Payment' ? 'selected' : '' }}>Online Payment</option>
+                                                            <option value="Cash" {{ $expense->payment_mode == 'Cash' ? 'selected' : '' }}>Cash</option>
                                                         </select>
                                                     </div>
                                                 </div>
