@@ -11,7 +11,7 @@
                                 <div class="main-body">
                                     <h1>Items</h1>
                                     <div>
-                                        <a href="{{ route('item.create') }}" class="btn btn-primary"><i
+                                        <a href="{{ route('item.create') }}" class="btn btn-outline-primary"><i
                                                 class="fa fa-plus"></i>New Item</a>
                                     </div>
                                    
@@ -53,7 +53,7 @@
                                             <td>{{ Str::limit($item->description,10)  }}</td>
                                             <td>
                                                 <a href="{{ route('item.edit', $item->id) }}"
-                                                    class="btn btn-outline-primary action-btn"><i class="fa fa-edit"></i></a>
+                                                    class="btn btn-outline-success action-btn"><i class="fa fa-edit"></i></a>
                                                 <form class="action-btn" action="{{ route('item.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')

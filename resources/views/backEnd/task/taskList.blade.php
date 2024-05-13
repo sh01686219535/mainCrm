@@ -12,7 +12,7 @@
                                 <div class="main-body">
                                     <h1>Task</h1>
                                     <div>
-                                        <a href="{{ route('task.create') }}" class="btn btn-primary"><i
+                                        <a href="{{ route('task.create') }}" class="btn btn-outline-primary"><i
                                                 class="fa fa-plus"></i>New Task</a>
                                     </div>
                                    
@@ -65,7 +65,7 @@
                                             <td>{{ $item->status }}</td>
                                             <td>
                                                 <a href="{{ route('task.edit', $item->id) }}"
-                                                    class="btn btn-outline-primary action-btn"><i class="fa fa-edit"></i></a>
+                                                    class="btn btn-outline-success action-btn"><i class="fa fa-edit"></i></a>
                                                 <form class="action-btn" action="{{ route('task.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')

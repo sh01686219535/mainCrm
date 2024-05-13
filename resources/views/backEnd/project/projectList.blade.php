@@ -12,7 +12,7 @@
                                 <div class="main-body">
                                     <h1>Projects</h1>
                                     <div>
-                                        <a href="{{ route('project.create') }}" class="btn btn-primary"><i
+                                        <a href="{{ route('project.create') }}" class="btn btn-outline-primary"><i
                                                 class="fa fa-plus"></i>New Project</a>
                                     </div>
                                    
@@ -64,7 +64,7 @@
                                             <td>{{ \Carbon\Carbon::parse($item->deadline)->format("d-M-y") }}</td>
                                             <td>
                                                 <a href="{{ route('project.edit', $item->id) }}"
-                                                    class="btn btn-outline-primary action-btn"><i class="fa fa-edit"></i></a>
+                                                    class="btn btn-outline-outline-success action-btn"><i class="fa fa-edit"></i></a>
                                                 <form class="action-btn" action="{{ route('project.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')

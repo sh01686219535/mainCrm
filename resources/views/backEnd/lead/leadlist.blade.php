@@ -48,7 +48,7 @@
                                     <th>Address</th>
                                     <th>Status</th>
                                     <th>Source</th>
-                                    <th style="width:30% !important">Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>

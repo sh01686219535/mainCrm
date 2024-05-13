@@ -13,7 +13,7 @@
                             <div class="card-body ">
                                 <div class="main-body">
                                     <h1>Payment</h1>
-                                    <a class="btn btn-primary" href="{{ route('add.payment') }}"><i class="fa fa-plus"></i>
+                                    <a class="btn btn-outline-primary" href="{{ route('add.payment') }}"><i class="fa fa-plus"></i>
                                         Payment</a>
                                 </div>
                             </div>

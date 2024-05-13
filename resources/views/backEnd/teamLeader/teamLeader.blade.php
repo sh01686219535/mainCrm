@@ -13,8 +13,10 @@
                             <div class="card-body ">
                                 <div class="main-body">
                                     <h1>Teamleader</h1>
-                                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                            class="fa fa-plus"></i> Teamleader</a>
+                                   <div>
+                                    <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                        class="fa fa-plus"></i> Teamleader</a>
+                                   </div>
                                     <!-- Teamleader modal-->
                                     <div class="modal fade" id="exampleModal" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -109,8 +111,8 @@
                                                             alt="">
                                                     </td>
                                                     <td>
-                                                        <a class="btn btn-primary action-btn" data-bs-toggle="modal" data-bs-target="#editExampleModal{{$item->id}}"><i class="fa fa-edit"></i></a>
-                                                        <a href="{{route('delete.teamleader',$item->id)}}" class="delete btn btn-danger action-btn"><i
+                                                        <a class="btn btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editExampleModal{{$item->id}}"><i class="fa fa-edit"></i></a>
+                                                        <a href="{{route('delete.teamleader',$item->id)}}" class="delete btn btn-outline-danger action-btn"><i
                                                                 class="fa fa-trash"></i></a>
                                                         <!-- Edit Teamleader modal-->
                                                         <div class="modal fade" id="editExampleModal{{$item->id}}" tabindex="-1"

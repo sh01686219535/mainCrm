@@ -13,6 +13,7 @@ class LeadsExport implements FromView,ShouldAutoSize
     use Exportable;
     private $leads;
 
+    
     public function __construct()
     {
         $this->leads = Lead::all();

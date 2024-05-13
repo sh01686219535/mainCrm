@@ -12,7 +12,7 @@
                                 <div class="main-body">
                                     <h1>Categories</h1>
                                     <div>
-                                        <a href="{{ route('category.create') }}"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                        <a href="{{ route('category.create') }}"  class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                                                 class="fa fa-plus"></i>New Category</a>
                                     </div>
                                    
@@ -52,7 +52,7 @@
                                             <td>{{ Str::limit($item->details,10)  }}</td>
                                             <td>
                                                 <a href="{{ route('category.edit', $item->id) }}"
-                                                    class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
+                                                    class="btn btn-outline-success"><i class="fa fa-edit"></i></a>
                                                 <form action="{{ route('category.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
