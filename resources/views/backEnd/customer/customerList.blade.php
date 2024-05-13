@@ -74,3 +74,7 @@ Customer List
     </div>
     </div>
 @endsection
+@push('js')
+{{-- id="example" --}}
+
+@endpush

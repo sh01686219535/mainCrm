@@ -98,7 +98,6 @@ Route::group(['middleware' => 'UserAuth'], function () {
     Route::controller(AjaxController::class)->group(function () {
         Route::get('/getCustomer', 'getCustomer');
     });
-
     // setting Route
     Route::controller(SettingController::class)->group(function () {
         Route::get('/setting', 'setting')->name('setting');
