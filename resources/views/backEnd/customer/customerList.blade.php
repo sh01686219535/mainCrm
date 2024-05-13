@@ -47,8 +47,8 @@ Customer List
                                                             alt="">
                                                     </td>
                                                     <td>
-                                                        <a href="{{route('customer.edit',$item->id)}}" class="btn btn-primary action-btn" ><i class="fa fa-edit"></i></a>
-                                                        <a href="{{route('delete.customer',$item->id)}}" class="delete btn btn-danger action-btn"><i
+                                                        <a href="{{route('customer.edit',$item->id)}}" class="btn btn-outline-success action-btn" ><i class="fa fa-edit"></i></a>
+                                                        <a href="{{route('delete.customer',$item->id)}}" class="delete btn btn-outline-danger action-btn"><i
                                                                 class="fa fa-trash"></i></a>
                                                 </tr>
                                             @endforeach

@@ -12,7 +12,7 @@
                                 <div class="main-body">
                                     <h1>Invoices</h1>
                                     <div>
-                                        <a href="{{ route('invoice.create') }}" class="btn btn-primary"><i
+                                        <a href="{{ route('invoice.create') }}" class="btn btn-outline-primary"><i
                                                 class="fa fa-plus"></i>New Invoice</a>
                                     </div>
                                    
@@ -62,7 +62,7 @@
                                             <td>{{ $item->project->title ?? '' }}</td>
                                             <td>{{ $item->currency }}</td>
                                             <td>
-                                                <a class="btn btn-primary action-btn" data-bs-toggle="modal"
+                                                <a class="btn btn-outline-success action-btn" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal{{ $item->id }}"><i
                                                     class="fa fa-eye"></i></a>
                                                 <form action="{{ route('invoice.destroy',$item->id) }}" method="post" class="action-btn">

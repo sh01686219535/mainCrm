@@ -118,6 +118,12 @@ class ExpenseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $expense = Expense::findOrFail($id);
+        $file = $expense->file;
+        if(File::exists($file)){
+            File::delete($file);
+        }
+        $expense->delete();
+        return back()->with('success','Expense Deleted Successfully');
     }
 }

@@ -12,7 +12,7 @@
                                 <div class="main-body">
                                     <h1>Expenses</h1>
                                     <div>
-                                        <a href="{{ route('expense.create') }}" class="btn btn-outline-success"><i
+                                        <a href="{{ route('expense.create') }}" class="btn btn-outline-primary"><i
                                                 class="fa fa-plus"></i>New Expense</a>
                                     </div>
                                    
@@ -64,11 +64,11 @@
                                             <td>{{ Str::limit($item->note,8) }}</td>
                                             <td>
                                                 <a href="{{ route('expense.edit', $item->id) }}"
-                                                    class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
-                                                <form action="{{ route('expense.destroy', $item->id) }}" method="POST">
+                                                    class="btn btn-outline-primary action-btn"><i class="fa fa-edit"></i></a>
+                                                <form action="{{ route('expense.destroy', $item->id) }}" class="action-btn" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger" id="delete"><i class="fas fa-trash"></i></button>
+                                                    <button type="submit" class="btn btn-outline-danger action-btn" id="delete"><i class="fas fa-trash"></i></button>
                                                 </form>
                                                 
                                             </td>

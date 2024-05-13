@@ -17,7 +17,7 @@
                         <div class="card">
                             <div class="card-head main-body m-3">
                                 <h1>Vendor Create</h1>
-                                <a class="btn btn-primary" href="{{ route('vendor.index') }}"><i
+                                <a class="btn btn-outline-primary" href="{{ route('vendor.index') }}"><i
                                         class="fa fa-list"></i> Vendor List</a>
                             </div>
                         </div>

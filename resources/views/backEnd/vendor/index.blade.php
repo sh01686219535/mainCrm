@@ -13,7 +13,7 @@
                             <div class="card-body ">
                                 <div class="main-body">
                                     <h1>Vendor</h1>
-                                    <a class="btn btn-primary"  href="{{ route('vendor.create') }}"><i
+                                    <a class="btn btn-outline-primary"  href="{{ route('vendor.create') }}"><i
                                             class="fa fa-plus"></i> Vendor Create</a>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                                                     <td>{{ $item->country }}</td>
                                                     <td>{{ Str::limit($item->notes,20) }}</td>
                                                     <td>
-                                                        <a class="btn btn-primary action-btn" href="{{route('vendor.edit',$item->id)}}"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn btn-outline-success action-btn" href="{{route('vendor.edit',$item->id)}}"><i class="fa fa-edit"></i></a>
                                                         <form action="{{ route('vendor.destroy', $item->id) }}" method="POST" class="action-btn">
                                                             @csrf
                                                             @method('DELETE')
