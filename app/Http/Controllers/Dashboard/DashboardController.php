@@ -49,7 +49,13 @@ class DashboardController extends Controller
                 'backgroundColor' => $colors
             ]
         ];
-    
-        return view('backEnd.dashboard.home.home', compact('labels', 'dataSets', 'customerCount', 'leadCount', 'todaysPayment', 'MonthlyPayment'));
+
+        $Customer = DB::select("select count(*) as total_mode, modeOfPayment from customers group by modeOfPayment");
+        $chartData = "";
+        foreach ($Customer as $value) {
+            $chartData .= "['".$value->modeOfPayment."',".$value->total_mode."],";
+        }
+        $charr = rtrim( $chartData,",");
+        return view('backEnd.dashboard.home.home', compact('charr','labels', 'dataSets', 'customerCount', 'leadCount', 'todaysPayment', 'MonthlyPayment'));
     }
 }
