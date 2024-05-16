@@ -5,6 +5,7 @@
     @push('css')
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
     @endpush
 
     <div class="content-wrapper">
@@ -68,12 +69,14 @@
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
-                   <section class="chart">
-                    <canvas id="myChart"></canvas>
-                   </section>
-                   <section class="chart">
-                    <div id="chart_div"></div>
-                   </section>
+                    <section class="chart">
+                        <canvas id="myChart"></canvas>
+                    </section>
+                    <section class="chart">
+                        <div id="chart_div"></div>
+
+                    </section>
+                    <div id="Container" style="width: 100%; height: 400px; margin: auto;"></div>
 
                 </div>
                 <!-- Chart -->
@@ -84,6 +87,7 @@
 @endsection
 
 @push('js')
+    {{-- monthly charts --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var ctx = document.getElementById('myChart').getContext('2d');
@@ -108,7 +112,7 @@
             });
         });
     </script>
-
+    {{-- pie charts --}}
     <script type="text/javascript">
         google.charts.load('current', {
             'packages': ['corechart']
@@ -128,10 +132,39 @@
             var options = {
                 'title': 'Customer',
             };
-
-            // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
+    </script>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+          // var userData = @json($paymentData); 
+            var userData =  [100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650]; 
+            console.log('Data for chart:', userData);
+            Highcharts.chart('Container', {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Monthly Payment ' + new Date().getFullYear()
+                },
+                xAxis: {
+                    categories: ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"
+                    ],
+                },
+                yAxis: {
+                    title: {
+                        text: 'Number of New Payments',
+                    
+                    }
+                },
+                series: [{
+                    name: 'New Payments',
+                    data: userData
+                }]
+            });
+        });
     </script>
 @endpush
