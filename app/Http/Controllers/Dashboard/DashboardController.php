@@ -49,6 +49,8 @@ class DashboardController extends Controller
                 'backgroundColor' => $colors
             ]
         ];
+        //pieChart
+
     
         return view('backEnd.dashboard.home.home', compact('labels', 'dataSets', 'customerCount', 'leadCount', 'todaysPayment', 'MonthlyPayment'));
     }

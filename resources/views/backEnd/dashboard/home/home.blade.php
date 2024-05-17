@@ -63,17 +63,15 @@
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <canvas id="myChart" style="width:60%; max-width:400px; height:200px;"></canvas>
-
-
         </div>
         <!-- Chart -->
+        <canvas id="myChart" style="width:60%; max-width:600px; height:200px;"></canvas>
+        <canvas id="piechart" style="width:40%; max-width:600px; height:200px;"></canvas>
       </div>
     </section>
     <!-- /.content -->
-  </div>
+</div>
 @endsection
-
 @push('js')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -98,5 +96,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+</script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Work',     11],
+      ['Eat',      2],
+      ['Commute',  2],
+      ['Watch TV', 2],
+      ['Sleep',    7]
+    ]);
+
+    var options = {
+      title: 'My Daily Activities'
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+    chart.draw(data, options);
+  }
 </script>
 @endpush
