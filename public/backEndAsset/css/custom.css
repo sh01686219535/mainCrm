@@ -89,3 +89,12 @@
     display: inline-block !important;
     font-size: 12px !important;
 }
+#myChart{
+    width:70%;height:200px;
+}
+#chart_div{
+    width: 70%;height: 500;
+}
+.chart{
+    width: 100%;
+}
