@@ -1,6 +1,5 @@
 @extends('backEnd.dashboard.home.master')
 @section('title', 'Dashboard')
-
 @section('content')
     @push('css')
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -72,17 +71,13 @@
                     <section class="chart">
                         <canvas id="myChart"></canvas>
                     </section>
+                    <div id="Container" class="chart"></div>
                     <section class="chart">
                         <div id="chart_div"></div>
-
                     </section>
-                    <div id="Container" style="width: 100%; height: 400px; margin: auto;"></div>
-
                 </div>
-                <!-- Chart -->
             </div>
         </section>
-        <!-- /.content -->
     </div>
 @endsection
 @push('js')
@@ -119,15 +114,12 @@
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
-
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Topping');
             data.addColumn('number', 'Slices');
             data.addRows([
                 <?php echo $charr; ?>
             ]);
-
-            // Set chart options
             var options = {
                 'title': 'Customer',
             };
@@ -135,12 +127,11 @@
             chart.draw(data, options);
         }
     </script>
-
+    // {{-- line charts --}}
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
-          // var userData = @json($paymentData); 
-            var userData =  [100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650]; 
-            console.log('Data for chart:', userData);
+          var userDataString = @json($paymentData); 
+          var userData = JSON.parse(userDataString);
             Highcharts.chart('Container', {
                 chart: {
                     type: 'line'
