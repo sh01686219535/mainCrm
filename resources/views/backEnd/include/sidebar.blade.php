@@ -14,50 +14,55 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                <li class="nav-item menu-open">
-                    <a href="{{ route('dashboard') }}" class="nav-link active">
+                {{-- <li class="nav-item {{ request()->routeIs('dashboard') ? 'menu-open' : '' }}">
+                    <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
                         </p>
                     </a>
-
-                </li>
+                </li> --}}
                 {{-- customer start --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-user-tie"></i>
-                        <p>
-                            Customer
-                            <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right"></span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('customer') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Customer</p>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('approve.customer') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Approve Customer</p>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('customer.list') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Customer List</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item {{ request()->routeIs('dashboard') ? 'menu-open' : '' }}">
+                        <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    {{-- customer start --}}
+                    <li class="nav-item {{ request()->routeIs('customer*') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ request()->routeIs('customer*') ? 'active' : '' }}">
+                            <i class="nav-icon fa fa-user-tie"></i>
+                            <p>
+                                Customer
+                                <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right"></span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('customer') }}" class="nav-link {{ request()->routeIs('customer') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Customer</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('approve.customer') }}" class="nav-link {{ request()->routeIs('approve.customer') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Approve Customer</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('customer.list') }}" class="nav-link {{ request()->routeIs('customer.list') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Customer List</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>                
+                
                 {{-- End customer start --}}
                 {{-- Vendor start --}}
                 <li class="nav-item">

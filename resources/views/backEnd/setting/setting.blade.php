@@ -90,7 +90,7 @@
                                                 <input type="file" name="componyLogoMenu" id="componyLogoMenu"
                                                     class="form-control">
                                                 @if ($setting->componyLogoMenu)
-                                                    <img class="imageUN" src="{{ asset($setting->componyLogoMenu) }}"
+                                                    <img class="imageUN" id="showImage" src="{{ asset($setting->componyLogoMenu) }}"
                                                         alt="" class="image-style mb-3">
                                                 @else
                                                     <img class="imageUN" id="showImage"
@@ -106,10 +106,10 @@
                                                 <input type="file" name="componyLogoFooter" id="componyLogoFooter"
                                                     class="form-control">
                                                 @if ($setting->componyLogoFooter)
-                                                    <img class="imageUN" src="{{ asset($setting->componyLogoFooter) }}"
+                                                    <img class="imageUN" id="showNImages" src="{{ asset($setting->componyLogoFooter) }}"
                                                         alt="" class="image-style mb-3">
                                                 @else
-                                                    <img class="imageUN" id="showNImage"
+                                                    <img class="imageUN" id="showNImages"
                                                         src="{{ asset('backEndAsset/img/previewImage.png') }}"
                                                         alt="" class="image-style mb-3">
                                                 @endif
@@ -159,7 +159,7 @@
             $('#componyLogoFooter').change('click', function(e) {
                 var reader = new FileReader();
                 reader.onload = function(e) {
-                    $('.showNImage').attr('src', e.target.result);
+                    $('#showNImages').attr('src', e.target.result);
                 }
                 reader.readAsDataURL(e.target.files['0']);
             });
