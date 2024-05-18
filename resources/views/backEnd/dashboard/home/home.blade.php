@@ -127,7 +127,7 @@
             chart.draw(data, options);
         }
     </script>
-    // {{-- line charts --}}
+    {{-- line charts --}}
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
           var userDataString = @json($paymentData); 

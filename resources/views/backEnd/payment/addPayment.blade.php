@@ -11,7 +11,9 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
+                    <!-- /.col -->
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
                             <div class="card-body ">
@@ -29,6 +31,7 @@
                                         <form action="{{ route('payment.store') }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
+                                            <!-- /.row -->
                                             <div class="row">
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
@@ -101,15 +104,18 @@
                                                     <input type="submit" class="btn btn-outline-success" value="Save">
                                                 </div>
                                             </div>
+                                            <!-- /.row -->
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                    </div><!-- /.col -->
+                    </div>
+                    <!-- /.col -->
 
-                </div><!-- /.row -->
+                </div>
+                <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
     </div>

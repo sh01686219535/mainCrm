@@ -12,6 +12,7 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
                     {{-- error mess --}}
                     @if ($errors->any())
@@ -23,6 +24,7 @@
                             </ul>
                         </div>
                     @endif
+                    <!-- /.col -->
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <form action="{{ route('update.customer') }}" class="form-demo" method="post"
                             enctype="multipart/form-data">
@@ -500,9 +502,11 @@
                                 <span class="clearfix"></span>
                             </div>
                         </form>
-                    </div><!-- /.col -->
+                    </div>
+                    <!-- /.col -->
 
-                </div><!-- /.row -->
+                </div>
+                <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->

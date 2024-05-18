@@ -59,7 +59,7 @@
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
           </div>
           <!-- /.col -->
-        </div>estimates
+        </div>
       </form>
 
       <div class="social-auth-links text-center mb-3">
@@ -67,9 +67,9 @@
         <a href="{{ url('/google/redirect')}}" class="btn btn-block btn-primary">
           <i class="fab fa-google mr-2"></i> Sign in using Google
         </a>
-        <a href="#" class="btn btn-block btn-primary">
+        {{-- <a href="#" class="btn btn-block btn-primary">
           <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
+        </a> --}}
         
       </div>
       <!-- /.social-auth-links -->

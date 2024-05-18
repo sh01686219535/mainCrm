@@ -11,7 +11,9 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
+                    <!-- /.col -->
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
                             <div class="card-head main-body m-3">
@@ -27,6 +29,7 @@
                                         <form action="{{ route('lead.store') }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
+                                            <!-- /.row -->
                                             <div class="row">
                                                 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                     <div class="form-group">
@@ -138,6 +141,7 @@
                                                 <br>
 
                                             </div>
+                                            <!-- /.row -->
                                             <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                 <input type="submit" class="btn btn-outline-success" value="Save">
                                             </div>
@@ -147,9 +151,11 @@
                             </div>
                         </div>
 
-                    </div><!-- /.col -->
+                    </div>
+                    <!-- /.col -->
 
-                </div><!-- /.row -->
+                </div>
+                <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->

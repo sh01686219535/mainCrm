@@ -7,7 +7,9 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
+                    <!-- /.col -->
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
                             <div class="card-body ">
@@ -30,6 +32,7 @@
                             <div class="card-body">
                                 <form action="{{ route('setting.store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
+                                    <!-- /.row -->
                                     <div class="row">
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
                                             <div class="form-group">
@@ -116,12 +119,15 @@
                                             <input type="submit" class="btn btn-success" value="Submit">
                                         </div>
                                     </div>
+                                    <!-- /.row -->
                                 </form>
                             </div>
                         </div>
                     </div>
+                    <!-- /.row -->
 
-                </div><!-- /.row -->
+                </div>
+                <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
@@ -153,7 +159,7 @@
             $('#componyLogoFooter').change('click', function(e) {
                 var reader = new FileReader();
                 reader.onload = function(e) {
-                    $('#showNImage').attr('src', e.target.result);
+                    $('.showNImage').attr('src', e.target.result);
                 }
                 reader.readAsDataURL(e.target.files['0']);
             });

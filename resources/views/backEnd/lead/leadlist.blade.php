@@ -5,7 +5,9 @@
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
+            <!-- /.row -->
             <div class="row mb-2">
+                <!-- /.col -->
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
@@ -33,7 +35,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- /.row -->
             </div>
+            <!-- /.row -->
 
             <div class="card">
                 <div class="card-body">

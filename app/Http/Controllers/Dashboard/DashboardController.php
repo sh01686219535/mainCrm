@@ -12,7 +12,7 @@ use GuzzleHttp\Promise\Create;
 
 class DashboardController extends Controller
 {
-    //dashboard
+    //Dashboard Index
     public function dashboard()
     {
         $customerCount = Customer::count();

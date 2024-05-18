@@ -7,7 +7,9 @@ Customer List
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
+                    <!-- /.col -->
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
                             <div class="card-body ">
@@ -57,9 +59,11 @@ Customer List
                                 </div>
                             </div>
                         </div>
-                    </div><!-- /.col -->
+                    </div>
+                    <!-- /.col -->
 
-                </div><!-- /.row -->
+                </div>
+                <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->

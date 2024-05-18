@@ -20,7 +20,9 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
+                    <!-- /.col -->
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
                             <div class="card-head main-body m-3">
@@ -37,6 +39,7 @@
                                             class="form-demo">
                                             @csrf
                                             @method('PUT')
+                                            <!-- /.row -->
                                             <div class="row">
                                                 <div class="col-xl-4 col-md-4 col-sm-4 col-lg-4">
                                                     <div class="form-group">
@@ -164,11 +167,14 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- /.row -->
+                                            <!-- /.row -->
                                             <div class="row">
                                                 <div class="col-xl-3">
                                                     <input type="submit" class="btn btn-outline-success" value="Save">
                                                 </div>
                                             </div>
+                                            <!-- /.row -->
 
                                         </form>
                                     </div>
@@ -176,9 +182,11 @@
                             </div>
                         </div>
 
-                    </div><!-- /.col -->
+                    </div>
+                    <!-- /.col -->
 
-                </div><!-- /.row -->
+                </div>
+                <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
