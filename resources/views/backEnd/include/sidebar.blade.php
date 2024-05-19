@@ -14,14 +14,6 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                {{-- <li class="nav-item {{ request()->routeIs('dashboard') ? 'menu-open' : '' }}">
-                    <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Dashboard
-                        </p>
-                    </a>
-                </li> --}}
                 {{-- customer start --}}
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item {{ request()->routeIs('dashboard') ? 'menu-open' : '' }}">
@@ -31,8 +23,8 @@
                         </a>
                     </li>
                     {{-- customer start --}}
-                    <li class="nav-item {{ request()->routeIs('customer*') ? 'menu-open' : '' }}">
-                        <a href="#" class="nav-link {{ request()->routeIs('customer*') ? 'active' : '' }}">
+                    <li class="nav-item {{ request()->routeIs('customer*') ? 'menu-open' : '' }} || {{ request()->routeIs('approve.customer*')? 'menu-open' : '' }} || {{ request()->routeIs('customer.list*') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ request()->routeIs('customer*') ? 'active' : '' }} || {{ request()->routeIs('approve.customer*') ? 'active' : '' }} || {{ request()->routeIs('customer.list*') ? 'active' : '' }}">
                             <i class="nav-icon fa fa-user-tie"></i>
                             <p>
                                 Customer
@@ -61,12 +53,12 @@
                             </li>
                         </ul>
                     </li>
-                </ul>                
+                                 
                 
                 {{-- End customer start --}}
                 {{-- Vendor start --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {{ request()->routeIs('vendor.index*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('vendor.index*') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-user"></i>
                         <p>
                             Vendor
@@ -76,7 +68,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('vendor.index') }}" class="nav-link">
+                            <a href="{{ route('vendor.index') }}" class="nav-link {{ request()->routeIs('vendor.index') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Vendor List</p>
                             </a>
@@ -85,8 +77,8 @@
                 </li>
                 {{-- End Vendor start --}}
                 {{-- Lead start --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {{ request()->routeIs('lead.index*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('lead.index*') ? 'active' : ''  }}">
                         <i class="nav-icon fas fa-lg fa-tty"></i>
                         <p>
                             Lead
@@ -96,7 +88,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('lead.index') }}" class="nav-link">
+                            <a href="{{ route('lead.index') }}" class="nav-link {{ request()->routeIs('lead.index') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Lead List</p>
                             </a>
@@ -105,8 +97,10 @@
                 </li>
                 {{-- Lead end --}}
                 {{-- Sales start --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {{ request()->routeIs('invoice.index*') ? 'menu-open' : '' }} || {{ request()->routeIs('estimates.index*') ? 'menu-open' : '' }} 
+                    || {{ request()->routeIs('item.index*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('invoice.index*') ? 'active' : ''  }} || {{ request()->routeIs('estimates.index*') ? 'active' : ''  }} 
+                        || {{ request()->routeIs('item.index*') ? 'active' : ''  }}">
                         <i class="nav-icon fab fa-lg fa-speakap"></i>
                         <p>
                             Sales
@@ -116,7 +110,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('invoice.index') }}" class="nav-link">
+                            <a href="{{ route('invoice.index') }}" class="nav-link {{ request()->routeIs('invoice.index') ? 'active' : ''  }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Invoice</p>
                             </a>
@@ -124,7 +118,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('estimates.index') }}" class="nav-link">
+                            <a href="{{ route('estimates.index') }}" class="nav-link {{ request()->routeIs('estimates.index') ? 'active' : ''  }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Estimates</p>
                             </a>
@@ -132,7 +126,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('item.index') }}" class="nav-link">
+                            <a href="{{ route('item.index') }}" class="nav-link {{ request()->routeIs('item.index') ? 'active' : ''  }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Item</p>
                             </a>
@@ -141,8 +135,8 @@
                 </li>
                 {{-- Sales end --}}
                 {{-- payment start --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {{ request()->routeIs('payment*') ? 'menu-open' : '' }} ">
+                    <a href="#" class="nav-link {{ request()->routeIs('payment*') ? 'active' : ''  }}">
                         <i class="nav-icon fab fa-lg fa-product-hunt"></i>
                         <p>
                             Payment
@@ -152,7 +146,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('payment') }}" class="nav-link">
+                            <a href="{{ route('payment') }}" class="nav-link {{ request()->routeIs('payment') ? 'active' : ''  }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Payment</p>
                             </a>
@@ -162,8 +156,8 @@
                 </li>
                 {{-- payment end --}}
                 {{-- Task start --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {{ request()->routeIs('task.index*')? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('task.index*') ? 'active' : ''  }}">
                         <i class="nav-icon fas fa-lg fa-tasks"></i>
                         <p>
                             Task
@@ -174,7 +168,7 @@
 
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('task.index') }}" class="nav-link">
+                            <a href="{{ route('task.index') }}" class="nav-link {{ request()->routeIs('task.index') ? 'active' : ''  }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Task List</p>
                             </a>
@@ -184,8 +178,8 @@
                 </li>
                 {{-- Task end --}}
                 {{-- Projects start --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {{ request()->routeIs('project.index*')? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('project.index*') ? 'active' : ''  }}">
                         <i class="nav-icon fas fa-lg fa-layer-group"></i>
                         <p>
                             Projects
@@ -196,7 +190,7 @@
 
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('project.index') }}" class="nav-link">
+                            <a href="{{ route('project.index') }}" class="nav-link {{ request()->routeIs('project.index') ? 'active' : ''  }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Project</p>
                             </a>
@@ -206,8 +200,8 @@
                 </li>
                 {{-- Projects end --}}
                 {{-- Expense start --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {{ request()->routeIs('category.index*')? 'menu-open' : '' }} || {{ request()->routeIs('expense.index*')? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('category.index*')? 'active' : '' }} || {{ request()->routeIs('expense.index*')? 'active' : '' }}">
                         <i class="nav-icon fab fa-lg fa-erlang"></i>
                         <p>
                             Expense
@@ -217,7 +211,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('category.index') }}" class="nav-link">
+                            <a href="{{ route('category.index') }}" class="nav-link {{ request()->routeIs('category.index')? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Category</p>
                             </a>
@@ -225,7 +219,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('expense.index') }}" class="nav-link">
+                            <a href="{{ route('expense.index') }}" class="nav-link {{ request()->routeIs('expense.index')? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Expense</p>
                             </a>
@@ -234,8 +228,8 @@
                 </li>
                 {{-- Expense end --}}
                 {{-- Employee Start --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {{ request()->routeIs('teamLeader*')? 'menu-open' : '' }} || {{ request()->routeIs('sales.person*')? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('teamLeader*')? 'active' : '' }} || {{ request()->routeIs('sales.person*')? 'active' : '' }}">
                         <i class="nav-icon fas fa fa-users"></i>
                         <p>
                             Employee
@@ -244,13 +238,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('teamLeader') }}" class="nav-link">
+                            <a href="{{ route('teamLeader') }}" class="nav-link {{ request()->routeIs('teamLeader')? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Team Leader</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('sales.person') }}" class="nav-link">
+                            <a href="{{ route('sales.person') }}" class="nav-link {{ request()->routeIs('sales.person*')? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Sales Person</p>
                             </a>
@@ -259,8 +253,10 @@
                 </li>
                 {{-- Employee End --}}
                 {{-- Report Start --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {{ request()->routeIs('task.report*')? 'menu-open' : '' }} || {{ request()->routeIs('customerLead.report*')? 'menu-open' : '' }}
+                     || {{ request()->routeIs('expense.report*')? 'menu-open' : '' }} || {{ request()->routeIs('customer.report*')? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('task.report*')? 'active' : ''}} || {{ request()->routeIs('customerLead.report*')? 'active' : '' }}
+                        || {{ request()->routeIs('expense.report*')? 'active' : '' }} || {{ request()->routeIs('customer.report*')? 'active' : '' }}">
                         <i class="nav-icon fa fa-copy"></i>
                         <p>
                             Report
@@ -269,7 +265,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('task.report') }}" class="nav-link">
+                            <a href="{{ route('task.report') }}" class="nav-link  {{ request()->routeIs('task.report')? 'active' : ''}}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Task</p>
                             </a>
@@ -277,7 +273,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('customerLead.report') }}" class="nav-link">
+                            <a href="{{ route('customerLead.report') }}" class="nav-link {{ request()->routeIs('customerLead.report')? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Lead</p>
                             </a>
@@ -285,7 +281,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('customer.report') }}" class="nav-link">
+                            <a href="{{ route('customer.report') }}" class="nav-link {{ request()->routeIs('customer.report')? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Customer</p>
                             </a>
@@ -293,7 +289,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('expense.report') }}" class="nav-link">
+                            <a href="{{ route('expense.report') }}" class="nav-link {{ request()->routeIs('expense.report')? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Expense</p>
                             </a>
@@ -302,9 +298,9 @@
                 </li>
                 {{-- Report End --}}
                 {{-- Settings Start --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-copy"></i>
+                <li class="nav-item {{ request()->routeIs('setting*')? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('setting*')? 'active' : '' }}">
+                        <i class="nav-icon far fa-circle nav-icon fa-lg fas fa-cogs"></i>
                         <p>
                             Settings
                             <i class="fas fa-angle-left right"></i>
@@ -312,8 +308,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('setting') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon fa-lg fas fa-cogs"></i>
+                            <a href="{{ route('setting') }}" class="nav-link {{ request()->routeIs('setting*')? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
                                 <p>Settings</p>
                             </a>
                         </li>

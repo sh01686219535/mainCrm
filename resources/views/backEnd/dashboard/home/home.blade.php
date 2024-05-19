@@ -25,7 +25,7 @@
                 <!-- Stat boxes -->
                 <div class="row">
                     <!-- Customer count -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-6 col-6">
                         <div class="small-box bg-info">
                             <div class="inner">
                                 <h3>{{ $customerCount }}</h3>
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <!-- Lead count -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-6 col-6">
                         <div class="small-box bg-success">
                             <div class="inner">
                                 <h3>{{ $leadCount }}</h3>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <!-- Today's payments -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-6 col-6">
                         <div class="small-box bg-warning">
                             <div class="inner">
                                 <h3>{{ $todaysPayment }}</h3>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <!-- Monthly payments -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-6 col-6">
                         <div class="small-box bg-danger">
                             <div class="inner">
                                 <h3>{{ $MonthlyPayment }}</h3>
@@ -68,10 +68,14 @@
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+                    <!-- Lead Chart -->
                     <section class="chart">
                         <canvas id="myChart"></canvas>
                     </section>
+                     <!-- Monthly payments Chart -->
                     <div id="Container" class="chart"></div>
+                    <br>
+                     <!-- Customer Chart -->
                     <section class="chart">
                         <div id="chart_div"></div>
                     </section>

@@ -44,12 +44,12 @@
     display: inherit;
 }
 .dummy {
-    color: rgb(0, 0, 0)
+    color: rgb(0, 0, 0);
 }
 /* showNImage */
-.imageUN{
-    width:150px;
-    height:150px;
+.imageUN {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
 }
 /* Add Lead */
@@ -57,16 +57,16 @@
     display: inherit;
 }
 .dummy {
-    color: rgb(0, 0, 0)
+    color: rgb(0, 0, 0);
 }
 /* report  */
-.item-btn{
+.item-btn {
     display: block;
-    padding:0 10px;
+    padding: 0 10px;
     text-decoration: none;
     color: #000;
 }
-.menu-item{
+.menu-item {
     background-color: #c4c7c9;
     width: 120px;
     padding: 5px;
@@ -74,27 +74,30 @@
     display: inline-block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.main-menu > a{
+.main-menu > a {
     margin: 0 15px;
 }
 .hidden {
     display: none;
 }
-/* .menu-item-1,.menu-item-2,.menu-item-3,.menu-item-4,.menu-item-5,.menu-item-6{
-    display: block;
-} */
-.action-btn{
+.action-btn {
     width: 32px;
     height: 32px;
     display: inline-block !important;
     font-size: 12px !important;
 }
-#myChart{
-    width:70%;height:200px;
+#myChart {
+    width: 70%;
+    height: 400px;
 }
-#chart_div{
-    width: 70%;height: 500;
-}
-.chart{
+#chart_div {
     width: 100%;
+    height: 500;
+}
+.chart {
+    width: 100%;
+    height: 400px;
+}
+#Container {
+    margin-bottom: 20px;
 }
