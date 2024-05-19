@@ -68,7 +68,7 @@
                                             <td>{{ \Carbon\Carbon::parse($item->deadline)->format("d-M-y") }}</td>
                                             <td>
                                                 <a href="{{ route('project.edit', $item->id) }}"
-                                                    class="btn btn-outline-outline-success action-btn"><i class="fa fa-edit"></i></a>
+                                                    class="btn btn-outline-success action-btn"><i class="fa fa-edit"></i></a>
                                                 <form class="action-btn" action="{{ route('project.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
