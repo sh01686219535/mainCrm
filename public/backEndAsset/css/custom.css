@@ -101,3 +101,9 @@
 #Container {
     margin-bottom: 20px;
 }
+.m-chart{
+    display: flex;
+}
+.inner{
+    text-align: center;
+}

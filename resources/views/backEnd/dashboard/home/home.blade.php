@@ -68,17 +68,26 @@
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
-                    <!-- Lead Chart -->
-                    <section class="chart">
-                        <canvas id="myChart"></canvas>
-                    </section>
-                     <!-- Monthly payments Chart -->
-                    <div id="Container" class="chart"></div>
+                    <!-- Monthly payments Chart -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 col-12">
+                        <div id="Container" class="chart"></div>
+                    </div>
                     <br>
-                     <!-- Customer Chart -->
-                    <section class="chart">
-                        <div id="chart_div"></div>
-                    </section>
+                    <!-- Lead Chart -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 col-12 m-chart">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-12">
+                            <section class="chart">
+                                <canvas id="myChart"></canvas>
+                            </section>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-12">
+                            <!-- Customer Chart -->
+                            <section class="chart">
+                                <div id="chart_div"></div>
+                            </section>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -134,8 +143,8 @@
     {{-- line charts --}}
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
-          var userDataString = @json($paymentData); 
-          var userData = JSON.parse(userDataString);
+            var userDataString = @json($paymentData);
+            var userData = JSON.parse(userDataString);
             Highcharts.chart('Container', {
                 chart: {
                     type: 'line'
@@ -151,7 +160,7 @@
                 yAxis: {
                     title: {
                         text: 'Number of New Payments',
-                    
+
                     }
                 },
                 series: [{
