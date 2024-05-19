@@ -57,11 +57,11 @@
                                             <td>{{ Str::limit($item->details,10)  }}</td>
                                             <td>
                                                 <a href="{{ route('category.edit', $item->id) }}"
-                                                    class="btn btn-outline-success"><i class="fa fa-edit"></i></a>
-                                                <form action="{{ route('category.destroy', $item->id) }}" method="POST">
+                                                    class="btn btn-outline-success action-btn"><i class="fa fa-edit"></i></a>
+                                                <form  class="action-btn" action="{{ route('category.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger" id="delete"><i class="fas fa-trash"></i></button>
+                                                    <button type="submit" class="btn btn-outline-danger action-btn" id="delete"><i class="fas fa-trash"></i></button>
                                                 </form>
                                                 
                                             </td>
