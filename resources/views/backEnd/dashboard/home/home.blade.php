@@ -29,10 +29,8 @@
                         <div class="small-box bg-info">
                             <div class="inner">
                                 <h3>{{ $customerCount }}</h3>
-                                <p>Customers</p>
+                                <h4>Customers</h4>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i
-                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- Lead count -->
@@ -40,10 +38,8 @@
                         <div class="small-box bg-success">
                             <div class="inner">
                                 <h3>{{ $leadCount }}</h3>
-                                <p>Leads</p>
+                                <h4>Leads</h4>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i
-                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- Today's payments -->
@@ -51,10 +47,8 @@
                         <div class="small-box bg-warning">
                             <div class="inner">
                                 <h3>{{ $todaysPayment }}</h3>
-                                <p>Payments - Today</p>
+                                <h4>Payments - Today</h4>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i
-                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- Monthly payments -->
@@ -62,10 +56,8 @@
                         <div class="small-box bg-danger">
                             <div class="inner">
                                 <h3>{{ $MonthlyPayment }}</h3>
-                                <p>Payments - Monthly</p>
+                                <h4>Payments - Monthly</h4>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i
-                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- Monthly payments Chart -->
