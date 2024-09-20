@@ -12,7 +12,7 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
-                    <!-- /.row -->
+                <!-- /.row -->
                 <div class="row mb-2">
                     {{-- error mess --}}
                     @if ($errors->any())
@@ -46,42 +46,42 @@
                                                 <div class="form-group">
                                                     <label for="fatherName">Father Name</label>
                                                     <input type="text" class="form-control" id="fatherName"
-                                                        name="fatherName">
+                                                        name="fathername">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="motherName">Mother Name</label>
                                                     <input type="text" class="form-control" id="motherName"
-                                                        name="motherName">
+                                                        name="mothername">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="spouseName">Spouse Name(If Any)</label>
                                                     <input type="text" class="form-control" id="spouseName"
-                                                        name="spouseName">
+                                                        name="spousename">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="dateOfBirth">Date of Birth</label>
                                                     <input type="date" class="form-control" id="dateOfBirth"
-                                                        name="dateOfBirth">
+                                                        name="date_of_birth">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="dateOfBirthSpouse">Date of Birth(Spouse)</label>
                                                     <input type="date" class="form-control" id="dateOfBirthSpouse"
-                                                        name="dateOfBirthSpouse">
+                                                        name="date_of_birthspouse">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="marriageDay">Marriage Day</label>
                                                     <input type="date" class="form-control" id="marriageDay"
-                                                        name="marriageDay">
+                                                        name="marriageday">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -102,14 +102,14 @@
                                                 <div class="form-group">
                                                     <label for="nidNumber">Nid Number</label>
                                                     <input type="number" class="form-control" id="nidNumber"
-                                                        name="nidNumber">
+                                                        name="nid_number">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="PassportNumber">Passport Number</label>
                                                     <input type="number" class="form-control" id="PassportNumber"
-                                                        name="PassportNumber">
+                                                        name="passport_number">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -137,28 +137,28 @@
                                                 <div class="form-group">
                                                     <label for="facebookId">Facebook Id</label>
                                                     <input type="text" class="form-control" id="facebookId"
-                                                        name="facebookId">
+                                                        name="facebook_id">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="presentAddress">Present Address</label>
                                                     <input type="text" class="form-control" id="presentAddress"
-                                                        name="presentAddress">
+                                                        name="present_address">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="permanentAddress">Permanent Address</label>
                                                     <input type="text" class="form-control" id="permanentAddress"
-                                                        name="permanentAddress">
+                                                        name="permanent_address">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="officeAddress">Office Address</label>
                                                     <input type="text" class="form-control" id="officeAddress"
-                                                        name="officeAddress">
+                                                        name="office_address">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -185,20 +185,20 @@
                                                 <div class="form-group">
                                                     <label for="projectName">Project Name</label>
                                                     <input type="text" class="form-control" id="projectName"
-                                                        name="projectName" value="Your Project Name">
+                                                        name="project_name" value="Your Project Name">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="projectAddress">Project Address</label>
                                                     <input type="text" class="form-control" id="projectAddress"
-                                                        name="projectAddress" value="Enter Project Address">
+                                                        name="project_address" value="Enter Project Address">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="categoryOfOwnership">Category Of Ownership</label>
-                                                    <select name="categoryOfOwnership" id="categoryOfOwnership"
+                                                    <select name="category_of_ownership" id="categoryOfOwnership"
                                                         class="form-control">
                                                         <option value=""> Select Category Of Ownership</option>
                                                         <option value="executive">Executive</option>
@@ -211,21 +211,21 @@
                                                 <div class="form-group">
                                                     <label for="ownershipSize">Suite Ownership Size(SFT)</label>
                                                     <input type="number" class="form-control" id="ownershipSize"
-                                                        name="ownershipSize" onchange="calculateOwnership()">
+                                                        name="ownership_size" onchange="calculateOwnership()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="noOffOwnership">No. Of Ownership</label>
                                                     <input type="number" class="form-control" id="noOffOwnership"
-                                                        name="noOffOwnership" onkeyup="calculateOwnership()">
+                                                        name="no_off_ownership" onkeyup="calculateOwnership()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="pricePerOwnership">Price Per Ownership</label>
                                                     <input type="number" class="form-control" id="pricePerOwnership"
-                                                        name="pricePerOwnership" onkeyup="calculatetotal()">
+                                                        name="price_per_ownership" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -233,41 +233,41 @@
                                                     <label for="pricePerOwnershipInWord">Price Per Ownership(In
                                                         Word)</label>
                                                     <input type="text" class="form-control"
-                                                        id="pricePerOwnershipInWord" name="pricePerOwnershipInWord">
+                                                        id="pricePerOwnershipInWord" name="price_per_ownership_in_word">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="totalPrice">Total Price</label>
                                                     <input type="number" class="form-control" id="totalPrice"
-                                                        name="totalPrice" onchange="calculatetotal()">
+                                                        name="total_price" onchange="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="totalPriceInWord">Total Price(In Word)</label>
                                                     <input type="number" class="form-control" id="totalPriceInWord"
-                                                        name="totalPriceInWord">
+                                                        name="total_price_in_word">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="specialDiscount">Special Discount</label>
                                                     <input type="number" class="form-control" id="specialDiscount"
-                                                        name="specialDiscount" onkeyup="calculatetotal()">
+                                                        name="special_discount" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="specialDiscountInWord">Special Discount(In Word)</label>
                                                     <input type="number" class="form-control" id="specialDiscountInWord"
-                                                        name="specialDiscountInWord">
+                                                        name="special_discount_inword">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <label for="modeOfPayment" class="form-label dummy">Mode Of
                                                     Payment</label>
-                                                <select name="modeOfPayment" id="modeOfPayment" class="form-control">
+                                                <select name="mode_of_payment" id="modeOfPayment" class="form-control">
                                                     <option value="">Select Mode Of Payment</option>
                                                     <option value="perMonth">Per Month</option>
                                                     <option value="quarterly">Quarterly</option>
@@ -291,27 +291,27 @@
                                                 <div class="form-group">
                                                     <label for="bookingMoney">Booking Money</label>
                                                     <input type="number" class="form-control" id="bookingMoney"
-                                                        name="bookingMoney" onkeyup="calculatetotal()">
+                                                        name="booking_money" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="bookingMoneyInWord">Booking Money(In Word)</label>
                                                     <input type="text" class="form-control" id="bookingMoneyInWord"
-                                                        name="bookingMoneyInWord">
+                                                        name="booking_money_inword">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="bookingMoneyDate">Booking Money(Date)</label>
                                                     <input type="date" class="form-control" id="bookingMoneyDate"
-                                                        name="bookingMoneyDate">
+                                                        name="booking_money_date">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="paymentType">Payment Type</label>
-                                                    <select name="paymentType" id="paymentType" class="form-control">
+                                                    <select name="payment_type" id="paymentType" class="form-control">
                                                         <option value=""> Select Payment Type</option>
                                                         <option value="cash">CASH</option>
                                                         <option value="chq">CHQ</option>
@@ -323,14 +323,14 @@
                                                 <div class="form-group">
                                                     <label for="inStallmentStart">InStallment Start</label>
                                                     <input type="date" class="form-control" id="inStallmentStart"
-                                                        name="inStallmentStart">
+                                                        name="in_stallment_start">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="noOfInstallment">No. Of Installment</label>
                                                     <input type="number" class="form-control" id="noOfInstallment"
-                                                        name="noOfInstallment" onkeyup="calculatetotal()">
+                                                        name="no_o_installment" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
 
@@ -338,28 +338,28 @@
                                                 <div class="form-group">
                                                     <label for="instPerMonth">Inst. Per Month</label>
                                                     <input type="number" class="form-control" id="instPerMonth"
-                                                        name="instPerMonth" onkeyup="calculatetotal()">
+                                                        name="inst_permonth" onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="inStallmentTo">InStallment To</label>
                                                     <input type="date" class="form-control" id="inStallmentTo"
-                                                        name="inStallmentTo">
+                                                        name="in_stallment_to">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="mainAmount">Main Amount</label>
                                                     <input type="number" class="form-control" id="mainAmount"
-                                                        name="mainAmount" onchange="calculatetotal()">
+                                                        name="main_amount" onchange="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="agreedAmount">Agreed Amount</label>
                                                     <input type="number" class="form-control" id="agreedAmount"
-                                                        name="agreedAmount" onchange="calculateOwnership()">
+                                                        name="agreed_amount" onchange="calculateOwnership()">
                                                 </div>
                                             </div>
 
@@ -387,55 +387,55 @@
                                                 <div class="form-group">
                                                     <label for="nomineeName">Nominee Name</label>
                                                     <input type="text" class="form-control" id="nomineeName"
-                                                        name="nomineeName">
+                                                        name="nominee_name">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="nomineeNumber">Nominee Cell Number</label>
                                                     <input type="number" class="form-control" id="nomineeNumber"
-                                                        name="nomineeNumber">
+                                                        name="nominee_number">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="relationToNominee">Relation To Nominee</label>
                                                     <input type="text" class="form-control" id="relationToNominee"
-                                                        name="relationToNominee">
+                                                        name="relation_to_nominee">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceNameA">Reference Name(A)</label>
                                                     <input type="text" class="form-control" id="referenceNameA"
-                                                        name="referenceNameA">
+                                                        name="reference_name_a">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceCellNumerA">Reference Cell Number(A)</label>
                                                     <input type="number" class="form-control" id="referenceCellNumerA"
-                                                        name="referenceCellNumerA">
+                                                        name="reference_cell_numer_a">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceNameb">Reference Name(B)</label>
                                                     <input type="text" class="form-control" id="referenceNameb"
-                                                        name="referenceNameb">
+                                                        name="reference_name_b">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceCellNumerB">Reference Cell Number(B)</label>
                                                     <input type="number" class="form-control" id="referenceCellNumerB"
-                                                        name="referenceCellNumerB">
+                                                        name="reference_cell_numer_b">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="salesPerson_id">Sales Person</label>
-                                                    <select name="salesPerson_id" id="salesPerson_id"
+                                                    <select name="sales_person_id" id="salesPerson_id"
                                                         class="form-control">
                                                         <option value=""> Select Sales Person</option>
                                                         @foreach ($salesPerson as $item)
@@ -448,7 +448,7 @@
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="teamLeader_id">Team Leader</label>
-                                                    <select name="teamLeader_id" id="teamLeader_id" class="form-control">
+                                                    <select name="teamleader_id" id="teamLeader_id" class="form-control">
                                                         <option value=""> Select Team Leader</option>
                                                         @foreach ($teamLeader as $item)
                                                             <option value="{{ $item->id }}">{{ $item->name }}
@@ -461,7 +461,7 @@
                                                 <div class="form-group">
                                                     <label for="userImage">User Image</label>
                                                     <input type="file" class="form-control" id="userImage"
-                                                        name="userImage">
+                                                        name="user_image">
                                                     <img class="imageUN" id="showImage"
                                                         src="{{ asset('backEndAsset/img/previewImage.png') }}"
                                                         alt="" class="image-style mb-3">
@@ -472,7 +472,7 @@
                                                 <div class="form-group">
                                                     <label for="nomineeImage">Nominee Image</label>
                                                     <input type="file" class="form-control" id="nomineeImage"
-                                                        name="nomineeImage">
+                                                        name="nominee_image">
                                                     <img class="imageUN" id="showNImage"
                                                         src="{{ asset('backEndAsset/img/previewImage.png') }}"
                                                         alt="" class="image-style mb-3">
@@ -511,7 +511,7 @@
 @endsection
 @push('js')
     <script>
-        //   userImage  
+        //   userImage
         $(document).ready(function() {
             $('#userImage').change('click', function(e) {
                 var reader = new FileReader();
@@ -521,7 +521,7 @@
                 reader.readAsDataURL(e.target.files['0']);
             });
         });
-        //nominee image 
+        //nominee image
         $(document).ready(function() {
             $('#nomineeImage').change('click', function(e) {
                 var reader = new FileReader();
@@ -574,9 +574,9 @@
     </script>
     {{-- end select 2  --}}
     <script>
-        // calculateOwnership 
+        // calculateOwnership
         function calculateOwnership() {
-            // calculateOwnership 
+            // calculateOwnership
             var ownershipSize = parseFloat(document.getElementById("ownershipSize").value) || 1;
             var noOffOwnership = parseFloat(document.getElementById("noOffOwnership").value) || 1;
             var result = ownershipSize * noOffOwnership;

@@ -50,7 +50,7 @@ class DashboardController extends Controller
             ]
         ];
 
-        $Customer = DB::select("select count(*) as total_mode, modeOfPayment from customers group by modeOfPayment");
+        $Customer = DB::select("select count(*) as total_mode, mode_of_payment from customers group by mode_of_payment");
         $chartData = "";
         foreach ($Customer as $value) {
             $chartData .= "['" . $value->modeOfPayment . "'," . $value->total_mode . "],";

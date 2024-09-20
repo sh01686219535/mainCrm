@@ -1,6 +1,6 @@
 @extends('backEnd.dashboard.home.master')
 @section('title')
-Customer List
+    Customer List
 @endsection
 @section('content')
     <div class="content-wrapper">
@@ -16,7 +16,7 @@ Customer List
                                 <div class="main-body">
                                     <h1>Customer List</h1>
                                     <!-- <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                            class="fa fa-plus"></i> Approve Customer</a> -->
+                                                                                                                                                                class="fa fa-plus"></i> Approve Customer</a> -->
                                 </div>
                             </div>
                         </div>
@@ -30,7 +30,6 @@ Customer List
                                                 <th>Name</th>
                                                 <th>Phone</th>
                                                 <th>Email</th>
-                                                <th>Designation</th>
                                                 <th>Image</th>
                                                 <th>Action</th>
                                             </tr>
@@ -43,14 +42,15 @@ Customer List
                                                     <td>{{ $item->name }}</td>
                                                     <td>{{ $item->phone }}</td>
                                                     <td>{{ $item->email }}</td>
-                                                    <td>{{ $item->profession }}</td>
                                                     <td>
-                                                        <img src="{{ asset($item->userImage) }}" class="teamLeader_img"
+                                                        <img src="{{ asset($item->user_image) }}" class="teamLeader_img"
                                                             alt="">
                                                     </td>
-                                                    <td>
-                                                        <a href="{{route('customer.edit',$item->id)}}" class="btn btn-outline-success action-btn" ><i class="fa fa-edit"></i></a>
-                                                        <a href="{{route('delete.customer',$item->id)}}" class="delete btn btn-outline-danger action-btn"><i
+                                                    <td class="d-flex justify-content-between">
+                                                        <a href="{{ route('customer.edit', $item->id) }}"
+                                                            class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+                                                        <a href="{{ route('delete.customer', $item->id) }}"
+                                                            class="delete btn btn-danger btn-sm"><i
                                                                 class="fa fa-trash"></i></a>
                                                 </tr>
                                             @endforeach
@@ -79,6 +79,5 @@ Customer List
     </div>
 @endsection
 @push('js')
-{{-- id="example" --}}
-
+    {{-- id="example" --}}
 @endpush
