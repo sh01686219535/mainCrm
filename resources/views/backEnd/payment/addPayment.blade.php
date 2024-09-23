@@ -11,7 +11,9 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
+                    <!-- /.col -->
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
                             <div class="card-body ">
@@ -26,15 +28,16 @@
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <form action="{{ route('lead.store') }}" method="post"
+                                        <form action="{{ route('payment.store') }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
+                                            <!-- /.row -->
                                             <div class="row">
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
                                                         <label for="customer_id">Customer</label>
                                                         <select name="customer_id" id="customer_id" class="form-control">
-                                                            <option value="">Selecct Customer</option>
+                                                            <option value="">Select Customer</option>
                                                             @foreach ($customer as $item)
                                                                 <option value="{{ $item->id }}">{{ $item->phone }}
                                                                 </option>
@@ -45,50 +48,50 @@
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
                                                         <label for="startdate">Start Date</label>
-                                                        <input type="text" class="form-control" id="startdate"
+                                                        <input type="date" class="form-control" id="startdate"
                                                             name="startdate">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
-                                                        <label for="endDate">End Date</label>
-                                                        <input type="text" class="form-control" id="endDate"
-                                                            name="endDate">
+                                                        <label for="end_date">End Date</label>
+                                                        <input type="date" class="form-control" id="end_date"
+                                                            name="end_date">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
-                                                        <label for="totalInstallment">Total Installment</label>
-                                                        <input type="text" class="form-control" name="totalInstallment"
-                                                            id="totalInstallment"></input>
+                                                        <label for="total_installment">Total Installment</label>
+                                                        <input type="text" class="form-control" name="total_installment"
+                                                            id="total_installment">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
-                                                        <label for="perInstallment">Per Installment</label>
-                                                        <input type="text" class="form-control" id="perInstallment"
-                                                            name="perInstallment">
+                                                        <label for="per_installment">Per Installment</label>
+                                                        <input type="text" class="form-control" id="per_installment"
+                                                            name="per_installment">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
-                                                        <label for="mainAmount">Main Amount</label>
-                                                        <input type="text" class="form-control" id="mainAmount"
-                                                            name="mainAmount">
+                                                        <label for="main_amount">Main Amount</label>
+                                                        <input type="text" class="form-control" id="main_amount"
+                                                            name="main_amount">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
                                                         <label for="dueAmount">Due Amount</label>
                                                         <input type="text" class="form-control" id="dueAmount"
-                                                            name="dueAmount">
+                                                            name="dueAmount" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <div class="form-group">
                                                         <label for="paidAmount">Paid Amount</label>
                                                         <input type="text" class="form-control" id="paidAmount"
-                                                            name="paidAmount">
+                                                            name="paidAmount" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -102,15 +105,16 @@
                                                     <input type="submit" class="btn btn-outline-success" value="Save">
                                                 </div>
                                             </div>
+                                            <!-- /.row -->
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                    </div><!-- /.col -->
-
-                </div><!-- /.row -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
     </div>
@@ -128,25 +132,37 @@
     <script>
         $(document).ready(function() {
             $("#customer_id").change(function() {
-                alert();
-                var customer_id = $(this).val()
-                alert(customer_id);
+                var customer_id = $(this).val();
                 $.ajax({
                     url: '/getCustomer',
                     type: 'get',
                     dataType: 'json',
                     data: {
-                        customer_id + customer_id
-                    }
+                        customer_id: customer_id
+                    },
                     success: function(data) {
-
+                        if (data.length > 0) {
+                            var customer = data[0];
+                            var payment = data[1];
+                            var mainAmount = customer.mainAmount;
+                            var main = mainAmount - payment;
+                            // console.log(main);
+                            $("#startdate").val(customer.in_stallment_start);
+                            $("#end_date").val(customer.in_stallment_to);
+                            $("#total_installment").val(customer.no_o_installment);
+                            $("#per_installment").val(customer.inst_permonth);
+                            $("#main_amount").val(customer.main_amount);
+                            $("#dueAmount").val(main);
+                            $("#paidAmount").val(payment);
+                        } else {
+                            console.error("No customer data found for the selected ID.");
+                        }
                     },
                     error: function(xhr, error, status) {
                         console.error(xhr.responseText);
-                    };
-
+                    }
                 });
-            })
-        })
+            });
+        });
     </script>
 @endpush

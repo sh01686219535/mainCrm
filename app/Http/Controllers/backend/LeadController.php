@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
+
+use  App\Http\Controllers\Controller;
+
 use App\Models\Lead;
 use App\Models\SalesPerson;
 use App\Models\TeamLeader;
@@ -53,7 +55,7 @@ class LeadController extends Controller
         $lead->status = $request->status;
         $lead->save();
 
-        return back()->with('success', 'Lead added Successfully');
+        return redirect('/lead')->with('success', 'Lead added Successfully');
     }
 
     /**
@@ -80,18 +82,6 @@ class LeadController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $this->validate($request, [
-        //     'name' => 'required',
-        //     'email' => 'required',
-        //     'phone' => 'required',
-        //     'address' => 'required',
-        //     'city' => 'required',
-        //     'state' => 'required',
-        //     'country' => 'required',
-        //     'source' => 'required',
-            
-        // ]);
-
         $lead = Lead::find($id);
         $lead->name = $request->name;
         $lead->email = $request->email;
@@ -110,7 +100,7 @@ class LeadController extends Controller
         $lead->save();
 
 
-        return back()->with('success', 'Lead Updated Successfully');
+        return redirect('lead')->with('success', 'Lead Updated Successfully');
     }
 
     /**

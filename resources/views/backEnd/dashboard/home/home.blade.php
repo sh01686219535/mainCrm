@@ -1,94 +1,165 @@
 @extends('backEnd.dashboard.home.master')
-@section('title')
-Dashboard
-@endsection
+@section('title', 'Dashboard')
 @section('content')
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
-         
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+    @push('css')
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+    @endpush
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
-
-                <p>New Orders</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Dashboard</h1>
+                    </div>
+                </div>
             </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                <p>Bounce Rate</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
-
-                <p>User Registrations</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Unique Visitors</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
         </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  </div>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Stat boxes -->
+                <div class="row">
+                    <!-- Customer count -->
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-6 col-6">
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>{{ $customerCount }}</h3>
+                                <h4>Customers</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Lead count -->
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-6 col-6">
+                        <div class="small-box bg-success">
+                            <div class="inner">
+                                <h3>{{ $leadCount }}</h3>
+                                <h4>Leads</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Today's payments -->
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-6 col-6">
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <h3>{{ $todaysPayment }}</h3>
+                                <h4>Payments - Today</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Monthly payments -->
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-6 col-6">
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3>{{ $MonthlyPayment }}</h3>
+                                <h4>Payments - Monthly</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Monthly payments Chart -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 col-12">
+                        <div id="Container" class="chart"></div>
+                    </div>
+                    <br>
+                    <!-- Lead Chart -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 col-12 m-chart">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-12">
+                            <section class="chart">
+                                <canvas id="myChart"></canvas>
+                            </section>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-12">
+                            <!-- Customer Chart -->
+                            <section class="chart">
+                                <div id="chart_div"></div>
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
 @endsection
+@push('js')
+    {{-- monthly charts --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var userChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: {!! json_encode($labels) !!},
+                    datasets: {!! json_encode($dataSets) !!}
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+    {{-- pie charts --}}
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+                <?php echo $charr; ?>
+            ]);
+            var options = {
+                'title': 'Customer',
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+    {{-- line charts --}}
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var userDataString = @json($paymentData);
+            var userData = JSON.parse(userDataString);
+            Highcharts.chart('Container', {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Monthly Payment ' + new Date().getFullYear()
+                },
+                xAxis: {
+                    categories: ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"
+                    ],
+                },
+                yAxis: {
+                    title: {
+                        text: 'Number of New Payments',
+
+                    }
+                },
+                series: [{
+                    name: 'New Payments',
+                    data: userData
+                }]
+            });
+        });
+    </script>
+@endpush

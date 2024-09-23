@@ -1,20 +1,22 @@
 @extends('backEnd.dashboard.home.master')
 @section('title')
-Approve Customer
+    Customer List
 @endsection
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
+                    <!-- /.col -->
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <h1>Customer List</h1>
                                     <!-- <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                            class="fa fa-plus"></i> Approve Customer</a> -->
+                                                                                                                                                                class="fa fa-plus"></i> Approve Customer</a> -->
                                 </div>
                             </div>
                         </div>
@@ -28,7 +30,6 @@ Approve Customer
                                                 <th>Name</th>
                                                 <th>Phone</th>
                                                 <th>Email</th>
-                                                <th>Designation</th>
                                                 <th>Image</th>
                                                 <th>Action</th>
                                             </tr>
@@ -37,18 +38,19 @@ Approve Customer
                                             @php $i = 1 @endphp
                                             @foreach ($customer as $item)
                                                 <tr>
-                                                    <td>{{ $i }}</td>
+                                                    <td>{{ $i++ }}</td>
                                                     <td>{{ $item->name }}</td>
                                                     <td>{{ $item->phone }}</td>
                                                     <td>{{ $item->email }}</td>
-                                                    <td>{{ $item->profession }}</td>
                                                     <td>
-                                                        <img src="{{ asset($item->userImage) }}" class="teamLeader_img"
+                                                        <img src="{{ asset($item->user_image) }}" class="teamLeader_img"
                                                             alt="">
                                                     </td>
-                                                    <td>
-                                                        <a href="{{route('customer.edit',$item->id)}}" class="btn btn-primary" ><i class="fa fa-edit"></i></a>
-                                                        <a href="{{route('delete.customer',$item->id)}}" class="delete btn btn-danger"><i
+                                                    <td class="d-flex justify-content-between">
+                                                        <a href="{{ route('customer.edit', $item->id) }}"
+                                                            class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+                                                        <a href="{{ route('delete.customer', $item->id) }}"
+                                                            class="delete btn btn-danger btn-sm"><i
                                                                 class="fa fa-trash"></i></a>
                                                 </tr>
                                             @endforeach
@@ -57,9 +59,11 @@ Approve Customer
                                 </div>
                             </div>
                         </div>
-                    </div><!-- /.col -->
+                    </div>
+                    <!-- /.col -->
 
-                </div><!-- /.row -->
+                </div>
+                <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
@@ -74,3 +78,6 @@ Approve Customer
     </div>
     </div>
 @endsection
+@push('js')
+    {{-- id="example" --}}
+@endpush

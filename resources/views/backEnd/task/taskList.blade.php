@@ -1,29 +1,23 @@
 @extends('backEnd.dashboard.home.master')
-@section('title', 'Lead')
+@section('title', 'Task')
 
 @section('content')
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
+                    <!-- /.col -->
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="main-body">
                                     <h1>Task</h1>
-                                    {{-- <form action="{{ route('lead.exportExcel') }}" method="post" target="blank"> --}}
-                                    {{-- @csrf --}}
                                     <div>
-                                        <a href="{{ route('task.create') }}" class="btn btn-primary"><i
-                                                class="fa fa-plus"></i>New Lead</a>
-                                        {{-- <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-plus"></i>Import Lead</a> --}}
-
-
-                                        {{-- <input type="submit" class="btn btn-success" value="Export"> --}}
-
+                                        <a href="{{ route('task.create') }}" class="btn btn-outline-primary"><i
+                                                class="fa fa-plus"></i>New Task</a>
                                     </div>
-                                    {{-- </form> --}}
-
+                                   
                                     @if ($errors->any())
                                         <div class="alert alert-danger">
                                             <ul>
@@ -37,7 +31,9 @@
                             </div>
                         </div>
                     </div>
+                    <!-- /.row -->
                 </div>
+                <!-- /.row -->
 
                 <div class="card">
                     <div class="card-body">
@@ -73,11 +69,11 @@
                                             <td>{{ $item->status }}</td>
                                             <td>
                                                 <a href="{{ route('task.edit', $item->id) }}"
-                                                    class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
-                                                <form action="{{ route('task.destroy', $item->id) }}" method="POST">
+                                                    class="btn btn-outline-success action-btn"><i class="fa fa-edit"></i></a>
+                                                <form class="action-btn" action="{{ route('task.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger"><i
+                                                    <button type="submit" class="action-btn btn btn-outline-danger" id="delete"><i
                                                             class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>

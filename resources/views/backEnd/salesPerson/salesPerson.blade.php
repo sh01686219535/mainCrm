@@ -7,13 +7,15 @@ Sales Person
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
+                    <!-- /.col -->
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <h1>Sales Person</h1>
-                                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                    <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                                             class="fa fa-plus"></i> Sales Person</a>
                                     <!-- Teamleader modal-->
                                     <div class="modal fade" id="exampleModal" tabindex="-1"
@@ -121,8 +123,8 @@ Sales Person
                                                             alt="">
                                                     </td>
                                                     <td>
-                                                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editExampleModal{{$item->id}}"><i class="fa fa-edit"></i></a>
-                                                        <a href="{{route('delete.salesPerson',$item->id)}}" class="delete btn btn-danger"><i
+                                                        <a class="btn btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editExampleModal{{$item->id}}"><i class="fa fa-edit"></i></a>
+                                                        <a href="{{route('delete.salesPerson',$item->id)}}" class="action-btn delete btn btn-outline-danger"><i
                                                                 class="fa fa-trash"></i></a>
                                                         <!-- Edit Teamleader modal-->
                                                         <div class="modal fade" id="editExampleModal{{$item->id}}" tabindex="-1"
@@ -215,9 +217,11 @@ Sales Person
                                 </div>
                             </div>
                         </div>
-                    </div><!-- /.col -->
+                    </div>
+                    <!-- /.col -->
 
-                </div><!-- /.row -->
+                </div>
+                <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->

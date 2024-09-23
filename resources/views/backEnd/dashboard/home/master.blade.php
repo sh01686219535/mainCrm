@@ -3,8 +3,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
- @include('backEnd.include.animation_img')
+
   <!-- Navbar -->
   @include('backEnd.include.navbar')
   <!-- /.navbar -->

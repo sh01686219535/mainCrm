@@ -12,6 +12,7 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
                     {{-- error mess --}}
                     @if ($errors->any())
@@ -23,11 +24,12 @@
                             </ul>
                         </div>
                     @endif
+                    <!-- /.col -->
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <form action="{{ route('update.customer') }}" class="form-demo" method="post"
                             enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="customer_id" value="{{$customer->id}}">
+                            <input type="hidden" name="customer_id" value="{{ $customer->id }}">
                             <div class="form-section ">
                                 <div class="card">
                                     <div class="card-body">
@@ -37,127 +39,129 @@
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="name">Full Name</label>
-                                                    <input type="text" class="form-control" id="name" name="name" value="{{$customer->name}}"
-                                                        required>
+                                                    <input type="text" class="form-control" id="name" name="name"
+                                                        value="{{ $customer->name }}" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="fatherName">Father Name</label>
-                                                    <input type="text" class="form-control" id="fatherName" value="{{$customer->fatherName}}"
-                                                        name="fatherName">
+                                                    <input type="text" class="form-control" id="fatherName"
+                                                        value="{{ $customer->fathername }}" name="fathername">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="motherName">Mother Name</label>
-                                                    <input type="text" class="form-control" id="motherName" value="{{$customer->motherName}}"
-                                                        name="motherName">
+                                                    <input type="text" class="form-control" id="motherName"
+                                                        value="{{ $customer->mothername }}" name="mothername">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="spouseName">Spouse Name(If Any)</label>
-                                                    <input type="text" class="form-control" id="spouseName" value="{{$customer->spouseName}}"
-                                                        name="spouseName">
+                                                    <input type="text" class="form-control" id="spouseName"
+                                                        value="{{ $customer->spousename }}" name="spousename">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="dateOfBirth">Date of Birth</label>
                                                     <input type="date" class="form-control" id="dateOfBirth"
-                                                        name="dateOfBirth" value="{{$customer->dateOfBirth}}">
+                                                        name="date_of_birth" value="{{ $customer->date_of_birth }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="dateOfBirthSpouse">Date of Birth(Spouse)</label>
                                                     <input type="date" class="form-control" id="dateOfBirthSpouse"
-                                                        name="dateOfBirthSpouse"  value="{{$customer->dateOfBirthSpouse}}">
+                                                        name="date_of_birthspouse"
+                                                        value="{{ $customer->date_of_birthspouse }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="marriageDay">Marriage Day</label>
                                                     <input type="date" class="form-control" id="marriageDay"
-                                                        name="marriageDay" value="{{$customer->marriageDay}}">
+                                                        name="marriageday" value="{{ $customer->marriageday }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="phone">Phone Number</label>
-                                                    <input type="text" class="form-control" id="phone" name="phone" value="{{$customer->phone}}"
-                                                        required>
+                                                    <input type="text" class="form-control" id="phone" name="phone"
+                                                        value="{{ $customer->phone }}" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="email">Email Address</label>
-                                                    <input type="email" class="form-control" id="email" value="{{$customer->email}}"
-                                                        name="email">
+                                                    <input type="email" class="form-control" id="email"
+                                                        value="{{ $customer->email }}" name="email">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="nidNumber">Nid Number</label>
-                                                    <input type="number" class="form-control" id="nidNumber" value="{{$customer->nidNumber}}"
-                                                        name="nidNumber">
+                                                    <input type="number" class="form-control" id="nidNumber"
+                                                        value="{{ $customer->nid_number }}" name="nid_number">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="PassportNumber">Passport Number</label>
-                                                    <input type="number" class="form-control" id="PassportNumber" value="{{$customer->PassportNumber}}"
-                                                        name="PassportNumber">
+                                                    <input type="number" class="form-control" id="PassportNumber"
+                                                        value="{{ $customer->passport_number }}" name="passport_number">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="Nationality">Nationality</label>
                                                     <input type="text" class="form-control" id="Nationality"
-                                                        name="nationality" value="{{$customer->nationality}}" >
+                                                        name="nationality" value="{{ $customer->nationality }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="Religion">Religion</label>
                                                     <input type="text" class="form-control" id="Religion"
-                                                        name="religion" value="{{$customer->religion}}">
+                                                        name="religion" value="{{ $customer->religion }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="profession">Profession</label>
                                                     <input type="text" class="form-control" id="profession"
-                                                        name="profession" value="{{$customer->profession}}">
+                                                        name="profession" value="{{ $customer->profession }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="facebookId">Facebook Id</label>
                                                     <input type="text" class="form-control" id="facebookId"
-                                                        name="facebookId" value="{{$customer->facebookId}}">
+                                                        name="facebook_id" value="{{ $customer->facebook_id }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="presentAddress">Present Address</label>
                                                     <input type="text" class="form-control" id="presentAddress"
-                                                        name="presentAddress"  value="{{$customer->presentAddress}}">
+                                                        name="present_address" value="{{ $customer->present_address }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="permanentAddress">Permanent Address</label>
                                                     <input type="text" class="form-control" id="permanentAddress"
-                                                        name="permanentAddress" value="{{$customer->permanentAddress}}">
+                                                        name="permanent_address"
+                                                        value="{{ $customer->permanent_address }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="officeAddress">Office Address</label>
                                                     <input type="text" class="form-control" id="officeAddress"
-                                                        name="officeAddress" value="{{$customer->officeAddress}}">
+                                                        name="office_address" value="{{ $customer->office_address }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -184,26 +188,35 @@
                                                 <div class="form-group">
                                                     <label for="projectName">Project Name</label>
                                                     <input type="text" class="form-control" id="projectName"
-                                                        name="projectName" value="{{$customer->projectName}}">
+                                                        name="project_name" value="{{ $customer->project_name }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="projectAddress">Project Address</label>
                                                     <input type="text" class="form-control" id="projectAddress"
-                                                        name="projectAddress" value="{{$customer->projectAddress}}">
+                                                        name="project_address" value="{{ $customer->project_address }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="categoryOfOwnership">Category Of Ownership</label>
-                                                    <select name="categoryOfOwnership" id="categoryOfOwnership" class="form-control">
+                                                    <select name="category_of_ownership" id="categoryOfOwnership"
+                                                        class="form-control">
                                                         <option value="">Select Category Of Ownership</option>
-                                                        <option value="executive" {{$customer->categoryOfOwnership == 'executive' ? 'selected' : ''}}>Executive</option>
-                                                        <option value="premium" {{$customer->categoryOfOwnership == 'premium' ? 'selected' : ''}}>Premium</option>
-                                                        <option value="royal" {{$customer->categoryOfOwnership == 'royal' ? 'selected' : ''}}>Royal</option>
-                                                        @if(!in_array($customer->categoryOfOwnership, ['executive', 'premium', 'royal']))
-                                                            <option value="{{$customer->categoryOfOwnership}}" selected>{{$customer->categoryOfOwnership}}</option>
+                                                        <option value="executive"
+                                                            {{ $customer->category_of_ownership == 'executive' ? 'selected' : '' }}>
+                                                            Executive</option>
+                                                        <option value="premium"
+                                                            {{ $customer->category_of_ownership == 'premium' ? 'selected' : '' }}>
+                                                            Premium</option>
+                                                        <option value="royal"
+                                                            {{ $customer->category_of_ownership == 'royal' ? 'selected' : '' }}>
+                                                            Royal</option>
+                                                        @if (!in_array($customer->category_of_ownership, ['executive', 'premium', 'royal']))
+                                                            <option value="{{ $customer->category_of_ownership }}"
+                                                                selected>
+                                                                {{ $customer->category_of_ownership }}</option>
                                                         @endif
                                                     </select>
                                                 </div>
@@ -212,21 +225,25 @@
                                                 <div class="form-group">
                                                     <label for="ownershipSize">Suite Ownership Size(SFT)</label>
                                                     <input type="number" class="form-control" id="ownershipSize"
-                                                        name="ownershipSize" value="{{$customer->ownershipSize}}" onchange="calculateOwnership()">
+                                                        name="ownership_size" value="{{ $customer->ownership_size }}"
+                                                        onchange="calculateOwnership()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="noOffOwnership">No. Of Ownership</label>
                                                     <input type="number" class="form-control" id="noOffOwnership"
-                                                        name="noOffOwnership"  value="{{$customer->noOffOwnership}}" onkeyup="calculateOwnership()">
+                                                        name="no_off_ownership" value="{{ $customer->no_off_ownership }}"
+                                                        onkeyup="calculateOwnership()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="pricePerOwnership">Price Per Ownership</label>
                                                     <input type="number" class="form-control" id="pricePerOwnership"
-                                                        name="pricePerOwnership" value="{{$customer->pricePerOwnership}}" onkeyup="calculatetotal()">
+                                                        name="price_per_ownership"
+                                                        value="{{ $customer->price_per_ownership }}"
+                                                        onkeyup="calculatetotal()">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -234,47 +251,65 @@
                                                     <label for="pricePerOwnershipInWord">Price Per Ownership(In
                                                         Word)</label>
                                                     <input type="text" class="form-control"
-                                                        id="pricePerOwnershipInWord" name="pricePerOwnershipInWord" value="{{$customer->pricePerOwnershipInWord}}">
+                                                        id="pricePerOwnershipInWord" name="price_per_ownership_in_word"
+                                                        value="{{ $customer->price_per_ownership_in_word }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="totalPrice">Total Price</label>
                                                     <input type="number" class="form-control" id="totalPrice"
-                                                        name="totalPrice" onchange="calculatetotal()" value="{{$customer->totalPrice}}">
+                                                        name="total_price" onchange="calculatetotal()"
+                                                        value="{{ $customer->total_price }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="totalPriceInWord">Total Price(In Word)</label>
                                                     <input type="number" class="form-control" id="totalPriceInWord"
-                                                        name="totalPriceInWord" value="{{$customer->totalPriceInWord}}">
+                                                        name="total_price_in_word"
+                                                        value="{{ $customer->total_price_in_word }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="specialDiscount">Special Discount</label>
                                                     <input type="number" class="form-control" id="specialDiscount"
-                                                        name="specialDiscount" onkeyup="calculatetotal()" value="{{$customer->specialDiscount}}">
+                                                        name="special_discount" onkeyup="calculatetotal()"
+                                                        value="{{ $customer->special_discount }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="specialDiscountInWord">Special Discount(In Word)</label>
                                                     <input type="number" class="form-control" id="specialDiscountInWord"
-                                                        name="specialDiscountInWord" value="{{$customer->specialDiscountInWord}}">
+                                                        name="special_discount_inword"
+                                                        value="{{ $customer->special_discount_inword }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <label for="modeOfPayment" class="form-label dummy">Mode Of
                                                     Payment</label>
-                                                <select name="modeOfPayment" id="modeOfPayment" class="form-control">
+                                                <select name="mode_of_payment" id="modeOfPayment" class="form-control">
                                                     <option value="">Select Mode Of Payment</option>
-                                                    <option value="perMonth" {{$customer->modeOfPayment == 'perMonth' ? 'selected' : ''}}>Per Month</option>
-                                                    <option value="quarterly" {{$customer->modeOfPayment == 'quarterly' ? 'selected' : ''}}>Quarterly</option>
-                                                    <option value="halfYearly" {{$customer->modeOfPayment == 'halfYearly' ? 'selected' : ''}}>Half Yearly</option>
-                                                    <option value="yearly" {{$customer->modeOfPayment == 'yearly' ? 'selected' : ''}}>Yearly</option>
-                                                    <option value="atATime" {{$customer->modeOfPayment == 'atATime' ? 'selected' : ''}}>At a Time</option>
+                                                    <option value="perMonth"
+                                                        {{ $customer->mode_of_payment == 'perMonth' ? 'selected' : '' }}>
+                                                        Per
+                                                        Month</option>
+                                                    <option value="quarterly"
+                                                        {{ $customer->mode_of_payment == 'quarterly' ? 'selected' : '' }}>
+                                                        Quarterly</option>
+                                                    <option value="halfYearly"
+                                                        {{ $customer->mode_of_payment == 'halfYearly' ? 'selected' : '' }}>
+                                                        Half Yearly</option>
+                                                    <option value="yearly"
+                                                        {{ $customer->mode_of_payment == 'yearly' ? 'selected' : '' }}>
+                                                        Yearly
+                                                    </option>
+                                                    <option value="atATime"
+                                                        {{ $customer->mode_of_payment == 'atATime' ? 'selected' : '' }}>At
+                                                        a
+                                                        Time</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -292,31 +327,40 @@
                                                 <div class="form-group">
                                                     <label for="bookingMoney">Booking Money</label>
                                                     <input type="number" class="form-control" id="bookingMoney"
-                                                        name="bookingMoney" onkeyup="calculatetotal()" value="{{$customer->bookingMoney}}">
+                                                        name="booking_money" onkeyup="calculatetotal()"
+                                                        value="{{ $customer->booking_money }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="bookingMoneyInWord">Booking Money(In Word)</label>
                                                     <input type="text" class="form-control" id="bookingMoneyInWord"
-                                                        name="bookingMoneyInWord" value="{{$customer->bookingMoneyInWord}}">
+                                                        name="booking_money_inword"
+                                                        value="{{ $customer->booking_money_inword }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="bookingMoneyDate">Booking Money(Date)</label>
                                                     <input type="date" class="form-control" id="bookingMoneyDate"
-                                                        name="bookingMoneyDate" value="{{$customer->bookingMoneyDate}}">
+                                                        name="booking_money_date"
+                                                        value="{{ $customer->booking_money_date }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="paymentType">Payment Type</label>
-                                                    <select name="paymentType" id="paymentType" class="form-control">
+                                                    <select name="payment_type" id="paymentType" class="form-control">
                                                         <option value=""> Select Payment Type</option>
-                                                        <option value="cash" {{$customer->paymentType == 'cash' ? 'selected' : ''}}>CASH</option>
-                                                        <option value="chq" {{$customer->paymentType == 'chq' ? 'selected' : ''}}>CHQ</option>
-                                                        <option value="online" {{$customer->paymentType == 'online' ? 'selected' : ''}}>Online</option>
+                                                        <option value="cash"
+                                                            {{ $customer->payment_type == 'cash' ? 'selected' : '' }}>CASH
+                                                        </option>
+                                                        <option value="chq"
+                                                            {{ $customer->payment_type == 'chq' ? 'selected' : '' }}>CHQ
+                                                        </option>
+                                                        <option value="online"
+                                                            {{ $customer->payment_type == 'online' ? 'selected' : '' }}>
+                                                            Online</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -324,48 +368,53 @@
                                                 <div class="form-group">
                                                     <label for="noOfInstallment">No. Of Installment</label>
                                                     <input type="number" class="form-control" id="noOfInstallment"
-                                                        name="noOfInstallment" onkeyup="calculatetotal()" value="{{$customer->noOfInstallment}}">
+                                                        name="no_o_installment" onkeyup="calculatetotal()"
+                                                        value="{{ $customer->no_o_installment }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="instPerMonth">Inst. Per Month</label>
                                                     <input type="number" class="form-control" id="instPerMonth"
-                                                        name="instPerMonth" onkeyup="calculatetotal()" value="{{$customer->instPerMonth}}"> 
+                                                        name="inst_permonth" onkeyup="calculatetotal()"
+                                                        value="{{ $customer->inst_permonth }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="mainAmount">Main Amount</label>
                                                     <input type="number" class="form-control" id="mainAmount"
-                                                        name="mainAmount" onchange="calculatetotal()" value="{{$customer->mainAmount}}">
+                                                        name="main_amount" onchange="calculatetotal()"
+                                                        value="{{ $customer->main_amount }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="agreedAmount">Agreed Amount</label>
                                                     <input type="number" class="form-control" id="agreedAmount"
-                                                        name="agreedAmount" onchange="calculateOwnership()" value="{{$customer->agreedAmount}}">
+                                                        name="agreed_amount" onchange="calculateOwnership()"
+                                                        value="{{ $customer->agreed_amount }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="inStallmentStart">InStallment Start</label>
                                                     <input type="date" class="form-control" id="inStallmentStart"
-                                                        name="inStallmentStart" value="{{$customer->inStallmentStart}}">
+                                                        name="in_stallment_start"
+                                                        value="{{ $customer->in_stallment_start }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="inStallmentTo">InStallment To</label>
                                                     <input type="date" class="form-control" id="inStallmentTo"
-                                                        name="inStallmentTo" value="{{$customer->inStallmentTo}}">
+                                                        name="in_stallment_to" value="{{ $customer->in_stallment_to }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                                 <div class="form-group">
                                                     <label for="description">Other Description</label>
-                                                    <textarea name="description" id="description" class="form-control" placeholder="Enter Other Description">{{$customer->description}}</textarea>
+                                                    <textarea name="description" id="description" class="form-control" placeholder="Enter Other Description">{{ $customer->description }}</textarea>
                                                 </div>
                                             </div>
 
@@ -385,59 +434,66 @@
                                                 <div class="form-group">
                                                     <label for="nomineeName">Nominee Name</label>
                                                     <input type="text" class="form-control" id="nomineeName"
-                                                        name="nomineeName" value="{{$customer->nomineeName}}">
+                                                        name="nominee_name" value="{{ $customer->nominee_name }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="nomineeNumber">Nominee Cell Number</label>
                                                     <input type="number" class="form-control" id="nomineeNumber"
-                                                        name="nomineeNumber" value="{{$customer->nomineeNumber}}">
+                                                        name="nominee_number" value="{{ $customer->nominee_number }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="relationToNominee">Relation To Nominee</label>
                                                     <input type="text" class="form-control" id="relationToNominee"
-                                                        name="relationToNominee" value="{{$customer->relationToNominee}}">
+                                                        name="relation_to_nominee"
+                                                        value="{{ $customer->relation_to_nominee }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceNameA">Reference Name(A)</label>
                                                     <input type="text" class="form-control" id="referenceNameA"
-                                                        name="referenceNameA" value="{{$customer->referenceNameA}}">
+                                                        name="reference_name_a"
+                                                        value="{{ $customer->reference_name_a }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceCellNumerA">Reference Cell Number(A)</label>
                                                     <input type="number" class="form-control" id="referenceCellNumerA"
-                                                        name="referenceCellNumerA" value="{{$customer->referenceCellNumerA}}">
+                                                        name="reference_cell_numer_a"
+                                                        value="{{ $customer->reference_cell_numer_a }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceNameb">Reference Name(B)</label>
                                                     <input type="text" class="form-control" id="referenceNameb"
-                                                        name="referenceNameb" value="{{$customer->referenceNameb}}">
+                                                        name="reference_name_b"
+                                                        value="{{ $customer->reference_name_b }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="referenceCellNumerB">Reference Cell Number(B)</label>
                                                     <input type="number" class="form-control" id="referenceCellNumerB"
-                                                        name="referenceCellNumerB" value="{{$customer->referenceCellNumerB}}">
+                                                        name="reference_cell_numer_b"
+                                                        value="{{ $customer->reference_cell_numer_b }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="salesPerson_id">Sales Person</label>
-                                                    <select name="salesPerson_id" id="salesPerson_id"
+                                                    <select name="sales_person_id" id="salesPerson_id"
                                                         class="form-control">
                                                         <option value=""> Select Sales Person</option>
                                                         @foreach ($salesPerson as $item)
-                                                            <option value="{{ $item->id }}" {{$item->id == $customer->salesPerson_id ? 'selected' : ''}}>{{ $item->name }}
+                                                            <option value="{{ $item->id }}"
+                                                                {{ $item->id == $customer->sales_person_id ? 'selected' : '' }}>
+                                                                {{ $item->name }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -446,10 +502,12 @@
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="teamLeader_id">Team Leader</label>
-                                                    <select name="teamLeader_id" id="teamLeader_id" class="form-control">
+                                                    <select name="teamleader_id" id="teamLeader_id" class="form-control">
                                                         <option value=""> Select Team Leader</option>
                                                         @foreach ($teamLeader as $item)
-                                                            <option value="{{ $item->id }}" {{$item->id == $customer->teamLeader_id ? 'selected' : ''}}>{{ $item->name }}
+                                                            <option value="{{ $item->id }}"
+                                                                {{ $item->id == $customer->teamleader_id ? 'selected' : '' }}>
+                                                                {{ $item->name }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -459,33 +517,31 @@
                                                 <div class="form-group">
                                                     <label for="userImage">User Image</label>
                                                     <input type="file" class="form-control" id="userImage"
-                                                        name="userImage">
-                                                        @if($customer->userImage)
-                                                            <img class="imageUN"
-                                                        src="{{ asset($customer->userImage) }}"
-                                                        alt="" class="image-style mb-3">
-                                                        @else
-                                                            <img class="imageUN" id="showImage"
-                                                        src="{{ asset('backEndAsset/img/previewImage.png') }}"
-                                                        alt="" class="image-style mb-3">
-                                                        @endif
+                                                        name="user_image">
+                                                    @if ($customer->user_image)
+                                                        <img class="imageUN" src="{{ asset($customer->user_image) }}"
+                                                            alt="" class="image-style mb-3">
+                                                    @else
+                                                        <img class="imageUN" id="showImage"
+                                                            src="{{ asset('backEndAsset/img/previewImage.png') }}"
+                                                            alt="" class="image-style mb-3">
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="form-group">
                                                     <label for="nomineeImage">Nominee Image</label>
                                                     <input type="file" class="form-control" id="nomineeImage"
-                                                        name="nomineeImage">
-                                                        @if($customer->nomineeImage)
-                                                            <img class="imageUN" 
-                                                        src="{{ asset($customer->nomineeImage) }}"
-                                                        alt="" class="image-style mb-3">
-                                                        @else
-                                                            <img class="imageUN" id="showNImage"
-                                                        src="{{ asset('backEndAsset/img/previewImage.png') }}"
-                                                        alt="" class="image-style mb-3">
-                                                        @endif
-                                                    
+                                                        name="nominee_image">
+                                                    @if ($customer->nominee_image)
+                                                        <img class="imageUN" src="{{ asset($customer->nominee_image) }}"
+                                                            alt="" class="image-style mb-3">
+                                                    @else
+                                                        <img class="imageUN" id="showNImage"
+                                                            src="{{ asset('backEndAsset/img/previewImage.png') }}"
+                                                            alt="" class="image-style mb-3">
+                                                    @endif
+
                                                 </div>
                                             </div>
                                         </div>
@@ -500,9 +556,11 @@
                                 <span class="clearfix"></span>
                             </div>
                         </form>
-                    </div><!-- /.col -->
+                    </div>
+                    <!-- /.col -->
 
-                </div><!-- /.row -->
+                </div>
+                <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->

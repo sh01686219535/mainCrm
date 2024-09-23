@@ -1,29 +1,35 @@
 @extends('backEnd.dashboard.home.master')
 @section('title')
-Add Task
+    Add Task
 @endsection
 @push('css')
-    
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endpush
 
 @section('content')
-
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
+                <!-- /.row -->
                 <div class="row mb-2">
+                    <!-- /.col -->
                     <div class="col-sm-12 col-md-12 col-lg-12 col-sm-12">
                         <div class="card">
-                            <div class="card-head">
-                                <h2>Add New Task</h2>
+                            <div class="card-head main-body m-3">
+                                <h1>Task Create</h1>
+                                <a class="btn btn-primary" href="{{ route('task.index') }}"><i class="fa fa-list"></i> Lead
+                                    Task</a>
                             </div>
+                        </div>
+                        <div class="card">
                             <div class="card-body ">
                                 <div class="main-body">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <form action="{{ route('task.store') }}" method="post" enctype="multipart/form-data">
+                                        <form action="{{ route('task.store') }}" method="post"
+                                            enctype="multipart/form-data">
                                             @csrf
+                                            <!-- /.row -->
                                             <div class="row">
                                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                                     <div class="form-group">
@@ -35,11 +41,11 @@ Add Task
                                                 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                     <div class="form-group">
                                                         <label for="lead_id">Lead</label>
-                                                        <Select class="form-control" id="lead_id"
-                                                        name="lead_id">
+                                                        <Select class="form-control" id="lead_id" name="lead_id">
                                                             <option value="">Select</option>
                                                             @foreach ($lead as $item)
-                                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                                <option value="{{ $item->id }}">{{ $item->name }}
+                                                                </option>
                                                             @endforeach
                                                         </Select>
                                                     </div>
@@ -94,7 +100,7 @@ Add Task
                                                             <option value="Urgent">Urgent</option>
                                                         </select>
                                                     </div>
-                                                </div> 
+                                                </div>
                                                 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                     <div class="form-group">
                                                         <label for="status">Status</label>
@@ -119,32 +125,31 @@ Add Task
                                                         <label for="description">Description</label>
                                                         <textarea class="form-control" name="description" id="description" cols="" rows=""></textarea>
                                                     </div>
-                                                </div>         
+                                                </div>
                                             </div>
+                                            <!-- /.row -->
                                             <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                 <input type="submit" class="btn btn-outline-success" value="Save">
-                                            </div>   
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                    </div><!-- /.col -->
+                    </div>
+                    <!-- /.col -->
 
-                </div><!-- /.row -->
+                </div>
+                <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
 
         <!-- Main content -->
-</div>
-
-
+    </div>
 @endsection
 
 @push('js')
-
     {{-- Additional JavaScript if needed --}}
-
 @endpush
