@@ -16,10 +16,10 @@ return new class extends Migration
             $table->unsignedBigInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->string('startdate')->nullable();
-            $table->string('endDate')->nullable();
-            $table->string('totalInstallment')->nullable();
-            $table->string('perInstallment')->nullable();
-            $table->string('mainAmount')->nullable();
+            $table->string('end_date')->nullable();
+            $table->string('total_installment')->nullable();
+            $table->string('per_installment')->nullable();
+            $table->string('main_amount')->nullable();
             $table->string('amount')->nullable();
             $table->timestamps();
         });

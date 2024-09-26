@@ -14,13 +14,13 @@ class PaymentController extends Controller
     public function payment()
     {
         $payment = Payment::all();
-        return view('backEnd.payment.payment',compact('payment'));
+        return view('backEnd.payment.payment', compact('payment'));
     }
     // addPayment
     public function addPayment()
     {
         $customer = Customer::all();
-        return view('backEnd.payment.addPayment',compact('customer'));
+        return view('backEnd.payment.addPayment', compact('customer'));
     }
     //paymentStore
     public function paymentStore(Request $request)
@@ -28,13 +28,13 @@ class PaymentController extends Controller
         $payment = new Payment();
         $payment->customer_id = $request->customer_id;
         $payment->startdate = $request->startdate;
-        $payment->endDate = $request->endDate;
-        $payment->totalInstallment = $request->totalInstallment;
-        $payment->perInstallment = $request->perInstallment;
-        $payment->mainAmount = $request->mainAmount;
+        $payment->end_date = $request->end_date;
+        $payment->total_installment = $request->total_installment;
+        $payment->per_installment = $request->per_installment;
+        $payment->main_amount = $request->main_amount;
         $payment->amount = $request->amount;
         $payment->save();
-        return redirect('/payment')->with('message','Payment Stored Successfully');
+        return redirect('/payment')->with('message', 'Payment Stored Successfully');
     }
     //paymentDelete
     public function paymentDelete(string $id)

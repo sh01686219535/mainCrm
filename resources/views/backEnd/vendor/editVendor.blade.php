@@ -17,8 +17,8 @@
                         <div class="card">
                             <div class="card-head main-body m-3">
                                 <h1>Vendor Edit</h1>
-                                <a class="btn btn-primary" href="{{ route('vendor.index') }}"><i
-                                        class="fa fa-list"></i> Vendor List</a>
+                                <a class="btn btn-primary" href="{{ route('vendor.index') }}"><i class="fa fa-list"></i>
+                                    Vendor List</a>
                             </div>
                         </div>
                         <div class="card">
@@ -34,7 +34,7 @@
                                                 </ul>
                                             </div>
                                         @endif
-                                        <form action="{{ route('vendor.update',$vendor->id) }}" method="post"
+                                        <form action="{{ route('vendor.update', $vendor->id) }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
                                             @method('put')
@@ -42,70 +42,79 @@
                                                 <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4">
                                                     <div class="form-group">
                                                         <label for="name">Full Name</label>
-                                                        <input type="text" id="name" name="name" value="{{$vendor->name}}"
-                                                            class="form-control" placeholder="Enter Full Name">
+                                                        <input type="text" id="name" name="name"
+                                                            value="{{ $vendor->name }}" class="form-control"
+                                                            placeholder="Enter Full Name">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4">
                                                     <div class="form-group">
                                                         <label for="phone">Phone Number</label>
-                                                        <input type="number" id="phone" name="phone" value="{{$vendor->phone}}"
-                                                            class="form-control" placeholder="Enter Phone Number">
+                                                        <input type="number" id="phone" name="phone"
+                                                            value="{{ $vendor->phone }}" class="form-control"
+                                                            placeholder="Enter Phone Number">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4">
                                                     <div class="form-group">
                                                         <label for="email">Email Address</label>
-                                                        <input type="email" id="email" name="email" value="{{$vendor->email}}"
-                                                            class="form-control" placeholder="Enter Email Address">
+                                                        <input type="email" id="email" name="email"
+                                                            value="{{ $vendor->email }}" class="form-control"
+                                                            placeholder="Enter Email Address">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4">
                                                     <div class="form-group">
                                                         <label for="position ">Position</label>
-                                                        <input type="text" id="position" name="position" value="{{$vendor->position}}"
-                                                            class="form-control" placeholder="Enter Position">
+                                                        <input type="text" id="position" name="position"
+                                                            value="{{ $vendor->position }}" class="form-control"
+                                                            placeholder="Enter Position">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4">
                                                     <div class="form-group">
                                                         <label for="street ">Street</label>
-                                                        <input type="text" id="street" name="street" value="{{$vendor->street}}"
-                                                            class="form-control" placeholder="Enter Street">
+                                                        <input type="text" id="street" name="street"
+                                                            value="{{ $vendor->street }}" class="form-control"
+                                                            placeholder="Enter Street">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4">
                                                     <div class="form-group">
                                                         <label for="city ">City</label>
-                                                        <input type="text" id="city" name="city" value="{{$vendor->city}}"
-                                                            class="form-control" placeholder="Enter City">
+                                                        <input type="text" id="city" name="city"
+                                                            value="{{ $vendor->city }}" class="form-control"
+                                                            placeholder="Enter City">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4">
                                                     <div class="form-group">
                                                         <label for="state">State</label>
-                                                        <input type="text" id="state" name="state" value="{{$vendor->state}}"
-                                                            class="form-control" placeholder="Enter State">
+                                                        <input type="text" id="state" name="state"
+                                                            value="{{ $vendor->state }}" class="form-control"
+                                                            placeholder="Enter State">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4">
                                                     <div class="form-group">
                                                         <label for="zipCode ">Zip Code</label>
-                                                        <input type="number" id="zipCode" name="zipCode" value="{{$vendor->zipCode}}"
-                                                            class="form-control" placeholder="Enter Zip Code">
+                                                        <input type="number" id="zipCode" name="zip_code"
+                                                            value="{{ $vendor->zip_code }}" class="form-control"
+                                                            placeholder="Enter Zip Code">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4">
                                                     <div class="form-group">
                                                         <label for="country">Country</label>
-                                                        <input type="text" id="country" name="country"  value="{{$vendor->country}}"
-                                                            class="form-control" placeholder="Enter Country">
+                                                        <input type="text" id="country" name="country"
+                                                            value="{{ $vendor->country }}" class="form-control"
+                                                            placeholder="Enter Country">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4">
                                                     <div class="form-group">
                                                         <label for="notes">Notes</label>
-                                                        <textarea name="notes" id="notes" class="form-control" placeholder="Enter Notes">{{$vendor->notes}}</textarea>
+                                                        <textarea name="notes" id="notes" class="form-control" placeholder="Enter Notes">{{ $vendor->notes }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>

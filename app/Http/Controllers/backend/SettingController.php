@@ -11,50 +11,52 @@ class SettingController extends Controller
     //setting
     public function setting()
     {
-        $setting = Setting::where('id',1)->first();
-        return view('backEnd.setting.setting',compact('setting'));
+        $setting = Setting::where('id', 1)->first();
+        return view('backEnd.setting.setting', compact('setting'));
     }
     //settingStore
     public function settingStore(Request $request)
     {
         $request->validate([
-            'companyName' => 'required',
+            'company_name' => 'required',
             'phone' => 'required',
             'email' => 'required',
         ]);
-        $setting = Setting::where('id',1)->first();
-        $setting->companyName = $request->companyName;
+        $setting = Setting::where('id', 1)->first();
+        $setting->company_name = $request->company_name;
         $setting->phone = $request->phone;
         $setting->email = $request->email;
         $setting->city = $request->city;
         $setting->state = $request->state;
         $setting->country = $request->country;
-        $setting->zipCode = $request->zipCode;
-        if ($request->file('componyLogoMenu')) {
-            $setting->componyLogoMenu = $this->componyLogoMenu($request);
+        $setting->zip_code = $request->zip_code;
+        if ($request->file('compony_logo_menu')) {
+            $setting->compony_logo_menu = $this->componyLogoMenu($request);
         }
-        if ($request->file('componyLogoFooter')) {
-            $setting->componyLogoFooter = $this->componyLogoFooter($request);
+        if ($request->file('compony_logo_footer')) {
+            $setting->compony_logo_footer = $this->componyLogoFooter($request);
         }
         $setting->save();
-        return back()->with('message','Settings Stored Successfully');
+        return back()->with('message', 'Settings Stored Successfully');
     }
-      //SaveImage
-      public function componyLogoMenu($request){
-        $image = $request->file('componyLogoMenu');
-        $imageName = rand().'.'.$image->getClientOriginalExtension();
+    //SaveImage
+    public function componyLogoMenu($request)
+    {
+        $image = $request->file('compony_logo_menu');
+        $imageName = rand() . '.' . $image->getClientOriginalExtension();
         $directory = 'backEndAsset/projectImg/componyLogoMenu-img/';
-        $imageUrl = $directory.$imageName;
-        $image->move($directory,$imageName);
+        $imageUrl = $directory . $imageName;
+        $image->move($directory, $imageName);
         return $imageUrl;
     }
-      //SaveImage
-      public function componyLogoFooter($request){
-        $image = $request->file('componyLogoFooter');
-        $imageName = rand().'.'.$image->getClientOriginalExtension();
+    //SaveImage
+    public function componyLogoFooter($request)
+    {
+        $image = $request->file('compony_logo_footer');
+        $imageName = rand() . '.' . $image->getClientOriginalExtension();
         $directory = 'backEndAsset/projectImg/componyLogoFooter-img/';
-        $imageUrl = $directory.$imageName;
-        $image->move($directory,$imageName);
+        $imageUrl = $directory . $imageName;
+        $image->move($directory, $imageName);
         return $imageUrl;
     }
 }

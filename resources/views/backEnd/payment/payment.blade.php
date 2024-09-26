@@ -15,7 +15,8 @@
                             <div class="card-body ">
                                 <div class="main-body">
                                     <h1>Payment</h1>
-                                    <a class="btn btn-outline-primary" href="{{ route('add.payment') }}"><i class="fa fa-plus"></i>
+                                    <a class="btn btn-outline-primary" href="{{ route('add.payment') }}"><i
+                                            class="fa fa-plus"></i>
                                         Payment</a>
                                 </div>
                             </div>
@@ -43,12 +44,13 @@
                                                     <td>{{ $i++ }}</td>
                                                     <td>{{ $item->customer->name ?? '' }}</td>
                                                     <td>{{ \Carbon\Carbon::parse($item->startdate)->format('d-M-y') }}</td>
-                                                    <td>{{ \Carbon\Carbon::parse($item->endDate)->format('d-M-y') }}</td>
-                                                    <td>{{ $item->totalInstallment }}</td>
-                                                    <td>{{ $item->perInstallment }}</td>
-                                                    <td>{{ $item->mainAmount }}</td>
+                                                    <td>{{ \Carbon\Carbon::parse($item->end_date)->format('d-M-y') }}</td>
+                                                    <td>{{ $item->total_installment }}</td>
+                                                    <td>{{ $item->per_installment }}</td>
+                                                    <td>{{ $item->main_amount }}</td>
                                                     <td>
-                                                        <form action="{{route('payment.delete',$item->id)}}" method="post" class="action-btn">
+                                                        <form action="{{ route('payment.delete', $item->id) }}"
+                                                            method="post" class="action-btn">
                                                             @csrf
                                                             <button type="submit" class="action-btn btn btn-outline-danger"
                                                                 id="delete"><i class="fa fa-trash"></i></button>

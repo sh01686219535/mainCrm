@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('companyName');
+            $table->string('company_name');
             $table->string('phone');
             $table->string('email');
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('country')->nullable();
-            $table->string('zipCode')->nullable();
-            $table->text('componyLogoMenu')->nullable();
-            $table->text('componyLogoFooter')->nullable();
+            $table->string('zip_code')->nullable();
+            $table->text('compony_logo_menu')->nullable();
+            $table->text('compony_logo_footer')->nullable();
             $table->timestamps();
         });
     }

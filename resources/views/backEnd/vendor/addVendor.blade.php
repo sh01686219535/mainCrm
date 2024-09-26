@@ -90,7 +90,7 @@
                                                 <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4">
                                                     <div class="form-group">
                                                         <label for="zipCode ">Zip Code</label>
-                                                        <input type="number" id="zipCode" name="zipCode"
+                                                        <input type="number" id="zipCode" name="zip_code"
                                                             class="form-control" placeholder="Enter Zip Code">
                                                     </div>
                                                 </div>

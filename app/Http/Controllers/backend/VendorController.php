@@ -15,7 +15,7 @@ class VendorController extends Controller
     {
         //
         $vendor = Vendor::all();
-        return view('backEnd.vendor.index',compact('vendor'));
+        return view('backEnd.vendor.index', compact('vendor'));
     }
 
     /**
@@ -41,11 +41,11 @@ class VendorController extends Controller
         $vendor->street = $request->street;
         $vendor->city = $request->city;
         $vendor->state = $request->state;
-        $vendor->zipCode = $request->zipCode;
+        $vendor->zip_code = $request->zip_code;
         $vendor->country = $request->country;
         $vendor->notes = $request->notes;
         $vendor->save();
-        return back()->with('message','Vendor Created Successfully');
+        return back()->with('message', 'Vendor Created Successfully');
     }
 
     /**
@@ -63,7 +63,7 @@ class VendorController extends Controller
     {
         //
         $vendor = Vendor::find($id);
-        return view('backEnd.vendor.editVendor',compact('vendor'));
+        return view('backEnd.vendor.editVendor', compact('vendor'));
     }
 
     /**
@@ -80,11 +80,11 @@ class VendorController extends Controller
         $vendor->street = $request->street;
         $vendor->city = $request->city;
         $vendor->state = $request->state;
-        $vendor->zipCode = $request->zipCode;
+        $vendor->zip_code = $request->zip_code;
         $vendor->country = $request->country;
         $vendor->notes = $request->notes;
         $vendor->save();
-        return redirect('vendor')->with('message','Vendor Updated Successfully');
+        return redirect('vendor')->with('message', 'Vendor Updated Successfully');
     }
 
     /**
@@ -95,6 +95,6 @@ class VendorController extends Controller
         //
         $vendor = Vendor::find($id);
         $vendor->delete();
-        return back()->with('message','Vendor Deleted Successfully');
+        return back()->with('message', 'Vendor Deleted Successfully');
     }
 }

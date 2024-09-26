@@ -38,8 +38,9 @@
                                             <div class="form-group">
                                                 <label for="companyName">Company Name <span
                                                         class="text-danger">*</span></label>
-                                                <input type="text" name="companyName" value="{{ $setting->companyName }}"
-                                                    id="companyName" class="form-control">
+                                                <input type="text" name="company_name"
+                                                    value="{{ $setting->company_name }}" id="companyName"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
@@ -80,18 +81,19 @@
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="zipCode">Zip Code</label>
-                                                <input type="number" name="zipCode" value="{{ $setting->zipCode }}"
+                                                <input type="number" name="zip_code" value="{{ $setting->zip_code }}"
                                                     id="zipCode" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="componyLogoMenu">Compony Logo Top Menu</label>
-                                                <input type="file" name="componyLogoMenu" id="componyLogoMenu"
+                                                <input type="file" name="compony_logo_menu" id="componyLogoMenu"
                                                     class="form-control">
-                                                @if ($setting->componyLogoMenu)
-                                                    <img class="imageUN" id="showImage" src="{{ asset($setting->componyLogoMenu) }}"
-                                                        alt="" class="image-style mb-3">
+                                                @if ($setting->compony_logo_menu)
+                                                    <img class="imageUN" id="showImage"
+                                                        src="{{ asset($setting->compony_logo_menu) }}" alt=""
+                                                        class="image-style mb-3">
                                                 @else
                                                     <img class="imageUN" id="showImage"
                                                         src="{{ asset('backEndAsset/img/previewImage.png') }}"
@@ -103,11 +105,12 @@
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="componyLogoFooter">Compony Logo Footer</label>
-                                                <input type="file" name="componyLogoFooter" id="componyLogoFooter"
+                                                <input type="file" name="compony_logo_footer" id="componyLogoFooter"
                                                     class="form-control">
-                                                @if ($setting->componyLogoFooter)
-                                                    <img class="imageUN" id="showNImages" src="{{ asset($setting->componyLogoFooter) }}"
-                                                        alt="" class="image-style mb-3">
+                                                @if ($setting->compony_logo_footer)
+                                                    <img class="imageUN" id="showNImages"
+                                                        src="{{ asset($setting->compony_logo_footer) }}" alt=""
+                                                        class="image-style mb-3">
                                                 @else
                                                     <img class="imageUN" id="showNImages"
                                                         src="{{ asset('backEndAsset/img/previewImage.png') }}"
@@ -144,7 +147,7 @@
 @endsection
 @push('js')
     <script>
-        //   userImage  
+        //   userImage
         $(document).ready(function() {
             $('#componyLogoMenu').change('click', function(e) {
                 var reader = new FileReader();
@@ -154,7 +157,7 @@
                 reader.readAsDataURL(e.target.files['0']);
             });
         });
-        //nominee image 
+        //nominee image
         $(document).ready(function() {
             $('#componyLogoFooter').change('click', function(e) {
                 var reader = new FileReader();
