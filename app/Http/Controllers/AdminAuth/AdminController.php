@@ -17,6 +17,7 @@ use Session;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Backend\AdminValidation;
 
 class AdminController extends Controller
 {
@@ -26,14 +27,9 @@ class AdminController extends Controller
         return view('backEnd.admin.register.register');
     }
     //register
-    public function StoreRegister(Request $request)
+    public function StoreRegister(AdminValidation $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' => 'required|min:6',
-            'confirmPassword' => 'required|min:6|same:password'
-        ]);
+        
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;

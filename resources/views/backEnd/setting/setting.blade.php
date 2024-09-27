@@ -36,52 +36,52 @@
                                     <div class="row">
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
                                             <div class="form-group">
-                                                <label for="companyName">Company Name <span
+                                                <label for="company_name">Company Name <span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" name="company_name"
-                                                    value="{{ $setting->company_name }}" id="companyName"
+                                                    value="{{ $setting->company_name ?? '' }}" id="companyName"
                                                     class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="phone">Phone<span class="text-danger">*</span></label>
-                                                <input type="number" name="phone" value="{{ $setting->phone }}"
+                                                <input type="number" name="phone" value="{{ $setting->phone ?? ''}}"
                                                     id="phone" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="email">Email <span class="text-danger">*</span></label>
-                                                <input type="email" name="email" value="{{ $setting->email }}"
+                                                <input type="email" name="email" value="{{ $setting->email ?? '' }}"
                                                     id="email" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="city">City</label>
-                                                <input type="text" name="city" value="{{ $setting->city }}"
+                                                <input type="text" name="city" value="{{ $setting->city ?? ''}}"
                                                     id="city" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="state">State</label>
-                                                <input type="text" name="state" value="{{ $setting->state }}"
+                                                <input type="text" name="state" value="{{ $setting->state ?? ''}}"
                                                     id="state" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="country">Country</label>
-                                                <input type="text" name="country" value="{{ $setting->country }}"
+                                                <input type="text" name="country" value="{{ $setting->country ?? ''}}"
                                                     id="country" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-4 col-xl-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="zipCode">Zip Code</label>
-                                                <input type="number" name="zip_code" value="{{ $setting->zip_code }}"
+                                                <input type="number" name="zip_code" value="{{ $setting->zip_code ?? ''}}"
                                                     id="zipCode" class="form-control">
                                             </div>
                                         </div>
@@ -90,7 +90,7 @@
                                                 <label for="componyLogoMenu">Compony Logo Top Menu</label>
                                                 <input type="file" name="compony_logo_menu" id="componyLogoMenu"
                                                     class="form-control">
-                                                @if ($setting->compony_logo_menu)
+                                                @if (isset($setting->compony_logo_menu))
                                                     <img class="imageUN" id="showImage"
                                                         src="{{ asset($setting->compony_logo_menu) }}" alt=""
                                                         class="image-style mb-3">
@@ -107,7 +107,7 @@
                                                 <label for="componyLogoFooter">Compony Logo Footer</label>
                                                 <input type="file" name="compony_logo_footer" id="componyLogoFooter"
                                                     class="form-control">
-                                                @if ($setting->compony_logo_footer)
+                                                @if (isset($setting->compony_logo_footer))
                                                     <img class="imageUN" id="showNImages"
                                                         src="{{ asset($setting->compony_logo_footer) }}" alt=""
                                                         class="image-style mb-3">
